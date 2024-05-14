@@ -28,11 +28,6 @@ namespace Руководство
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Калькулятор(object sender, EventArgs e)
         {
             Калькулятор newForm = new Калькулятор();
