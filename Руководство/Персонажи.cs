@@ -37,8 +37,8 @@ namespace Руководство
 
         protected void selectChar(string nameCharacter)
         {
-            // Имя, фото и описание
             SqlDataAdapter adapter = new SqlDataAdapter();
+            // Имя, фото и описание
             DataTable table = new DataTable();
 
             string querystring = $"select * from char_info_db where name = '{nameCharacter}'";
@@ -146,37 +146,31 @@ namespace Руководство
             adapter.Fill(weapon_table);
 
 
-            if (table.Rows.Count > 0)
-            {
-                Информация_о_персонажах characterDetailsForm = new Информация_о_персонажах();
 
-                this.Hide();
+            Информация_о_персонажах characterDetailsForm = new Информация_о_персонажах();
+
+            this.Hide();
                 
-                characterDetailsForm.SetCharacterData(table.Rows[0]["name"].ToString(), table.Rows[0]["info"].ToString(), table.Rows[0]["image"].ToString());
+            characterDetailsForm.SetCharacterData(table.Rows[0]["name"].ToString(), table.Rows[0]["info"].ToString(), table.Rows[0]["image"].ToString());
 
-                characterDetailsForm.SetElement(nameCharacter, element[0], element[1]);
+            characterDetailsForm.SetElement(nameCharacter, element[0], element[1]);
 
-                characterDetailsForm.SetAbility(ability_table.Rows[0]["name"].ToString(), ability_table.Rows[0]["ability1_info"].ToString(), ability_table.Rows[0]["ability1_image"].ToString(), ability_table.Rows[0]["ability2_info"].ToString(), ability_table.Rows[0]["ability2_image"].ToString(), ability_table.Rows[0]["ability3_info"].ToString(), ability_table.Rows[0]["ability3_image"].ToString());
+            characterDetailsForm.SetAbility(ability_table.Rows[0]["name"].ToString(), ability_table.Rows[0]["ability1_info"].ToString(), ability_table.Rows[0]["ability1_image"].ToString(), ability_table.Rows[0]["ability2_info"].ToString(), ability_table.Rows[0]["ability2_image"].ToString(), ability_table.Rows[0]["ability3_info"].ToString(), ability_table.Rows[0]["ability3_image"].ToString());
 
-                characterDetailsForm.SetPassive(passive_table.Rows[0]["name"].ToString(), passive_table.Rows[0]["pas1_info"].ToString(), passive_table.Rows[0]["pas1_image"].ToString(), passive_table.Rows[0]["pas2_info"].ToString(), passive_table.Rows[0]["pas2_image"].ToString(), passive_table.Rows[0]["pas3_info"].ToString(), passive_table.Rows[0]["pas3_image"].ToString());
+            characterDetailsForm.SetPassive(passive_table.Rows[0]["name"].ToString(), passive_table.Rows[0]["pas1_info"].ToString(), passive_table.Rows[0]["pas1_image"].ToString(), passive_table.Rows[0]["pas2_info"].ToString(), passive_table.Rows[0]["pas2_image"].ToString(), passive_table.Rows[0]["pas3_info"].ToString(), passive_table.Rows[0]["pas3_image"].ToString());
 
-                characterDetailsForm.SetConst(const_table.Rows[0]["name"].ToString(), const_table.Rows[0]["const1_info"].ToString(), const_table.Rows[0]["const1_image"].ToString(), const_table.Rows[0]["const2_info"].ToString(), const_table.Rows[0]["const2_image"].ToString(), const_table.Rows[0]["const3_info"].ToString(), const_table.Rows[0]["const3_image"].ToString(), const_table.Rows[0]["const4_info"].ToString(), const_table.Rows[0]["const4_image"].ToString(), const_table.Rows[0]["const5_info"].ToString(), const_table.Rows[0]["const5_image"].ToString(), const_table.Rows[0]["const6_info"].ToString(), const_table.Rows[0]["const6_image"].ToString());
+            characterDetailsForm.SetConst(const_table.Rows[0]["name"].ToString(), const_table.Rows[0]["const1_info"].ToString(), const_table.Rows[0]["const1_image"].ToString(), const_table.Rows[0]["const2_info"].ToString(), const_table.Rows[0]["const2_image"].ToString(), const_table.Rows[0]["const3_info"].ToString(), const_table.Rows[0]["const3_image"].ToString(), const_table.Rows[0]["const4_info"].ToString(), const_table.Rows[0]["const4_image"].ToString(), const_table.Rows[0]["const5_info"].ToString(), const_table.Rows[0]["const5_image"].ToString(), const_table.Rows[0]["const6_info"].ToString(), const_table.Rows[0]["const6_image"].ToString());
 
-                characterDetailsForm.SetAbilitylvlup(nameCharacter, imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6]);
+            characterDetailsForm.SetAbilitylvlup(nameCharacter, imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6]);
 
-                characterDetailsForm.SetCharlvlup(nameCharacter, imagePaths_char_lvlup[0], imagePaths_char_lvlup[1], imagePaths_char_lvlup[2], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8]);
+            characterDetailsForm.SetCharlvlup(nameCharacter, imagePaths_char_lvlup[0], imagePaths_char_lvlup[1], imagePaths_char_lvlup[2], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8]);
 
-                characterDetailsForm.SetArtifact(artifact_table.Rows[0]["artifact_name"].ToString(), artifact_table.Rows[0]["image"].ToString(), artifact_table.Rows[0]["art_1_info"].ToString(), artifact_table.Rows[0]["art_2_info"].ToString(), artifact_table.Rows[0]["art_3_info"].ToString());
+            characterDetailsForm.SetArtifact(artifact_table.Rows[0]["artifact_name"].ToString(), artifact_table.Rows[0]["image"].ToString(), artifact_table.Rows[0]["art_1_info"].ToString(), artifact_table.Rows[0]["art_2_info"].ToString(), artifact_table.Rows[0]["art_3_info"].ToString());
 
-                characterDetailsForm.SetWeapon(weapon_table.Rows[0]["weapon1_name"].ToString(), weapon_table.Rows[0]["weapon1_image"].ToString(), weapon_table.Rows[0]["weapon2_name"].ToString(), weapon_table.Rows[0]["weapon2_image"].ToString(), weapon_table.Rows[0]["weapon3_name"].ToString(), weapon_table.Rows[0]["weapon3_image"].ToString(), weapon_table.Rows[0]["weapon4_name"].ToString(), weapon_table.Rows[0]["weapon4_image"].ToString());
+            characterDetailsForm.SetWeapon(weapon_table.Rows[0]["weapon1_name"].ToString(), weapon_table.Rows[0]["weapon1_image"].ToString(), weapon_table.Rows[0]["weapon2_name"].ToString(), weapon_table.Rows[0]["weapon2_image"].ToString(), weapon_table.Rows[0]["weapon3_name"].ToString(), weapon_table.Rows[0]["weapon3_image"].ToString(), weapon_table.Rows[0]["weapon4_name"].ToString(), weapon_table.Rows[0]["weapon4_image"].ToString());
 
-                characterDetailsForm.ShowDialog();
-            }
+            characterDetailsForm.ShowDialog();
 
-            else
-            {
-                MessageBox.Show("Ошибка");
-            }
         }
 
         protected void Казуха_Click(object sender, EventArgs e)

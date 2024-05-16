@@ -129,8 +129,8 @@ namespace Руководство
         {
             arti.Text = artifact_name;
             art1_info.Text = art_1_info;
-            art2_info.Text = art_1_info;
-            art3_info.Text = art_1_info;
+            art2_info.Text = art_2_info;
+            art3_info.Text = art_3_info;
 
             SetImage(art_image, image);
         }

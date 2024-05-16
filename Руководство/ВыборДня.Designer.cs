@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.Понедельник = new System.Windows.Forms.Button();
-            this.Среда = new System.Windows.Forms.Button();
-            this.Вторник = new System.Windows.Forms.Button();
-            this.Четверг = new System.Windows.Forms.Button();
-            this.Пятница = new System.Windows.Forms.Button();
-            this.Суббота = new System.Windows.Forms.Button();
-            this.Воскресенье = new System.Windows.Forms.Button();
+            this.Ponedelnik = new System.Windows.Forms.Button();
+            this.Sreda = new System.Windows.Forms.Button();
+            this.Vtornik = new System.Windows.Forms.Button();
+            this.Chetverg = new System.Windows.Forms.Button();
+            this.Pyatnica = new System.Windows.Forms.Button();
+            this.Subbota = new System.Windows.Forms.Button();
+            this.Voskresenye = new System.Windows.Forms.Button();
             this.Назад = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,68 +49,75 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Выберите день";
             // 
-            // Понедельник
+            // Ponedelnik
             // 
-            this.Понедельник.Location = new System.Drawing.Point(87, 104);
-            this.Понедельник.Name = "Понедельник";
-            this.Понедельник.Size = new System.Drawing.Size(132, 51);
-            this.Понедельник.TabIndex = 1;
-            this.Понедельник.Text = "Понедельник";
-            this.Понедельник.UseVisualStyleBackColor = true;
+            this.Ponedelnik.Location = new System.Drawing.Point(87, 104);
+            this.Ponedelnik.Name = "Ponedelnik";
+            this.Ponedelnik.Size = new System.Drawing.Size(132, 51);
+            this.Ponedelnik.TabIndex = 1;
+            this.Ponedelnik.Text = "Понедельник";
+            this.Ponedelnik.UseVisualStyleBackColor = true;
+            this.Ponedelnik.Click += new System.EventHandler(this.Ponedelnik_Click);
             // 
-            // Среда
+            // Sreda
             // 
-            this.Среда.Location = new System.Drawing.Point(87, 238);
-            this.Среда.Name = "Среда";
-            this.Среда.Size = new System.Drawing.Size(132, 51);
-            this.Среда.TabIndex = 2;
-            this.Среда.Text = "Среда";
-            this.Среда.UseVisualStyleBackColor = true;
+            this.Sreda.Location = new System.Drawing.Point(87, 238);
+            this.Sreda.Name = "Sreda";
+            this.Sreda.Size = new System.Drawing.Size(132, 51);
+            this.Sreda.TabIndex = 2;
+            this.Sreda.Text = "Среда";
+            this.Sreda.UseVisualStyleBackColor = true;
+            this.Sreda.Click += new System.EventHandler(this.Sreda_Click);
             // 
-            // Вторник
+            // Vtornik
             // 
-            this.Вторник.Location = new System.Drawing.Point(87, 167);
-            this.Вторник.Name = "Вторник";
-            this.Вторник.Size = new System.Drawing.Size(132, 51);
-            this.Вторник.TabIndex = 3;
-            this.Вторник.Text = "Вторник";
-            this.Вторник.UseVisualStyleBackColor = true;
+            this.Vtornik.Location = new System.Drawing.Point(87, 167);
+            this.Vtornik.Name = "Vtornik";
+            this.Vtornik.Size = new System.Drawing.Size(132, 51);
+            this.Vtornik.TabIndex = 3;
+            this.Vtornik.Text = "Вторник";
+            this.Vtornik.UseVisualStyleBackColor = true;
+            this.Vtornik.Click += new System.EventHandler(this.Vtornik_Click);
             // 
-            // Четверг
+            // Chetverg
             // 
-            this.Четверг.Location = new System.Drawing.Point(87, 310);
-            this.Четверг.Name = "Четверг";
-            this.Четверг.Size = new System.Drawing.Size(132, 51);
-            this.Четверг.TabIndex = 4;
-            this.Четверг.Text = "Четверг";
-            this.Четверг.UseVisualStyleBackColor = true;
+            this.Chetverg.Location = new System.Drawing.Point(87, 310);
+            this.Chetverg.Name = "Chetverg";
+            this.Chetverg.Size = new System.Drawing.Size(132, 51);
+            this.Chetverg.TabIndex = 4;
+            this.Chetverg.Text = "Четверг";
+            this.Chetverg.UseVisualStyleBackColor = true;
+            this.Chetverg.Click += new System.EventHandler(this.Chetverg_Click);
             // 
-            // Пятница
+            // Pyatnica
             // 
-            this.Пятница.Location = new System.Drawing.Point(87, 382);
-            this.Пятница.Name = "Пятница";
-            this.Пятница.Size = new System.Drawing.Size(132, 51);
-            this.Пятница.TabIndex = 5;
-            this.Пятница.Text = "Пятница";
-            this.Пятница.UseVisualStyleBackColor = true;
+            this.Pyatnica.Location = new System.Drawing.Point(87, 382);
+            this.Pyatnica.Name = "Pyatnica";
+            this.Pyatnica.Size = new System.Drawing.Size(132, 51);
+            this.Pyatnica.TabIndex = 5;
+            this.Pyatnica.Text = "Пятница";
+            this.Pyatnica.UseVisualStyleBackColor = true;
+            this.Pyatnica.Click += new System.EventHandler(this.Pyatnica_Click);
             // 
-            // Суббота
+            // Subbota
             // 
-            this.Суббота.Location = new System.Drawing.Point(87, 449);
-            this.Суббота.Name = "Суббота";
-            this.Суббота.Size = new System.Drawing.Size(132, 51);
-            this.Суббота.TabIndex = 6;
-            this.Суббота.Text = "Суббота";
-            this.Суббота.UseVisualStyleBackColor = true;
+            this.Subbota.Location = new System.Drawing.Point(87, 449);
+            this.Subbota.Name = "Subbota";
+            this.Subbota.Size = new System.Drawing.Size(132, 51);
+            this.Subbota.TabIndex = 6;
+            this.Subbota.Text = "Суббота";
+            this.Subbota.UseVisualStyleBackColor = true;
+            this.Subbota.Click += new System.EventHandler(this.Subbota_Click);
             // 
-            // Воскресенье
+            // Voskresenye
             // 
-            this.Воскресенье.Location = new System.Drawing.Point(87, 515);
-            this.Воскресенье.Name = "Воскресенье";
-            this.Воскресенье.Size = new System.Drawing.Size(132, 51);
-            this.Воскресенье.TabIndex = 7;
-            this.Воскресенье.Text = "Воскресенье";
-            this.Воскресенье.UseVisualStyleBackColor = true;
+            this.Voskresenye.Location = new System.Drawing.Point(87, 515);
+            this.Voskresenye.Name = "Voskresenye";
+            this.Voskresenye.Size = new System.Drawing.Size(132, 51);
+            this.Voskresenye.TabIndex = 7;
+            this.Voskresenye.Text = "Воскресенье";
+            this.Voskresenye.UseVisualStyleBackColor = true;
+            this.Voskresenye.Click += new System.EventHandler(this.Voskresenye_Click);
             // 
             // Назад
             // 
@@ -128,13 +135,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 573);
             this.Controls.Add(this.Назад);
-            this.Controls.Add(this.Воскресенье);
-            this.Controls.Add(this.Суббота);
-            this.Controls.Add(this.Пятница);
-            this.Controls.Add(this.Четверг);
-            this.Controls.Add(this.Вторник);
-            this.Controls.Add(this.Среда);
-            this.Controls.Add(this.Понедельник);
+            this.Controls.Add(this.Voskresenye);
+            this.Controls.Add(this.Subbota);
+            this.Controls.Add(this.Pyatnica);
+            this.Controls.Add(this.Chetverg);
+            this.Controls.Add(this.Vtornik);
+            this.Controls.Add(this.Sreda);
+            this.Controls.Add(this.Ponedelnik);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -150,13 +157,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Понедельник;
-        private System.Windows.Forms.Button Среда;
-        private System.Windows.Forms.Button Вторник;
-        private System.Windows.Forms.Button Четверг;
-        private System.Windows.Forms.Button Пятница;
-        private System.Windows.Forms.Button Суббота;
-        private System.Windows.Forms.Button Воскресенье;
+        private System.Windows.Forms.Button Ponedelnik;
+        private System.Windows.Forms.Button Sreda;
+        private System.Windows.Forms.Button Vtornik;
+        private System.Windows.Forms.Button Chetverg;
+        private System.Windows.Forms.Button Pyatnica;
+        private System.Windows.Forms.Button Subbota;
+        private System.Windows.Forms.Button Voskresenye;
         private System.Windows.Forms.Button Назад;
     }
 }

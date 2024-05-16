@@ -96,6 +96,12 @@
       <DependentUpon>characters.resx</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="Воскресенье.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Воскресенье.Designer.cs">
+      <DependentUpon>Воскресенье.cs</DependentUpon>
+    </Compile>
     <Compile Include="ВыборДня.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     <EmbeddedResource Include="characters.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>characters.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Воскресенье.resx">
+      <DependentUpon>Воскресенье.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ВыборДня.resx">
       <DependentUpon>ВыборДня.cs</DependentUpon>
