@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +14,121 @@ namespace Руководство
 {
     public partial class ТирЛист : Form
     {
+        Database database = new Database();
+
         public ТирЛист()
         {
             InitializeComponent();
-            InitializeTierList();
+
+
+            typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
+            tierListTable.CellPaint += tierListTable_CellPaint;
+
+            foreach (Control control in tierListTable.Controls) // создает ограничение 25 симв
+            {
+                if (control is RichTextBox)
+                {
+                    ((RichTextBox)control).KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
+                }
+            }
+            selectChar();
+        }
+
+        protected void selectChar()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            // Фото
+            DataTable table = new DataTable();
+
+            string querystring = $"select image from char_icon_db";
+            SqlCommand command = new SqlCommand(querystring, database.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            foreach (DataRow row in table.Rows)
+            {
+                string imagePath = row["image"].ToString(); // Получаем путь к изображению из базы данных
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Image = Image.FromFile(imagePath); // Устанавливаем изображение в PictureBox
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Устанавливаем режим отображения изображения
+                pictureBox.Width = 118; // Устанавливаем ширину PictureBox (можете выбрать подходящее значение)
+                pictureBox.Height = 118; // Устанавливаем высоту PictureBox (можете выбрать подходящее значение)
+                pictureBox.BorderStyle = BorderStyle.FixedSingle;
+
+                image_container.Controls.Add(pictureBox); // Добавляем PictureBox в FlowLayoutPanel
+
+                ImageManager(pictureBox);
+            }
+            label1.Text = $"Количество созданных PictureBox:{image_container.Controls.Count}";
+        }
+
+
+        public void ImageManager(PictureBox pictureBox)
+        {
+            pictureBox.MouseDown += Picture_MouseDown;
+            pictureBox.MouseMove += Picture_MouseMove;
+            pictureBox.MouseUp += Picture_MouseUp;
+        }
+
+        Point downPoint;
+        bool moved;
+
+        Dictionary<TableLayoutPanelCellPosition, Rectangle> dict = new Dictionary<TableLayoutPanelCellPosition, Rectangle>();
+
+
+        private void Picture_MouseDown(object sender, MouseEventArgs e)
+        {
+            Control picture = sender as Control;
+            picture.Parent = this;
+            picture.BringToFront();
+            downPoint = e.Location;
+        }
+
+        private void Picture_MouseMove(object sender, MouseEventArgs e)
+        {
+            Control picture = sender as Control;
+            if (e.Button == MouseButtons.Left)
+            {
+                picture.Left += e.X - downPoint.X;
+                picture.Top += e.Y - downPoint.Y;
+                moved = true;
+                tierListTable.Invalidate();
+            }
+        }
+
+        private void Picture_MouseUp(object sender, MouseEventArgs e)
+        {
+            Control picture = sender as Control;
+            if (moved)
+            {
+                SetControl(picture, e.Location);
+                picture.Parent = tierListTable;
+                moved = false;
+            }
+        }
+
+        private void SetControl(Control c, Point position)
+        {
+            Point localPoint = tierListTable.PointToClient(c.PointToScreen(position));
+            var keyValue = dict.FirstOrDefault(e => e.Value.Contains(localPoint));
+            if (!keyValue.Equals(default(KeyValuePair<TableLayoutPanelCellPosition, Rectangle>)))
+            {
+                tierListTable.SetCellPosition(c, keyValue.Key);
+            }
+        }
+
+        private void tierListTable_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            dict[new TableLayoutPanelCellPosition(e.Column, e.Row)] = e.CellBounds;
+            if (moved)
+            {
+                if (e.CellBounds.Contains(tierListTable.PointToClient(MousePosition)))
+                {
+                    e.Graphics.FillRectangle(Brushes.Yellow, e.CellBounds);
+                }
+            }
         }
 
         private void Назад(object sender, EventArgs e)
@@ -29,26 +142,6 @@ namespace Руководство
             oldForm.ShowDialog();
         }
 
-        private void InitializeTierList()
-        {
-            // Добавление строк в таблицу
-            for (int i = 0; i < 7; i++)
-            {
-                tierListTable.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                Label label = new Label();
-                label.Text = "Row " + (i + 1);
-                tierListTable.Controls.Add(label, 0, i);
-            }
-
-            this.Controls.Add(tierListTable);
-
-            // Добавление кнопок для добавления и удаления строк
-            addButton.Text = "Add Row";
-            this.Controls.Add(addButton);
-
-            deleteButton.Text = "Delete Row";
-        }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (tierListTable.RowCount > 0)
@@ -58,16 +151,71 @@ namespace Руководство
                 tierListTable.Controls.Remove(controlToRemove);
                 tierListTable.RowStyles.RemoveAt(rowCount - 1);
                 tierListTable.RowCount--;
+
+                for (int i = 0; i < tierListTable.RowCount; i++)
+                {
+                    tierListTable.RowStyles[i] = new RowStyle(SizeType.Absolute, 124);
+                }
             }
         }
 
+
         private void addButton_Click(object sender, EventArgs e)
         {
+            // Создаем новую строку с ячейками
             int rowCount = tierListTable.RowCount;
-            tierListTable.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            Label label = new Label();
-            label.Text = "Row " + rowCount;
-            tierListTable.Controls.Add(label, 0, rowCount - 1);
+            tierListTable.RowCount++;
+            tierListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 124));
+
+            // Создаем новую RichTextBox и настраиваем ее
+            var richTextBox = new RichTextBox();
+            richTextBox.Size = new Size(118, 118);
+            richTextBox.ReadOnly = false;
+            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox.ForeColor = SystemColors.Window;
+            richTextBox.BackColor = SystemColors.ActiveCaption;
+            richTextBox.Font = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
+            richTextBox.Text = "Введите новое название";
+            richTextBox.KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
+            richTextBox.BorderStyle = BorderStyle.None;
+            // Добавляем новую RichTextBox в ячейку и добавляем ячейку в строку
+            tierListTable.Controls.Add(richTextBox, 0, rowCount);
         }
+
+        private void richTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RichTextBox richTextBox = (RichTextBox)sender;
+
+            // Проверяем, что длина текста не превышает 25 символов
+            if (richTextBox.Text.Length >= 25 && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Отменяем ввод символа, если длина превышает 25 символов
+            }
+        }
+
+        //private void deleteButton_Click(object sender, EventArgs e)
+        //{
+        //    if (tierListTable.RowCount > 0)
+        //    {
+        //        int rowCount = tierListTable.RowCount - 1;
+        //        // Удаляем последнюю строку с ячейками
+        //        tierListTable.RowCount--;
+
+        //        for (int i = 0; i < tierListTable.ColumnCount; i++)
+        //        {
+        //            // Удаляем последнюю ячейку из каждой строки
+        //            Control cell = tierListTable.GetControlFromPosition(i, rowCount);
+        //            tierListTable.Controls.Remove(cell);
+        //            // cell.Dispose();
+        //        }
+
+        //        for (int i = 0; i < tierListTable.RowCount; i++)
+        //        {
+        //            tierListTable.RowStyles[i] = new RowStyle(SizeType.Absolute, 124);
+        //        }
+        //    }
+        //}
+
     }
+
 }
