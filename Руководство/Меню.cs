@@ -57,9 +57,7 @@ namespace Руководство
 
         private void ТирЛист(object sender, EventArgs e)
         {
-            // ТирЛист newForm = new ТирЛист();
-            //тирлистдемо newForm = new тирлистдемо();
-            лист_из_flow newForm = new лист_из_flow();
+            TIERLIST newForm = new TIERLIST();
 
             // Показ новой формы
             newForm.Show();

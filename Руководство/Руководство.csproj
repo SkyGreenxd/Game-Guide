@@ -126,11 +126,11 @@
     <Compile Include="Калькулятор.Designer.cs">
       <DependentUpon>Калькулятор.cs</DependentUpon>
     </Compile>
-    <Compile Include="лист из flow.cs">
+    <Compile Include="TIERLIST.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="лист из flow.Designer.cs">
-      <DependentUpon>лист из flow.cs</DependentUpon>
+    <Compile Include="TIERLIST.Designer.cs">
+      <DependentUpon>TIERLIST.cs</DependentUpon>
     </Compile>
     <Compile Include="Меню.cs">
       <SubType>Form</SubType>
@@ -152,18 +152,6 @@
     <Compile Include="Расчёт.Designer.cs">
       <DependentUpon>Расчёт.cs</DependentUpon>
     </Compile>
-    <Compile Include="ТирЛист.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ТирЛист.Designer.cs">
-      <DependentUpon>ТирЛист.cs</DependentUpon>
-    </Compile>
-    <Compile Include="тирлистдемо.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="тирлистдемо.Designer.cs">
-      <DependentUpon>тирлистдемо.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="characters.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>characters.Designer.cs</LastGenOutput>
@@ -183,8 +171,8 @@
     <EmbeddedResource Include="Калькулятор.resx">
       <DependentUpon>Калькулятор.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="лист из flow.resx">
-      <DependentUpon>лист из flow.cs</DependentUpon>
+    <EmbeddedResource Include="TIERLIST.resx">
+      <DependentUpon>TIERLIST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Меню.resx">
       <DependentUpon>Меню.cs</DependentUpon>
@@ -203,12 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Расчёт.resx">
       <DependentUpon>Расчёт.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ТирЛист.resx">
-      <DependentUpon>ТирЛист.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="тирлистдемо.resx">
-      <DependentUpon>тирлистдемо.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
