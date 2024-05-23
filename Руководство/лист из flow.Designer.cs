@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace Руководство
+﻿namespace Руководство
 {
-    partial class ТирЛист
+    partial class лист_из_flow
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +28,9 @@ namespace Руководство
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.image_container = new System.Windows.Forms.FlowLayoutPanel();
             this.tierListTable = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -39,33 +39,54 @@ namespace Руководство
             this.tier_2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.tier_1 = new System.Windows.Forms.RichTextBox();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.image_container = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel0 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.nazad = new System.Windows.Forms.Button();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.tierListTable.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 41);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Назад);
+            this.addButton.Location = new System.Drawing.Point(787, 12);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(147, 63);
+            this.addButton.TabIndex = 12;
+            this.addButton.Text = "Добавить строку";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(962, 12);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(147, 63);
+            this.deleteButton.TabIndex = 11;
+            this.deleteButton.Text = "Удалить строку";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // image_container
+            // 
+            this.image_container.AutoScroll = true;
+            this.image_container.Location = new System.Drawing.Point(787, 93);
+            this.image_container.Name = "image_container";
+            this.image_container.Size = new System.Drawing.Size(285, 829);
+            this.image_container.TabIndex = 13;
             // 
             // tierListTable
             // 
             this.tierListTable.AutoScroll = true;
             this.tierListTable.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tierListTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tierListTable.ColumnCount = 5;
+            this.tierListTable.ColumnCount = 2;
             this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 524F));
+            this.tierListTable.Controls.Add(this.flowLayoutPanel4, 1, 4);
             this.tierListTable.Controls.Add(this.richTextBox2, 0, 5);
             this.tierListTable.Controls.Add(this.richTextBox1, 0, 4);
             this.tierListTable.Controls.Add(this.tier_4, 0, 3);
@@ -73,7 +94,13 @@ namespace Руководство
             this.tierListTable.Controls.Add(this.tier_2, 0, 1);
             this.tierListTable.Controls.Add(this.richTextBox3, 0, 6);
             this.tierListTable.Controls.Add(this.tier_1, 0, 0);
-            this.tierListTable.Location = new System.Drawing.Point(119, 105);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel0, 1, 0);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel2, 1, 2);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel3, 1, 3);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel5, 1, 5);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel6, 1, 6);
+            this.tierListTable.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.tierListTable.Location = new System.Drawing.Point(66, 93);
             this.tierListTable.Name = "tierListTable";
             this.tierListTable.RowCount = 7;
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
@@ -83,8 +110,8 @@ namespace Руководство
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.Size = new System.Drawing.Size(650, 507);
-            this.tierListTable.TabIndex = 4;
+            this.tierListTable.Size = new System.Drawing.Size(670, 889);
+            this.tierListTable.TabIndex = 14;
             // 
             // richTextBox2
             // 
@@ -164,7 +191,7 @@ namespace Руководство
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox3.Location = new System.Drawing.Point(5, 761);
+            this.richTextBox3.Location = new System.Drawing.Point(5, 763);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(118, 118);
             this.richTextBox3.TabIndex = 23;
@@ -184,51 +211,79 @@ namespace Руководство
             this.tier_1.TabIndex = 19;
             this.tier_1.Text = "Лучший";
             // 
-            // deleteButton
+            // flowLayoutPanel0
             // 
-            this.deleteButton.Location = new System.Drawing.Point(954, 12);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(147, 63);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Удалить строку";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.flowLayoutPanel0.Location = new System.Drawing.Point(131, 5);
+            this.flowLayoutPanel0.Name = "flowLayoutPanel0";
+            this.flowLayoutPanel0.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel0.TabIndex = 24;
             // 
-            // addButton
+            // flowLayoutPanel2
             // 
-            this.addButton.Location = new System.Drawing.Point(779, 12);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(147, 63);
-            this.addButton.TabIndex = 6;
-            this.addButton.Text = "Добавить строку";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(131, 257);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel2.TabIndex = 26;
             // 
-            // image_container
+            // flowLayoutPanel3
             // 
-            this.image_container.AutoScroll = true;
-            this.image_container.Location = new System.Drawing.Point(803, 105);
-            this.image_container.Name = "image_container";
-            this.image_container.Size = new System.Drawing.Size(285, 501);
-            this.image_container.TabIndex = 9;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(131, 383);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel3.TabIndex = 27;
             // 
-            // ТирЛист
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(131, 635);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel5.TabIndex = 29;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(131, 761);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel6.TabIndex = 30;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(131, 131);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel1.TabIndex = 31;
+            // 
+            // nazad
+            // 
+            this.nazad.Location = new System.Drawing.Point(20, 12);
+            this.nazad.Name = "nazad";
+            this.nazad.Size = new System.Drawing.Size(75, 41);
+            this.nazad.TabIndex = 10;
+            this.nazad.Text = "Назад";
+            this.nazad.UseVisualStyleBackColor = true;
+            this.nazad.Click += new System.EventHandler(this.Назад);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(131, 509);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(501, 118);
+            this.flowLayoutPanel4.TabIndex = 32;
+            // 
+            // лист_из_flow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1113, 624);
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1131, 788);
+            this.Controls.Add(this.tierListTable);
             this.Controls.Add(this.image_container);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.tierListTable);
-            this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ТирЛист";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ТирЛист";
+            this.Controls.Add(this.nazad);
+            this.Name = "лист_из_flow";
+            this.Text = "лист_из_flow";
             this.tierListTable.ResumeLayout(false);
             this.tierListTable.PerformLayout();
             this.ResumeLayout(false);
@@ -237,17 +292,24 @@ namespace Руководство
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TableLayoutPanel tierListTable;
-        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.FlowLayoutPanel image_container;
+        private System.Windows.Forms.TableLayoutPanel tierListTable;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox tier_4;
+        private System.Windows.Forms.RichTextBox tier_3;
+        private System.Windows.Forms.RichTextBox tier_2;
+        private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox tier_1;
-        private RichTextBox tier_4;
-        private RichTextBox tier_3;
-        private RichTextBox tier_2;
-        private RichTextBox richTextBox2;
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox3;
-        private FlowLayoutPanel image_container;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel0;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button nazad;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
     }
 }

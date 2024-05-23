@@ -96,12 +96,6 @@
       <DependentUpon>characters.resx</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="tierListt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="tierListt.Designer.cs">
-      <DependentUpon>tierListt.cs</DependentUpon>
-    </Compile>
     <Compile Include="Воскресенье.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +126,12 @@
     <Compile Include="Калькулятор.Designer.cs">
       <DependentUpon>Калькулятор.cs</DependentUpon>
     </Compile>
+    <Compile Include="лист из flow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="лист из flow.Designer.cs">
+      <DependentUpon>лист из flow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Меню.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,11 +146,11 @@
     <Compile Include="Персонажи.Designer.cs">
       <DependentUpon>Персонажи.cs</DependentUpon>
     </Compile>
-    <Compile Include="Рассчет.cs">
+    <Compile Include="Расчёт.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Рассчет.Designer.cs">
-      <DependentUpon>Рассчет.cs</DependentUpon>
+    <Compile Include="Расчёт.Designer.cs">
+      <DependentUpon>Расчёт.cs</DependentUpon>
     </Compile>
     <Compile Include="ТирЛист.cs">
       <SubType>Form</SubType>
@@ -158,12 +158,15 @@
     <Compile Include="ТирЛист.Designer.cs">
       <DependentUpon>ТирЛист.cs</DependentUpon>
     </Compile>
+    <Compile Include="тирлистдемо.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="тирлистдемо.Designer.cs">
+      <DependentUpon>тирлистдемо.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="characters.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>characters.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="tierListt.resx">
-      <DependentUpon>tierListt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Воскресенье.resx">
       <DependentUpon>Воскресенье.cs</DependentUpon>
@@ -180,6 +183,9 @@
     <EmbeddedResource Include="Калькулятор.resx">
       <DependentUpon>Калькулятор.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="лист из flow.resx">
+      <DependentUpon>лист из flow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Меню.resx">
       <DependentUpon>Меню.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,11 +201,14 @@
     <EmbeddedResource Include="Персонажи.resx">
       <DependentUpon>Персонажи.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Рассчет.resx">
-      <DependentUpon>Рассчет.cs</DependentUpon>
+    <EmbeddedResource Include="Расчёт.resx">
+      <DependentUpon>Расчёт.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ТирЛист.resx">
       <DependentUpon>ТирЛист.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="тирлистдемо.resx">
+      <DependentUpon>тирлистдемо.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

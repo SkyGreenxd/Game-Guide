@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +11,18 @@ using System.Windows.Forms;
 
 namespace Руководство
 {
-    public partial class ТирЛист : Form
+    public partial class тирлистдемо : Form
     {
         Database database = new Database();
 
-        public ТирЛист()
+        public тирлистдемо()
         {
             InitializeComponent();
 
 
             typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
             tierListTable.CellPaint += tierListTable_CellPaint;
+
 
 
             foreach (Control control in tierListTable.Controls) // создает ограничение 25 симв
@@ -34,6 +34,7 @@ namespace Руководство
             }
             selectChar();
         }
+
 
         protected void selectChar()
         {
@@ -84,9 +85,16 @@ namespace Руководство
         private void Picture_MouseDown(object sender, MouseEventArgs e)
         {
             Control picture = sender as Control;
-            picture.Parent = this;
-            picture.BringToFront();
-            downPoint = e.Location;
+            if (e.Button == MouseButtons.Right)
+            {
+                picture.Parent = image_container;  // Возвращаем PictureBox в image_container при нажатии правой кнопки мыши
+            }
+            else
+            {
+                picture.Parent = this;
+                picture.BringToFront();
+                downPoint = e.Location;
+            }
         }
 
         private void Picture_MouseMove(object sender, MouseEventArgs e)
@@ -99,6 +107,8 @@ namespace Руководство
                 moved = true;
                 tierListTable.Invalidate();
             }
+
+
         }
 
         private void Picture_MouseUp(object sender, MouseEventArgs e)
@@ -107,13 +117,43 @@ namespace Руководство
             if (moved)
             {
                 SetControl(picture, e.Location);
-                picture.Parent = tierListTable;
+
+                //Получение ячейки TableLayoutPanel, в которой находится flowLayoutPanel1
+                TableLayoutPanelCellPosition cellPosition = tierListTable.GetPositionFromControl(flowLayoutPanel1);
+
+                //Добавление pictureBox во flowLayoutPanel1
+                flowLayoutPanel1.Controls.Add(picture);
+
+                //Убеждаемся, что картинка помещается в flowLayoutPanel1
+                EnsurePictureFits(picture);
+
+                //Обновление отображения
+                tierListTable.Invalidate();
 
                 if (!tierListTable.ClientRectangle.Contains(tierListTable.PointToClient(Cursor.Position)))
                 {
                     picture.Parent = image_container; // проверка на позицию курсора после перемещения PictureBox.
                 }
+
                 moved = false;
+            }
+        }
+
+
+        private void EnsurePictureFits(Control picture)
+        {
+            // Получаем индекс строки, в которой находится flowLayoutPanel1
+            int rowIndex = tierListTable.GetRow(flowLayoutPanel1);
+
+            if (rowIndex >= 0 && rowIndex < tierListTable.RowStyles.Count)
+            {
+                int requiredHeight = picture.Bottom + 10; // 10 - отступ между изображениями
+                if (requiredHeight > tierListTable.RowStyles[rowIndex].Height)
+                {
+                    // Увеличиваем высоту строки и flowLayoutPanel1, чтобы картинка поместилась
+                    tierListTable.RowStyles[rowIndex].Height = requiredHeight + 10; // Дополнительный отступ
+                    flowLayoutPanel1.Height = requiredHeight;
+                }
             }
         }
 
@@ -138,8 +178,8 @@ namespace Руководство
                 }
             }
         }
-        
-        
+
+
 
 
 
@@ -231,6 +271,7 @@ namespace Руководство
 
 
 
+
         //private void deleteButton_Click(object sender, EventArgs e)
         //{
         //    if (tierListTable.RowCount > 0)
@@ -255,5 +296,4 @@ namespace Руководство
         //}
 
     }
-
 }
