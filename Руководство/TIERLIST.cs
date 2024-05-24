@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -297,6 +298,30 @@ namespace Руководство
                     // Очищаем FlowLayoutPanel
                     control.Controls.Clear();
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Отображаем диалоговое окно сохранения
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PNG файлы (*.png)|*.png|Все файлы (*.*)|*.*"; // Фильтр для диалогового окна сохранения
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Создаем изображение с большим размером, чтобы вместить всё содержимое TableLayoutPanel
+                Bitmap bmp = new Bitmap(tierListTable.Width, tierListTable.Height);
+
+                // Рисуем содержимое TableLayoutPanel в созданном изображении
+                tierListTable.DrawToBitmap(bmp, new Rectangle(0, 0, tierListTable.Width, tierListTable.Height));
+
+                // Сохраняем изображение по выбранному пути
+                bmp.Save(saveFileDialog.FileName, ImageFormat.Png);
+
+                // Освобождаем ресурсы
+                bmp.Dispose();
+
+                // Показываем сообщение об успешном сохранении
+                MessageBox.Show("Изображение успешно сохранено.", "Сохранение завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

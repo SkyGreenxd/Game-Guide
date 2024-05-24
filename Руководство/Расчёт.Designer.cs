@@ -76,6 +76,7 @@ namespace Руководство
             this.res2 = new System.Windows.Forms.RichTextBox();
             this.res3 = new System.Windows.Forms.RichTextBox();
             this.NameCh = new System.Windows.Forms.RichTextBox();
+            this.Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -534,6 +535,16 @@ namespace Руководство
             this.NameCh.TabIndex = 166;
             this.NameCh.Text = "";
             // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(165, 12);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(101, 41);
+            this.Save.TabIndex = 167;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
+            // 
             // Расчёт
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,6 +552,7 @@ namespace Руководство
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(309, 573);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.NameCh);
             this.Controls.Add(this.res3);
             this.Controls.Add(this.res2);
@@ -661,5 +673,6 @@ namespace Руководство
         private System.Windows.Forms.RichTextBox res2;
         private System.Windows.Forms.RichTextBox res3;
         private System.Windows.Forms.RichTextBox NameCh;
+        private Button Save;
     }
 }

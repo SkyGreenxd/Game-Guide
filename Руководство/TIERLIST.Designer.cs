@@ -51,6 +51,7 @@ namespace Руководство
             this.tier_3 = new System.Windows.Forms.RichTextBox();
             this.nazad = new System.Windows.Forms.Button();
             this.Reboot = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.tierListTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@ namespace Руководство
             this.tierListTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tierListTable.ColumnCount = 2;
             this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 548F));
             this.tierListTable.Controls.Add(this.flowLayoutPanel4, 1, 4);
             this.tierListTable.Controls.Add(this.richTextBox2, 0, 5);
             this.tierListTable.Controls.Add(this.richTextBox1, 0, 4);
@@ -104,7 +105,7 @@ namespace Руководство
             this.tierListTable.Controls.Add(this.flowLayoutPanel1, 1, 1);
             this.tierListTable.Controls.Add(this.tier_2, 0, 1);
             this.tierListTable.Controls.Add(this.tier_3, 0, 2);
-            this.tierListTable.Location = new System.Drawing.Point(66, 93);
+            this.tierListTable.Location = new System.Drawing.Point(42, 93);
             this.tierListTable.Name = "tierListTable";
             this.tierListTable.RowCount = 7;
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
@@ -114,7 +115,7 @@ namespace Руководство
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tierListTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tierListTable.Size = new System.Drawing.Size(670, 933);
+            this.tierListTable.Size = new System.Drawing.Size(700, 933);
             this.tierListTable.TabIndex = 14;
             // 
             // flowLayoutPanel4
@@ -174,7 +175,7 @@ namespace Руководство
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox3.Location = new System.Drawing.Point(5, 797);
+            this.richTextBox3.Location = new System.Drawing.Point(5, 800);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(118, 124);
             this.richTextBox3.TabIndex = 23;
@@ -281,12 +282,22 @@ namespace Руководство
             this.Reboot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Reboot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Reboot.ForeColor = System.Drawing.SystemColors.Window;
-            this.Reboot.Location = new System.Drawing.Point(686, 12);
+            this.Reboot.Location = new System.Drawing.Point(513, 12);
             this.Reboot.Name = "Reboot";
             this.Reboot.Size = new System.Drawing.Size(64, 63);
             this.Reboot.TabIndex = 15;
             this.Reboot.UseVisualStyleBackColor = false;
             this.Reboot.Click += new System.EventHandler(this.Reboot_Click);
+            // 
+            // Save
+            // 
+            this.Save.Location = new System.Drawing.Point(614, 12);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(145, 63);
+            this.Save.TabIndex = 16;
+            this.Save.Text = "Сохранить";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.button1_Click);
             // 
             // TIERLIST
             // 
@@ -295,14 +306,19 @@ namespace Руководство
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1131, 788);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.Reboot);
             this.Controls.Add(this.tierListTable);
             this.Controls.Add(this.image_container);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.nazad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TIERLIST";
-            this.Text = "Создание Тир-Листа";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.tierListTable.ResumeLayout(false);
             this.tierListTable.PerformLayout();
             this.ResumeLayout(false);
@@ -331,5 +347,6 @@ namespace Руководство
         private System.Windows.Forms.Button nazad;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private Button Reboot;
+        private Button Save;
     }
 }

@@ -122,7 +122,7 @@
             this.MinimizeBox = false;
             this.Name = "Меню";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Меню";
             this.ResumeLayout(false);
             this.PerformLayout();
 

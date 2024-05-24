@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,6 +97,44 @@ namespace Руководство
         }
 
 
+        public void SaveCharacterDataToTxt(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine("Имя персонажа: " + NameCh.Text);
+                writer.WriteLine("Опыт героя: " + exp1.Text);
+                writer.WriteLine("Опыт искателя приключений: " + exp2.Text);
+                writer.WriteLine("Опыт странника " + exp3.Text);
+                writer.WriteLine("Необходимое кол-во моры: " + total_mora.Text);
+                writer.WriteLine("Материал для повышения талантов 2*: " + tal1.Text);
+                writer.WriteLine("Материал для повышения талантов 3*: " + tal2.Text);
+                writer.WriteLine("Материал для повышения талантов 4*: " + tal3.Text);
+                writer.WriteLine("Ресурсы с мобов 1*: " + res1.Text);
+                writer.WriteLine("Ресурсы с мобов 2*: " + res2.Text);
+                writer.WriteLine("Ресурсы с мобов 3*: " + res3.Text);
+                writer.WriteLine("Ресурс с еженедельного босса: " + w_boss.Text);
+                writer.WriteLine("Общее количество корон: " + total_crown.Text);
+                writer.WriteLine("Материал для возвышения 2*: " + m1.Text);
+                writer.WriteLine("Материал для возвышения 3*: " + m2.Text);
+                writer.WriteLine("Материал для возвышения 4*: " + m3.Text);
+                writer.WriteLine("Материал для возвышения 5*: " + m4.Text);
+                writer.WriteLine("Материал с босса: " + b_material.Text);
+                writer.WriteLine("Кол-во диковин: " + l_specialty.Text);
+            }
+        }
 
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"; // Фильтр для диалогового окна сохранения
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SaveCharacterDataToTxt(saveFileDialog.FileName);
+                MessageBox.Show("Успешно сохранено!");
+            }
+
+        }
     }
+    
 }
