@@ -131,7 +131,7 @@ namespace Руководство
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 SaveCharacterDataToTxt(saveFileDialog.FileName);
-                MessageBox.Show("Успешно сохранено!");
+                MessageBox.Show("Результат успешно сохранен.", "Сохранение завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

@@ -196,6 +196,26 @@ namespace Руководство
             {
                 MessageBox.Show("Параметры выбраны неверно");
             }
+            else if ((v_1.Value == 0 && lvl1.Value > 20) || 
+                (v_1.Value == 1 && (lvl1.Value < 20 || lvl1.Value > 40)) || 
+                (v_1.Value == 2 && (lvl1.Value < 40 || lvl1.Value > 50)) || 
+                (v_1.Value == 3 && (lvl1.Value < 50 || lvl1.Value > 60)) ||
+                (v_1.Value == 4 && (lvl1.Value < 60 || lvl1.Value > 70)) ||
+                (v_1.Value == 5 && (lvl1.Value < 70 || lvl1.Value > 80)) ||
+                (v_1.Value == 3 && lvl1.Value < 81)) 
+            {
+                MessageBox.Show("Параметры выбраны неверно");
+            }
+            else if ((v_2.Value == 0 && lvl2.Value > 20) ||
+                (v_2.Value == 1 && (lvl2.Value < 20 || lvl2.Value > 40)) ||
+                (v_2.Value == 2 && (lvl2.Value < 40 || lvl2.Value > 50)) ||
+                (v_2.Value == 3 && (lvl2.Value < 50 || lvl2.Value > 60)) ||
+                (v_2.Value == 4 && (lvl2.Value < 60 || lvl2.Value > 70)) ||
+                (v_2.Value == 5 && (lvl2.Value < 70 || lvl2.Value > 80)) ||
+                (v_2.Value == 3 && lvl2.Value < 81))
+            {
+                MessageBox.Show("Параметры выбраны неверно");
+            }
             else
             {
                 Расчёт result = new Расчёт();

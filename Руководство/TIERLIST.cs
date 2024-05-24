@@ -282,23 +282,28 @@ namespace Руководство
 
         private void Reboot_Click(object sender, EventArgs e)
         {
+            List<PictureBox> pictureBoxesToMove = new List<PictureBox>();
+
             foreach (Control control in tierListTable.Controls)
             {
                 if (control is FlowLayoutPanel)
                 {
-                    // Перебираем все фотографии (PictureBox) в FlowLayoutPanel
                     foreach (Control subControl in control.Controls)
                     {
                         if (subControl is PictureBox)
                         {
-                            // Возвращаем фотографию в родительский контейнер image_container
-                            image_container.Controls.Add(subControl);
+                            pictureBoxesToMove.Add((PictureBox)subControl); // Добавляем все PictureBox в список
                         }
                     }
-                    // Очищаем FlowLayoutPanel
-                    control.Controls.Clear();
                 }
             }
+
+            foreach (PictureBox pictureBox in pictureBoxesToMove)
+            {
+                image_container.Controls.Add(pictureBox); // Перемещаем все PictureBox обратно в image_container
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
