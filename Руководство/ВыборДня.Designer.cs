@@ -1,6 +1,6 @@
 ﻿namespace Руководство
 {
-    partial class ВыборДня
+    partial class choiceDay
     {
         /// <summary>
         /// Required designer variable.
@@ -129,7 +129,7 @@
             this.Назад.UseVisualStyleBackColor = true;
             this.Назад.Click += new System.EventHandler(this.Назад_Click);
             // 
-            // ВыборДня
+            // choiceDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,9 +146,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ВыборДня";
+            this.Name = "choiceDay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ВыборДня";
+            this.Text = "Выбор Дня";
             this.ResumeLayout(false);
             this.PerformLayout();
 

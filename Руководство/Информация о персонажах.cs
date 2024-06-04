@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Руководство
 {
@@ -34,7 +25,7 @@ namespace Руководство
             if (!string.IsNullOrEmpty(image))
             {
                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                pictureBox.Image = System.Drawing.Image.FromFile(image); // установка изображения персонажа в PictureBox
+                pictureBox.Image = System.Drawing.Image.FromFile(image);
             }
         }
 
@@ -49,7 +40,7 @@ namespace Руководство
         }
 
         // Элемент персонажа
-        public void SetElement(string name_char, string name_element, string image)
+        public void SetElement(string name_element, string image)
         {
             el.Text = name_element;
 
@@ -57,7 +48,7 @@ namespace Руководство
         }
 
         // Таланты
-        public void SetAbility(string name, string ability1_info, string ability1_image, string ability2_info, string ability2_image, string ability3_info, string ability3_image)
+        public void SetAbility(string ability1_info, string ability1_image, string ability2_info, string ability2_image, string ability3_info, string ability3_image)
         {
             this.a1_info.Text = ability1_info;
             this.a2_info.Text = ability2_info;
@@ -81,7 +72,7 @@ namespace Руководство
         }
 
         // Созвездия
-        public void SetConst(string name, string const1_info, string const1_image, string const2_info, string const2_image, string const3_info, string const3_image, string const4_info, string const4_image, string const5_info, string const5_image, string const6_info, string const6_image)
+        public void SetConst(string const1_info, string const1_image, string const2_info, string const2_image, string const3_info, string const3_image, string const4_info, string const4_image, string const5_info, string const5_image, string const6_info, string const6_image)
         {
             this.c1_info.Text = const1_info;
             this.c2_info.Text = const2_info;
@@ -96,10 +87,17 @@ namespace Руководство
             SetImage(c4_image, const4_image);
             SetImage(c5_image, const5_image);
             SetImage(c6_image, const6_image);
+
+            //for (int i = 0; i < Math.Min(images.Length, daycharImages.Length); i++)
+            //{
+            //    SetImage(daycharImages[i], images[i]);
+            //}
+
+
         }
 
         // Рес-сы для талантов
-        public void SetAbilitylvlup(string name, string abilitylvlup1_image, string abilitylvlup2_image, string abilitylvlup3_image, string abilitylvlup4_image, string abilitylvlup5_image, string abilitylvlup6_image, string abilitylvlup7_image)
+        public void SetAbilitylvlup(string abilitylvlup1_image, string abilitylvlup2_image, string abilitylvlup3_image, string abilitylvlup4_image, string abilitylvlup5_image, string abilitylvlup6_image, string abilitylvlup7_image)
         {
             SetImage(alvlup1_image, abilitylvlup1_image);
             SetImage(alvlup2_image, abilitylvlup2_image);
@@ -111,7 +109,7 @@ namespace Руководство
         }
 
         // Рес-сы для возвышения
-        public void SetCharlvlup(string name, string charlvlup1_image, string charlvlup2_image, string charlvlup3_image, string charlvlup4_image, string charlvlup5_image, string charlvlup6_image, string charlvlup7_image, string charlvlup8_image, string charlvlup9_image)
+        public void SetCharlvlup(string charlvlup1_image, string charlvlup2_image, string charlvlup3_image, string charlvlup4_image, string charlvlup5_image, string charlvlup6_image, string charlvlup7_image, string charlvlup8_image, string charlvlup9_image)
         {
             SetImage(clvlup1_image, charlvlup1_image);
             SetImage(clvlup2_image, charlvlup2_image);
@@ -147,6 +145,5 @@ namespace Руководство
             SetImage(w3_image, weapon3_image);
             SetImage(w4_image, weapon4_image);
         }
-
     }
 }

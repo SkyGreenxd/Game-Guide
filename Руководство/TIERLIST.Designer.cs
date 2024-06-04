@@ -90,7 +90,7 @@ namespace Руководство
             this.tierListTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tierListTable.ColumnCount = 2;
             this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 548F));
+            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 576F));
             this.tierListTable.Controls.Add(this.flowLayoutPanel4, 1, 4);
             this.tierListTable.Controls.Add(this.richTextBox2, 0, 5);
             this.tierListTable.Controls.Add(this.richTextBox1, 0, 4);
@@ -175,7 +175,7 @@ namespace Руководство
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox3.Location = new System.Drawing.Point(5, 800);
+            this.richTextBox3.Location = new System.Drawing.Point(5, 797);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(118, 124);
             this.richTextBox3.TabIndex = 23;
@@ -297,7 +297,7 @@ namespace Руководство
             this.Save.TabIndex = 16;
             this.Save.Text = "Сохранить";
             this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.button1_Click);
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // TIERLIST
             // 
@@ -305,7 +305,7 @@ namespace Руководство
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1131, 788);
+            this.ClientSize = new System.Drawing.Size(1165, 788);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Reboot);
             this.Controls.Add(this.tierListTable);
@@ -318,7 +318,7 @@ namespace Руководство
             this.MinimizeBox = false;
             this.Name = "TIERLIST";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Создание собственного Тир-Листа";
             this.tierListTable.ResumeLayout(false);
             this.tierListTable.PerformLayout();
             this.ResumeLayout(false);

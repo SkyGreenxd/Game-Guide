@@ -251,7 +251,7 @@
             // dayw10
             // 
             this.dayw10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw10.Location = new System.Drawing.Point(17, 1348);
+            this.dayw10.Location = new System.Drawing.Point(213, 743);
             this.dayw10.Name = "dayw10";
             this.dayw10.Size = new System.Drawing.Size(70, 70);
             this.dayw10.TabIndex = 149;
@@ -260,7 +260,7 @@
             // dayw3
             // 
             this.dayw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw3.Location = new System.Drawing.Point(213, 922);
+            this.dayw3.Location = new System.Drawing.Point(115, 1209);
             this.dayw3.Name = "dayw3";
             this.dayw3.Size = new System.Drawing.Size(70, 70);
             this.dayw3.TabIndex = 148;
@@ -269,7 +269,7 @@
             // dayw2
             // 
             this.dayw2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw2.Location = new System.Drawing.Point(115, 922);
+            this.dayw2.Location = new System.Drawing.Point(17, 1209);
             this.dayw2.Name = "dayw2";
             this.dayw2.Size = new System.Drawing.Size(70, 70);
             this.dayw2.TabIndex = 147;
@@ -278,7 +278,7 @@
             // dayw1
             // 
             this.dayw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw1.Location = new System.Drawing.Point(17, 922);
+            this.dayw1.Location = new System.Drawing.Point(213, 1067);
             this.dayw1.Name = "dayw1";
             this.dayw1.Size = new System.Drawing.Size(70, 70);
             this.dayw1.TabIndex = 146;
@@ -332,7 +332,7 @@
             // daychar6
             // 
             this.daychar6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar6.Location = new System.Drawing.Point(213, 317);
+            this.daychar6.Location = new System.Drawing.Point(17, 922);
             this.daychar6.Name = "daychar6";
             this.daychar6.Size = new System.Drawing.Size(70, 70);
             this.daychar6.TabIndex = 159;
@@ -341,7 +341,7 @@
             // daychar12
             // 
             this.daychar12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar12.Location = new System.Drawing.Point(213, 601);
+            this.daychar12.Location = new System.Drawing.Point(17, 459);
             this.daychar12.Name = "daychar12";
             this.daychar12.Size = new System.Drawing.Size(70, 70);
             this.daychar12.TabIndex = 171;
@@ -358,7 +358,7 @@
             // daychar11
             // 
             this.daychar11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar11.Location = new System.Drawing.Point(115, 601);
+            this.daychar11.Location = new System.Drawing.Point(213, 317);
             this.daychar11.Name = "daychar11";
             this.daychar11.Size = new System.Drawing.Size(70, 70);
             this.daychar11.TabIndex = 165;
@@ -367,7 +367,7 @@
             // daychar10
             // 
             this.daychar10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar10.Location = new System.Drawing.Point(17, 601);
+            this.daychar10.Location = new System.Drawing.Point(115, 1067);
             this.daychar10.Name = "daychar10";
             this.daychar10.Size = new System.Drawing.Size(70, 70);
             this.daychar10.TabIndex = 164;
@@ -376,7 +376,7 @@
             // daychar9
             // 
             this.daychar9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar9.Location = new System.Drawing.Point(213, 459);
+            this.daychar9.Location = new System.Drawing.Point(17, 1067);
             this.daychar9.Name = "daychar9";
             this.daychar9.Size = new System.Drawing.Size(70, 70);
             this.daychar9.TabIndex = 163;
@@ -385,7 +385,7 @@
             // daychar8
             // 
             this.daychar8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar8.Location = new System.Drawing.Point(115, 459);
+            this.daychar8.Location = new System.Drawing.Point(213, 922);
             this.daychar8.Name = "daychar8";
             this.daychar8.Size = new System.Drawing.Size(70, 70);
             this.daychar8.TabIndex = 162;
@@ -394,7 +394,7 @@
             // daychar7
             // 
             this.daychar7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar7.Location = new System.Drawing.Point(17, 459);
+            this.daychar7.Location = new System.Drawing.Point(115, 922);
             this.daychar7.Name = "daychar7";
             this.daychar7.Size = new System.Drawing.Size(70, 70);
             this.daychar7.TabIndex = 161;
@@ -411,7 +411,7 @@
             // daychar15
             // 
             this.daychar15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar15.Location = new System.Drawing.Point(213, 743);
+            this.daychar15.Location = new System.Drawing.Point(17, 601);
             this.daychar15.Name = "daychar15";
             this.daychar15.Size = new System.Drawing.Size(70, 70);
             this.daychar15.TabIndex = 177;
@@ -436,7 +436,7 @@
             // daychar14
             // 
             this.daychar14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar14.Location = new System.Drawing.Point(115, 743);
+            this.daychar14.Location = new System.Drawing.Point(213, 459);
             this.daychar14.Name = "daychar14";
             this.daychar14.Size = new System.Drawing.Size(70, 70);
             this.daychar14.TabIndex = 174;
@@ -445,7 +445,7 @@
             // daychar13
             // 
             this.daychar13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar13.Location = new System.Drawing.Point(17, 743);
+            this.daychar13.Location = new System.Drawing.Point(115, 459);
             this.daychar13.Name = "daychar13";
             this.daychar13.Size = new System.Drawing.Size(70, 70);
             this.daychar13.TabIndex = 173;
@@ -479,7 +479,7 @@
             // dayw9
             // 
             this.dayw9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw9.Location = new System.Drawing.Point(213, 1209);
+            this.dayw9.Location = new System.Drawing.Point(115, 743);
             this.dayw9.Name = "dayw9";
             this.dayw9.Size = new System.Drawing.Size(70, 70);
             this.dayw9.TabIndex = 191;
@@ -504,7 +504,7 @@
             // dayw8
             // 
             this.dayw8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw8.Location = new System.Drawing.Point(115, 1209);
+            this.dayw8.Location = new System.Drawing.Point(17, 743);
             this.dayw8.Name = "dayw8";
             this.dayw8.Size = new System.Drawing.Size(70, 70);
             this.dayw8.TabIndex = 188;
@@ -513,7 +513,7 @@
             // dayw7
             // 
             this.dayw7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw7.Location = new System.Drawing.Point(17, 1209);
+            this.dayw7.Location = new System.Drawing.Point(213, 601);
             this.dayw7.Name = "dayw7";
             this.dayw7.Size = new System.Drawing.Size(70, 70);
             this.dayw7.TabIndex = 187;
@@ -530,7 +530,7 @@
             // dayw6
             // 
             this.dayw6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw6.Location = new System.Drawing.Point(213, 1067);
+            this.dayw6.Location = new System.Drawing.Point(115, 601);
             this.dayw6.Name = "dayw6";
             this.dayw6.Size = new System.Drawing.Size(70, 70);
             this.dayw6.TabIndex = 185;
@@ -555,7 +555,7 @@
             // dayw5
             // 
             this.dayw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw5.Location = new System.Drawing.Point(115, 1067);
+            this.dayw5.Location = new System.Drawing.Point(17, 1348);
             this.dayw5.Name = "dayw5";
             this.dayw5.Size = new System.Drawing.Size(70, 70);
             this.dayw5.TabIndex = 182;
@@ -564,7 +564,7 @@
             // dayw4
             // 
             this.dayw4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw4.Location = new System.Drawing.Point(17, 1067);
+            this.dayw4.Location = new System.Drawing.Point(213, 1209);
             this.dayw4.Name = "dayw4";
             this.dayw4.Size = new System.Drawing.Size(70, 70);
             this.dayw4.TabIndex = 181;
@@ -690,7 +690,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(309, 573);
+            this.ClientSize = new System.Drawing.Size(326, 573);
             this.Controls.Add(this.dtext30);
             this.Controls.Add(this.dayw15);
             this.Controls.Add(this.dtext28);

@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Руководство
 {
     public partial class TIERLIST : Form
     {
+        private imageMove imagemove;
         Database database = new Database();
         public TIERLIST()
         {
             InitializeComponent();
-
+            imagemove = new imageMove(tierListTable, image_container);
             tierListTable.Focus();
 
             typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
@@ -62,146 +58,18 @@ namespace Руководство
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
 
                 image_container.Controls.Add(pictureBox); // Добавляем PictureBox в FlowLayoutPanel
+                
+                imagemove.AttachHandlers(pictureBox);
 
-                ImageManager(pictureBox);
-            }
-        }
-
-        public void ImageManager(PictureBox pictureBox)
-        {
-            pictureBox.MouseDown += Picture_MouseDown;
-            pictureBox.MouseMove += Picture_MouseMove;
-            pictureBox.MouseUp += Picture_MouseUp;
-        }
-
-        Point downPoint;
-        bool moved;
-
-        Dictionary<TableLayoutPanelCellPosition, Rectangle> dict = new Dictionary<TableLayoutPanelCellPosition, Rectangle>();
-
-
-        private void Picture_MouseDown(object sender, MouseEventArgs e)
-        {
-            Control picture = sender as Control;
-            if (e.Button == MouseButtons.Right)
-            {
-                picture.Parent = image_container;  // Возвращаем PictureBox в image_container при нажатии правой кнопки мыши
-            }
-            else
-            {
-                picture.Parent = this;
-                picture.BringToFront();
-                downPoint = e.Location;
-            }
-        }
-
-        private void Picture_MouseMove(object sender, MouseEventArgs e)
-        {
-            Control picture = sender as Control;
-            if (e.Button == MouseButtons.Left)
-            {
-                picture.Left += e.X - downPoint.X;
-                picture.Top += e.Y - downPoint.Y;
-                moved = true;
-                tierListTable.Invalidate();
-            }
-        }
-
-        private void Picture_MouseUp(object sender, MouseEventArgs e)
-        {
-            Control picture = sender as Control;
-            if (e.Button == MouseButtons.Left)
-            {
-                // Получаем положение курсора относительно TableLayoutPanel
-                Point currentLocation = tierListTable.PointToClient(Cursor.Position);
-
-                int scrolledY = currentLocation.Y + tierListTable.VerticalScroll.Value;
-                for (int row = 0; row < tierListTable.RowCount; row++)
-                {
-                    FlowLayoutPanel targetFlowLayoutPanel = FindFlowLayoutPanelInRow(row);
-                    if (targetFlowLayoutPanel != null)
-                    {
-                        int top = targetFlowLayoutPanel.Top - tierListTable.VerticalScroll.Value;
-                        int bottom = top + targetFlowLayoutPanel.Height;
-                        if (scrolledY >= top && scrolledY <= bottom)
-                        {
-                            targetFlowLayoutPanel.Controls.Add(picture);
-                            picture.Focus();
-
-                            // Вызываем метод EnsurePictureFits для обновления размеров
-                            EnsurePictureFits(picture, targetFlowLayoutPanel);
-
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        // Метод для поиска FlowLayoutPanel в заданной строке
-        private FlowLayoutPanel FindFlowLayoutPanelInRow(int rowIndex)
-        {
-            string flowLayoutPanelName = "flowLayoutPanel" + rowIndex;
-            Control[] controlsInRow = tierListTable.Controls.Find(flowLayoutPanelName, true);
-            if (controlsInRow.Length > 0 && controlsInRow[0] is FlowLayoutPanel)
-            {
-                return (FlowLayoutPanel)controlsInRow[0];
-            }
-            return null;
-        }
-
-
-        private void EnsurePictureFits(Control picture, FlowLayoutPanel flowLayoutPanel)
-        {
-            int rowIndex = tierListTable.GetRow(flowLayoutPanel);
-
-            if (rowIndex >= 0 && rowIndex < tierListTable.RowStyles.Count)
-            {
-                int requiredHeight = picture.Bottom + 10; // 10 - отступ между изображениями
-
-                if (requiredHeight > tierListTable.RowStyles[rowIndex].Height)
-                {
-                    // Увеличиваем высоту строки таблицы и FlowLayoutPanel, чтобы картинка поместилась
-                    tierListTable.RowStyles[rowIndex].Height = requiredHeight + 10; // Дополнительный отступ
-                    flowLayoutPanel.Height = requiredHeight;
-
-                    // Пересчитываем высоту таблицы, основываясь на высоте строк
-                    int newHeight = 0;
-                    for (int i = 0; i < tierListTable.RowStyles.Count; i++)
-                    {
-                        newHeight += (int)tierListTable.RowStyles[i].Height;
-                    }
-                    tierListTable.Height = newHeight;
-                }
             }
         }
 
         private void Назад(object sender, EventArgs e)
         {
             Меню oldForm = new Меню();
-
-            // Закрытие текущей формы
             this.Hide();
-
-            // Отображение предыдущей формы как модальной
             oldForm.ShowDialog();
         }
-
-        //private void deleteButton_Click(object sender, EventArgs e)
-        //{
-        //    if (tierListTable.RowCount > 0)
-        //    {
-        //        int rowCount = tierListTable.RowCount;
-        //        Control controlToRemove = tierListTable.GetControlFromPosition(0, rowCount - 1);
-        //        tierListTable.Controls.Remove(controlToRemove);
-        //        tierListTable.RowStyles.RemoveAt(rowCount - 1);
-        //        tierListTable.RowCount--;
-
-        //        for (int i = 0; i < tierListTable.RowCount; i++)
-        //        {
-        //            tierListTable.RowStyles[i] = new RowStyle(SizeType.Absolute, 124);
-        //        }
-        //    }
-        //}
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (tierListTable.RowCount > 0)
@@ -212,6 +80,21 @@ namespace Руководство
                 for (int col = 0; col < tierListTable.ColumnCount; col++)
                 {
                     Control controlToRemove = tierListTable.GetControlFromPosition(col, rowCount - 1);
+
+                    if (controlToRemove is FlowLayoutPanel)
+                    {
+                        FlowLayoutPanel panel = controlToRemove as FlowLayoutPanel;
+                        foreach (Control item in panel.Controls)
+                        {
+                            if (item is PictureBox)
+                            {
+                                PictureBox picture = item as PictureBox;
+                                // Возврат PictureBox в image_container
+                                image_container.Controls.Add(picture);
+                            }
+                        }
+                    }
+
                     tierListTable.Controls.Remove(controlToRemove);
                 }
 
@@ -231,9 +114,6 @@ namespace Руководство
             }
         }
 
-
-
-
         private void addButton_Click(object sender, EventArgs e)
         {
             tierListTable.Height += 130;
@@ -242,20 +122,11 @@ namespace Руководство
             tierListTable.RowCount++;
             tierListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 130));
 
-            // Создаем новую RichTextBox и настраиваем ее
+            // Создаем новый RichTextBox и настраиваем ее
             var richTextBox = new RichTextBox();
-            richTextBox.Size = new Size(118, 124);
-            richTextBox.ReadOnly = false;
-            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
-            richTextBox.ForeColor = SystemColors.Window;
-            richTextBox.BackColor = SystemColors.ActiveCaption;
-            richTextBox.Font = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
-            richTextBox.Text = "Введите новое название";
-            richTextBox.KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
-            richTextBox.BorderStyle = BorderStyle.None;
+            RichTextBoxInst(richTextBox);
             // Добавляем новую RichTextBox в ячейку и добавляем ячейку в строку
             tierListTable.Controls.Add(richTextBox, 0, rowCount);
-
 
             var flowLayoutPanel = new FlowLayoutPanel();
             
@@ -267,6 +138,19 @@ namespace Руководство
             flowLayoutPanel.Name = flowLayoutPanelName;
             // Добавляем новый FlowLayoutPanel во второй столбец последней строки
             tierListTable.Controls.Add(flowLayoutPanel, 1, rowCount);
+        }
+
+        public void RichTextBoxInst(RichTextBox richTextBox)
+        {
+            richTextBox.Size = new Size(118, 124);
+            richTextBox.ReadOnly = false;
+            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox.ForeColor = SystemColors.Window;
+            richTextBox.BackColor = SystemColors.ActiveCaption;
+            richTextBox.Font = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
+            richTextBox.Text = "Введите новое название";
+            richTextBox.KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
+            richTextBox.BorderStyle = BorderStyle.None;
         }
 
         private void richTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -283,7 +167,6 @@ namespace Руководство
         private void Reboot_Click(object sender, EventArgs e)
         {
             List<PictureBox> pictureBoxesToMove = new List<PictureBox>();
-
             foreach (Control control in tierListTable.Controls)
             {
                 if (control is FlowLayoutPanel)
@@ -292,21 +175,18 @@ namespace Руководство
                     {
                         if (subControl is PictureBox)
                         {
-                            pictureBoxesToMove.Add((PictureBox)subControl); // Добавляем все PictureBox в список
+                            pictureBoxesToMove.Add((PictureBox)subControl);
                         }
                     }
                 }
             }
-
             foreach (PictureBox pictureBox in pictureBoxesToMove)
             {
                 image_container.Controls.Add(pictureBox); // Перемещаем все PictureBox обратно в image_container
             }
-
-            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             // Отображаем диалоговое окно сохранения
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -330,5 +210,4 @@ namespace Руководство
             }
         }
     }
-
 }

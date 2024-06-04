@@ -49,8 +49,6 @@ namespace Руководство
             SetImage(clvlup9_image, charlvlup9_image);
         }
 
-
-
         public void SetEXP(int lvl1, int lvl2, int mora_lvl1, int mora_lvl2)
         {
             int totalexp = lvl2 - lvl1;
@@ -127,13 +125,12 @@ namespace Руководство
         private void Save_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"; // Фильтр для диалогового окна сохранения
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 SaveCharacterDataToTxt(saveFileDialog.FileName);
                 MessageBox.Show("Результат успешно сохранен.", "Сохранение завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
     }
     

@@ -33,7 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Выход = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -78,9 +78,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(152, 59);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Календарь";
+            this.button3.Text = "Ресурсы";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Календарь);
+            this.button3.Click += new System.EventHandler(this.Ресурсы);
             // 
             // button4
             // 
@@ -94,24 +94,24 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.ТирЛист);
             // 
-            // button5
+            // Выход
             // 
-            this.button5.AutoSize = true;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(79, 492);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(152, 59);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Выход";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Выход.AutoSize = true;
+            this.Выход.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Выход.Location = new System.Drawing.Point(79, 492);
+            this.Выход.Name = "Выход";
+            this.Выход.Size = new System.Drawing.Size(152, 59);
+            this.Выход.TabIndex = 5;
+            this.Выход.Text = "Выход";
+            this.Выход.UseVisualStyleBackColor = true;
+            this.Выход.Click += new System.EventHandler(this.Выход_Click);
             // 
             // Меню
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 573);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Выход);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -122,7 +122,7 @@
             this.MinimizeBox = false;
             this.Name = "Меню";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Меню";
+            this.Text = "Руководство";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +135,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Выход;
     }
 }
 

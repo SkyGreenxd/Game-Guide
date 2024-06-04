@@ -90,12 +90,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="characters.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>characters.resx</DependentUpon>
-    </Compile>
+    <Compile Include="toArray.cs" />
+    <Compile Include="characterFilter.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="imageMove.cs" />
     <Compile Include="Воскресенье.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,10 +150,6 @@
     <Compile Include="Расчёт.Designer.cs">
       <DependentUpon>Расчёт.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="characters.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>characters.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Воскресенье.resx">
       <DependentUpon>Воскресенье.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,7 +201,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\казуха.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

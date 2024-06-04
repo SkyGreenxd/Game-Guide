@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Руководство
 {
@@ -20,10 +13,7 @@ namespace Руководство
         public Калькулятор()
         {
             InitializeComponent();
-            
-
         }
-
         private string[] setChar(string nameCharacter)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -35,7 +25,6 @@ namespace Руководство
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
-            // (table.Rows[0]["name"].ToString(), table.Rows[0]["image"].ToString());
 
             // Рес-сы для талантов
             DataTable abil_lvlup_table = new DataTable();
@@ -52,7 +41,6 @@ namespace Руководство
             {
                 imagePaths_abil_lvlup.Add(row["name_resource"].ToString());
             }
-            // characterDetailsForm.SetAbilitylvlup(nameCharacter, imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6]);
 
             // Рес-сы для возвышения
             DataTable char_lvlup_table = new DataTable();
@@ -70,12 +58,8 @@ namespace Руководство
                 imagePaths_char_lvlup.Add(row["name_resource"].ToString());
             }
 
-            // characterDetailsForm.SetCharlvlup(nameCharacter, imagePaths_char_lvlup[0], imagePaths_char_lvlup[1], imagePaths_char_lvlup[2], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8]);
-
-
             return new string[] { table.Rows[0]["name"].ToString(), table.Rows[0]["image"].ToString(), imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8] };
         }
-
         private int[] selectLVL(int lvl1, int lvl2)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -106,7 +90,6 @@ namespace Руководство
             // result.ShowDialog();
             
         }
-
         private int[] selectTalent_LVL(int tal1, int tal2)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -143,10 +126,6 @@ namespace Руководство
             {
                 return new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             }
-            // MessageBox.Show($"tal_book1 = {total_tal_book1}\ntal_book2 = {total_tal_book2}\ntal_book3 = {total_tal_book3}\nmora = {total_mora}\ncrown = {total_crown}");
-
-            // return (total_tal_book1, total_tal_book2, total_tal_book3, total_mora, total_crown);
-            // result.ShowDialog();
         }
 
         private int[] selectEvolution(int evol1, int evol2)
@@ -184,13 +163,11 @@ namespace Руководство
                 return new int[] { 0, 0, 0, 0, 0, 0, 0 };
             }
         }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(char_name.Text))
             {
-                MessageBox.Show("Выберите персонажа");
+                MessageBox.Show("Вы не выбрали персонажа", "Выберите персонажа", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (lvl1.Value > lvl2.Value || v_1.Value > v_2.Value || tal1_1.Value > tal1_2.Value || tal2_1.Value > tal2_2.Value || tal3_1.Value > tal3_2.Value)
             {
@@ -244,68 +221,20 @@ namespace Руководство
                 result.ShowDialog();
             }  
         }
-
         private void Меню(object sender, EventArgs e)
         {
             Меню oldForm = new Меню();
-
-            // Закрытие текущей формы
             this.Hide();
-
-            // Отображение предыдущей формы как модальной
             oldForm.ShowDialog();
         }
-
         private void Сяо_Click(object sender, EventArgs e)
         {
             char_name.Text = Сяо.Text;
         }
-
         private void Кадзуха_Click(object sender, EventArgs e)
         {
             char_name.Text = Кадзуха.Text;
         }
-
-        //private void lvl1_ValueChanged(object sender, EventArgs e)
-        //{
-        //    if (lvl2.Value < lvl1.Value)
-        //    {
-        //        lvl2.Value = lvl1.Value;
-        //    }
-
-        //    int lvl = (int)lvl1.Value;
-
-        //    switch (lvl)
-        //    {
-        //        case int n when (n >= 0 && n <= 20 ):
-        //            v_1.Value = 0;
-        //            break;
-        //        case int n when (n >= 21 && n <= 40):
-        //            v_1.Value = 1;
-        //            break;
-        //        case int n when (n >= 41 && n <= 50):
-        //            v_1.Value = 2;
-        //            break;
-        //        case int n when (n >= 51 && n <= 60):
-        //            v_1.Value = 3;
-        //            break;
-        //        case int n when (n >= 61 && n <= 70):
-        //            v_1.Value = 4;
-        //            break;
-        //        case int n when (n >= 71 && n <= 80):
-        //            v_1.Value = 5;
-        //            break;
-        //        case int n when (n >= 81 && n <= 90):
-        //            v_1.Value = 6;
-        //            break;
-        //    }
-
-        //    if (v_1.Value > v_2.Value)
-        //    {
-        //        v_2.Value = v_1.Value;
-        //    }
-        //}
-
         private void v_1_ValueChanged(object sender, EventArgs e)
         {
             if (v_1.Value > v_2.Value)
@@ -313,7 +242,6 @@ namespace Руководство
                 v_2.Value = v_1.Value;
             }
         }
-
         public void SetTal(decimal evol, NumericUpDown tal_lvl)
         {
             switch (evol)
@@ -341,7 +269,6 @@ namespace Руководство
                     break;
             }
         }
-
         private void tal1_1_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_1.Value, tal1_1);
@@ -361,17 +288,14 @@ namespace Руководство
         {
             SetTal(v_2.Value, tal1_2);
         }
-
         private void tal2_2_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_2.Value, tal2_2);
         }
-
         private void tal3_2_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_2.Value, tal3_2);
         }
-
         private void lvl1_ValueChanged(object sender, EventArgs e)
         {
             if (lvl2.Value < lvl1.Value)
