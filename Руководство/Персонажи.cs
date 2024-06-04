@@ -10,6 +10,7 @@ namespace Руководство
     {
         Database database = new Database();
         characterFilter filter = new characterFilter();
+        toArray toarray = new toArray();
         public Персонажи()
         {
             InitializeComponent();
@@ -80,6 +81,17 @@ namespace Руководство
 
             adapter.SelectCommand = command1;
             adapter.Fill(ability_table);
+
+            List<string> abilityInfo = new List<string>();
+            List<string> abilityImage = new List<string>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                abilityInfo.Add(ability_table.Rows[0][$"ability{i}_info"].ToString());
+                abilityImage.Add(ability_table.Rows[0][$"ability{i}_image"].ToString());
+            }
+
+
             // Пассивные таланты
             DataTable passive_table = new DataTable();
 
@@ -88,6 +100,16 @@ namespace Руководство
 
             adapter.SelectCommand = command2;
             adapter.Fill(passive_table);
+
+            List<string> pasInfo = new List<string>();
+            List<string> pasImage = new List<string>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                pasInfo.Add(passive_table.Rows[0][$"pas{i}_info"].ToString());
+                pasImage.Add(passive_table.Rows[0][$"pas{i}_image"].ToString());
+            }
+
             // Созвездия
             DataTable const_table = new DataTable();
 
@@ -96,6 +118,16 @@ namespace Руководство
 
             adapter.SelectCommand = command3;
             adapter.Fill(const_table);
+
+            List<string> cInfo = new List<string>();
+            List<string> cImage = new List<string>();
+
+            for (int i = 1; i <= 6; i++)
+            {
+                cInfo.Add(const_table.Rows[0][$"const{i}_info"].ToString());
+                cImage.Add(const_table.Rows[0][$"const{i}_image"].ToString());
+            }
+
             // Рес-сы для талантов
             DataTable abil_lvlup_table = new DataTable();
 
@@ -111,6 +143,10 @@ namespace Руководство
             {
                 imagePaths_abil_lvlup.Add(row["name_resource"].ToString());
             }
+
+            string[] abillvlup = toarray.InitializeArrayFromList(imagePaths_abil_lvlup);
+
+
             // Рес-сы для возвышения
             DataTable char_lvlup_table = new DataTable();
 
@@ -126,6 +162,9 @@ namespace Руководство
             {
                 imagePaths_char_lvlup.Add(row["name_resource"].ToString());
             }
+            
+            string[] charlvlup = toarray.InitializeArrayFromList(imagePaths_char_lvlup);
+
             // Артефакты
             DataTable artifact_table = new DataTable();
 
@@ -134,6 +173,16 @@ namespace Руководство
 
             adapter.SelectCommand = command7;
             adapter.Fill(artifact_table);
+
+            List<string> artInfo = new List<string>();
+            List<string> artImage = new List<string>();
+            artInfo.Add(artifact_table.Rows[0]["artifact_name"].ToString());
+            artImage.Add(artifact_table.Rows[0]["image"].ToString());
+            for (int i = 1; i <= 3; i++)
+            {
+                artInfo.Add(artifact_table.Rows[0][$"art_{i}_info"].ToString());
+            }
+
             // Оружие
             DataTable weapon_table = new DataTable();
 
@@ -143,18 +192,29 @@ namespace Руководство
             adapter.SelectCommand = command8;
             adapter.Fill(weapon_table);
 
+            List<string> weaponInfo = new List<string>();
+            List<string> weaponImage = new List<string>();
+
+            for (int i = 1; i <= 4; i++)
+            {
+                weaponInfo.Add(weapon_table.Rows[0][$"weapon{i}_name"].ToString());
+                weaponImage.Add(weapon_table.Rows[0][$"weapon{i}_image"].ToString());
+            }
+
+
             Информация_о_персонажах characterDetailsForm = new Информация_о_персонажах();
             this.Hide();
                 
             characterDetailsForm.SetCharacterData(table.Rows[0]["name"].ToString(), table.Rows[0]["info"].ToString(), table.Rows[0]["image"].ToString());
             characterDetailsForm.SetElement(element[0], element[1]);
-            characterDetailsForm.SetAbility(ability_table.Rows[0]["ability1_info"].ToString(), ability_table.Rows[0]["ability1_image"].ToString(), ability_table.Rows[0]["ability2_info"].ToString(), ability_table.Rows[0]["ability2_image"].ToString(), ability_table.Rows[0]["ability3_info"].ToString(), ability_table.Rows[0]["ability3_image"].ToString());
-            characterDetailsForm.SetPassive(passive_table.Rows[0]["name"].ToString(), passive_table.Rows[0]["pas1_info"].ToString(), passive_table.Rows[0]["pas1_image"].ToString(), passive_table.Rows[0]["pas2_info"].ToString(), passive_table.Rows[0]["pas2_image"].ToString(), passive_table.Rows[0]["pas3_info"].ToString(), passive_table.Rows[0]["pas3_image"].ToString());
-            characterDetailsForm.SetConst(const_table.Rows[0]["const1_info"].ToString(), const_table.Rows[0]["const1_image"].ToString(), const_table.Rows[0]["const2_info"].ToString(), const_table.Rows[0]["const2_image"].ToString(), const_table.Rows[0]["const3_info"].ToString(), const_table.Rows[0]["const3_image"].ToString(), const_table.Rows[0]["const4_info"].ToString(), const_table.Rows[0]["const4_image"].ToString(), const_table.Rows[0]["const5_info"].ToString(), const_table.Rows[0]["const5_image"].ToString(), const_table.Rows[0]["const6_info"].ToString(), const_table.Rows[0]["const6_image"].ToString());
-            characterDetailsForm.SetAbilitylvlup(imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6]);
-            characterDetailsForm.SetCharlvlup(imagePaths_char_lvlup[0], imagePaths_char_lvlup[1], imagePaths_char_lvlup[2], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8]);
-            characterDetailsForm.SetArtifact(artifact_table.Rows[0]["artifact_name"].ToString(), artifact_table.Rows[0]["image"].ToString(), artifact_table.Rows[0]["art_1_info"].ToString(), artifact_table.Rows[0]["art_2_info"].ToString(), artifact_table.Rows[0]["art_3_info"].ToString());
-            characterDetailsForm.SetWeapon(weapon_table.Rows[0]["weapon1_name"].ToString(), weapon_table.Rows[0]["weapon1_image"].ToString(), weapon_table.Rows[0]["weapon2_name"].ToString(), weapon_table.Rows[0]["weapon2_image"].ToString(), weapon_table.Rows[0]["weapon3_name"].ToString(), weapon_table.Rows[0]["weapon3_image"].ToString(), weapon_table.Rows[0]["weapon4_name"].ToString(), weapon_table.Rows[0]["weapon4_image"].ToString());
+            characterDetailsForm.SetAbility(abilityInfo, abilityImage);
+            characterDetailsForm.SetPassive(pasInfo, pasImage);
+            characterDetailsForm.SetConst(cInfo, cImage);
+            characterDetailsForm.SetAbilitylvlup(abillvlup);
+            characterDetailsForm.SetCharlvlup(charlvlup);
+            // characterDetailsForm.SetArtifact(artifact_table.Rows[0]["artifact_name"].ToString(), artifact_table.Rows[0]["image"].ToString(), artifact_table.Rows[0]["art_1_info"].ToString(), artifact_table.Rows[0]["art_2_info"].ToString(), artifact_table.Rows[0]["art_3_info"].ToString());
+            characterDetailsForm.SetArtifact(artInfo, artImage);
+            characterDetailsForm.SetWeapon(weaponInfo, weaponImage);
             characterDetailsForm.ShowDialog();
         }
         protected void Казуха_Click(object sender, EventArgs e)

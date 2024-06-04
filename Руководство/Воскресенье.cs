@@ -26,17 +26,17 @@ namespace Руководство
             PictureBox[] daywImages = { dayw1, dayw2, dayw3, dayw4, dayw5, dayw6, dayw7, dayw8, dayw9, dayw10, dayw11, dayw12, dayw13, dayw14, dayw15 };
             RichTextBox[] dtextNames = { dtext1, dtext2, dtext3, dtext4, dtext5, dtext6, dtext7, dtext8, dtext9, dtext10, dtext11, dtext12, dtext13, dtext14, dtext15, dtext16, dtext17, dtext18, dtext19, dtext20, dtext21, dtext22, dtext23, dtext24, dtext25, dtext26, dtext27, dtext28, dtext29, dtext30 };
 
-            for (int i = 0; i < images.Length && i < daycharImages.Length; i++)
+            for (int i = 0; i < daycharImages.Length; i++)
             {
                 SetImage(daycharImages[i], images[i]);
             }
 
-            for (int i = 0; i < images.Length - 15 && i < daywImages.Length; i++)
+            for (int i = 0; i < daywImages.Length; i++)
             {
                 SetImage(daywImages[i], images[i + 15]);
             }
 
-            for (int i = 0; i < names.Length && i < dtextNames.Length; i++)
+            for (int i = 0; i < dtextNames.Length; i++)
             {
                 dtextNames[i].Text = names[i];
             }
