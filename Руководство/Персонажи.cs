@@ -212,7 +212,6 @@ namespace Руководство
             characterDetailsForm.SetConst(cInfo, cImage);
             characterDetailsForm.SetAbilitylvlup(abillvlup);
             characterDetailsForm.SetCharlvlup(charlvlup);
-            // characterDetailsForm.SetArtifact(artifact_table.Rows[0]["artifact_name"].ToString(), artifact_table.Rows[0]["image"].ToString(), artifact_table.Rows[0]["art_1_info"].ToString(), artifact_table.Rows[0]["art_2_info"].ToString(), artifact_table.Rows[0]["art_3_info"].ToString());
             characterDetailsForm.SetArtifact(artInfo, artImage);
             characterDetailsForm.SetWeapon(weaponInfo, weaponImage);
             characterDetailsForm.ShowDialog();

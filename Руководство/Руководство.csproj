@@ -94,23 +94,17 @@
     <Compile Include="characterFilter.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="imageMove.cs" />
-    <Compile Include="Воскресенье.cs">
+    <Compile Include="Ресурсы.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Воскресенье.Designer.cs">
-      <DependentUpon>Воскресенье.cs</DependentUpon>
+    <Compile Include="Ресурсы.Designer.cs">
+      <DependentUpon>Ресурсы.cs</DependentUpon>
     </Compile>
     <Compile Include="ВыборДня.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ВыборДня.Designer.cs">
       <DependentUpon>ВыборДня.cs</DependentUpon>
-    </Compile>
-    <Compile Include="День.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="День.Designer.cs">
-      <DependentUpon>День.cs</DependentUpon>
     </Compile>
     <Compile Include="Информация о персонажах.cs">
       <SubType>Form</SubType>
@@ -150,14 +144,11 @@
     <Compile Include="Расчёт.Designer.cs">
       <DependentUpon>Расчёт.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Воскресенье.resx">
-      <DependentUpon>Воскресенье.cs</DependentUpon>
+    <EmbeddedResource Include="Ресурсы.resx">
+      <DependentUpon>Ресурсы.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ВыборДня.resx">
       <DependentUpon>ВыборДня.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="День.resx">
-      <DependentUpon>День.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Информация о персонажах.resx">
       <DependentUpon>Информация о персонажах.cs</DependentUpon>

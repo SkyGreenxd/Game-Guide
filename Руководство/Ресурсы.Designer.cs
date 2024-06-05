@@ -1,6 +1,6 @@
 ﻿namespace Руководство
 {
-    partial class Воскресенье
+    partial class Ресурсы
     {
         /// <summary>
         /// Required designer variable.
@@ -93,6 +93,8 @@
             this.dtext29 = new System.Windows.Forms.RichTextBox();
             this.dayw14 = new System.Windows.Forms.PictureBox();
             this.dayw13 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dayw11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw3)).BeginInit();
@@ -123,68 +125,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.dayw15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw13)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtext8
             // 
-            this.dtext8.Location = new System.Drawing.Point(213, 998);
+            this.dtext8.Location = new System.Drawing.Point(158, 79);
             this.dtext8.Name = "dtext8";
+            this.dtext8.ReadOnly = true;
             this.dtext8.Size = new System.Drawing.Size(70, 42);
             this.dtext8.TabIndex = 153;
             this.dtext8.Text = "";
             // 
             // dtext7
             // 
-            this.dtext7.Location = new System.Drawing.Point(115, 998);
+            this.dtext7.Location = new System.Drawing.Point(82, 79);
             this.dtext7.Name = "dtext7";
+            this.dtext7.ReadOnly = true;
             this.dtext7.Size = new System.Drawing.Size(70, 42);
             this.dtext7.TabIndex = 152;
             this.dtext7.Text = "";
             // 
             // dtext6
             // 
-            this.dtext6.Location = new System.Drawing.Point(17, 998);
+            this.dtext6.Location = new System.Drawing.Point(6, 79);
             this.dtext6.Name = "dtext6";
+            this.dtext6.ReadOnly = true;
             this.dtext6.Size = new System.Drawing.Size(70, 42);
             this.dtext6.TabIndex = 151;
             this.dtext6.Text = "";
             // 
             // dtext4
             // 
-            this.dtext4.Location = new System.Drawing.Point(17, 393);
+            this.dtext4.Location = new System.Drawing.Point(3, 204);
             this.dtext4.Name = "dtext4";
+            this.dtext4.ReadOnly = true;
             this.dtext4.Size = new System.Drawing.Size(70, 42);
             this.dtext4.TabIndex = 145;
             this.dtext4.Text = "";
             // 
             // dtext5
             // 
-            this.dtext5.Location = new System.Drawing.Point(115, 393);
+            this.dtext5.Location = new System.Drawing.Point(79, 204);
             this.dtext5.Name = "dtext5";
+            this.dtext5.ReadOnly = true;
             this.dtext5.Size = new System.Drawing.Size(70, 42);
             this.dtext5.TabIndex = 144;
             this.dtext5.Text = "";
             // 
             // dtext3
             // 
-            this.dtext3.Location = new System.Drawing.Point(213, 251);
+            this.dtext3.Location = new System.Drawing.Point(155, 79);
             this.dtext3.Name = "dtext3";
+            this.dtext3.ReadOnly = true;
             this.dtext3.Size = new System.Drawing.Size(70, 42);
             this.dtext3.TabIndex = 143;
             this.dtext3.Text = "";
             // 
             // dtext2
             // 
-            this.dtext2.Location = new System.Drawing.Point(115, 251);
+            this.dtext2.Location = new System.Drawing.Point(79, 79);
             this.dtext2.Name = "dtext2";
+            this.dtext2.ReadOnly = true;
             this.dtext2.Size = new System.Drawing.Size(70, 42);
             this.dtext2.TabIndex = 142;
             this.dtext2.Text = "";
             // 
             // dtext1
             // 
-            this.dtext1.Location = new System.Drawing.Point(17, 251);
+            this.dtext1.Location = new System.Drawing.Point(3, 79);
             this.dtext1.Name = "dtext1";
+            this.dtext1.ReadOnly = true;
             this.dtext1.Size = new System.Drawing.Size(70, 42);
             this.dtext1.TabIndex = 141;
             this.dtext1.Text = "";
@@ -193,7 +205,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(12, 884);
+            this.label4.Location = new System.Drawing.Point(292, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 25);
             this.label4.TabIndex = 140;
@@ -203,7 +215,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 138);
+            this.label3.Location = new System.Drawing.Point(15, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 25);
             this.label3.TabIndex = 139;
@@ -223,7 +235,7 @@
             // 
             this.day_text.AutoSize = true;
             this.day_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.day_text.Location = new System.Drawing.Point(132, 68);
+            this.day_text.Location = new System.Drawing.Point(130, 83);
             this.day_text.Name = "day_text";
             this.day_text.Size = new System.Drawing.Size(75, 24);
             this.day_text.TabIndex = 157;
@@ -233,16 +245,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(21, 68);
+            this.label1.Location = new System.Drawing.Point(12, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 24);
+            this.label1.Size = new System.Drawing.Size(121, 24);
             this.label1.TabIndex = 156;
-            this.label1.Text = "Ресурсы";
+            this.label1.Text = "Ресурсы за";
             // 
             // dayw11
             // 
             this.dayw11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw11.Location = new System.Drawing.Point(115, 1348);
+            this.dayw11.Location = new System.Drawing.Point(82, 375);
             this.dayw11.Name = "dayw11";
             this.dayw11.Size = new System.Drawing.Size(70, 70);
             this.dayw11.TabIndex = 150;
@@ -251,7 +263,7 @@
             // dayw10
             // 
             this.dayw10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw10.Location = new System.Drawing.Point(213, 743);
+            this.dayw10.Location = new System.Drawing.Point(76, 500);
             this.dayw10.Name = "dayw10";
             this.dayw10.Size = new System.Drawing.Size(70, 70);
             this.dayw10.TabIndex = 149;
@@ -260,7 +272,7 @@
             // dayw3
             // 
             this.dayw3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw3.Location = new System.Drawing.Point(115, 1209);
+            this.dayw3.Location = new System.Drawing.Point(82, 251);
             this.dayw3.Name = "dayw3";
             this.dayw3.Size = new System.Drawing.Size(70, 70);
             this.dayw3.TabIndex = 148;
@@ -269,7 +281,7 @@
             // dayw2
             // 
             this.dayw2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw2.Location = new System.Drawing.Point(17, 1209);
+            this.dayw2.Location = new System.Drawing.Point(6, 251);
             this.dayw2.Name = "dayw2";
             this.dayw2.Size = new System.Drawing.Size(70, 70);
             this.dayw2.TabIndex = 147;
@@ -278,7 +290,7 @@
             // dayw1
             // 
             this.dayw1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw1.Location = new System.Drawing.Point(213, 1067);
+            this.dayw1.Location = new System.Drawing.Point(158, 127);
             this.dayw1.Name = "dayw1";
             this.dayw1.Size = new System.Drawing.Size(70, 70);
             this.dayw1.TabIndex = 146;
@@ -287,7 +299,7 @@
             // daychar5
             // 
             this.daychar5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar5.Location = new System.Drawing.Point(115, 317);
+            this.daychar5.Location = new System.Drawing.Point(79, 128);
             this.daychar5.Name = "daychar5";
             this.daychar5.Size = new System.Drawing.Size(70, 70);
             this.daychar5.TabIndex = 138;
@@ -296,7 +308,7 @@
             // daychar4
             // 
             this.daychar4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar4.Location = new System.Drawing.Point(17, 317);
+            this.daychar4.Location = new System.Drawing.Point(3, 128);
             this.daychar4.Name = "daychar4";
             this.daychar4.Size = new System.Drawing.Size(70, 70);
             this.daychar4.TabIndex = 137;
@@ -305,7 +317,7 @@
             // daychar3
             // 
             this.daychar3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar3.Location = new System.Drawing.Point(213, 175);
+            this.daychar3.Location = new System.Drawing.Point(155, 3);
             this.daychar3.Name = "daychar3";
             this.daychar3.Size = new System.Drawing.Size(70, 70);
             this.daychar3.TabIndex = 136;
@@ -314,7 +326,7 @@
             // daychar2
             // 
             this.daychar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar2.Location = new System.Drawing.Point(115, 175);
+            this.daychar2.Location = new System.Drawing.Point(79, 3);
             this.daychar2.Name = "daychar2";
             this.daychar2.Size = new System.Drawing.Size(70, 70);
             this.daychar2.TabIndex = 135;
@@ -323,7 +335,7 @@
             // daychar1
             // 
             this.daychar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar1.Location = new System.Drawing.Point(17, 175);
+            this.daychar1.Location = new System.Drawing.Point(3, 3);
             this.daychar1.Name = "daychar1";
             this.daychar1.Size = new System.Drawing.Size(70, 70);
             this.daychar1.TabIndex = 134;
@@ -332,7 +344,7 @@
             // daychar6
             // 
             this.daychar6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar6.Location = new System.Drawing.Point(17, 922);
+            this.daychar6.Location = new System.Drawing.Point(6, 3);
             this.daychar6.Name = "daychar6";
             this.daychar6.Size = new System.Drawing.Size(70, 70);
             this.daychar6.TabIndex = 159;
@@ -341,7 +353,7 @@
             // daychar12
             // 
             this.daychar12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar12.Location = new System.Drawing.Point(17, 459);
+            this.daychar12.Location = new System.Drawing.Point(3, 252);
             this.daychar12.Name = "daychar12";
             this.daychar12.Size = new System.Drawing.Size(70, 70);
             this.daychar12.TabIndex = 171;
@@ -349,8 +361,9 @@
             // 
             // dtext21
             // 
-            this.dtext21.Location = new System.Drawing.Point(115, 677);
+            this.dtext21.Location = new System.Drawing.Point(152, 452);
             this.dtext21.Name = "dtext21";
+            this.dtext21.ReadOnly = true;
             this.dtext21.Size = new System.Drawing.Size(70, 42);
             this.dtext21.TabIndex = 169;
             this.dtext21.Text = "";
@@ -358,7 +371,7 @@
             // daychar11
             // 
             this.daychar11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar11.Location = new System.Drawing.Point(213, 317);
+            this.daychar11.Location = new System.Drawing.Point(155, 128);
             this.daychar11.Name = "daychar11";
             this.daychar11.Size = new System.Drawing.Size(70, 70);
             this.daychar11.TabIndex = 165;
@@ -367,7 +380,7 @@
             // daychar10
             // 
             this.daychar10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar10.Location = new System.Drawing.Point(115, 1067);
+            this.daychar10.Location = new System.Drawing.Point(82, 127);
             this.daychar10.Name = "daychar10";
             this.daychar10.Size = new System.Drawing.Size(70, 70);
             this.daychar10.TabIndex = 164;
@@ -376,7 +389,7 @@
             // daychar9
             // 
             this.daychar9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar9.Location = new System.Drawing.Point(17, 1067);
+            this.daychar9.Location = new System.Drawing.Point(6, 127);
             this.daychar9.Name = "daychar9";
             this.daychar9.Size = new System.Drawing.Size(70, 70);
             this.daychar9.TabIndex = 163;
@@ -385,7 +398,7 @@
             // daychar8
             // 
             this.daychar8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar8.Location = new System.Drawing.Point(213, 922);
+            this.daychar8.Location = new System.Drawing.Point(158, 3);
             this.daychar8.Name = "daychar8";
             this.daychar8.Size = new System.Drawing.Size(70, 70);
             this.daychar8.TabIndex = 162;
@@ -394,7 +407,7 @@
             // daychar7
             // 
             this.daychar7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar7.Location = new System.Drawing.Point(115, 922);
+            this.daychar7.Location = new System.Drawing.Point(82, 3);
             this.daychar7.Name = "daychar7";
             this.daychar7.Size = new System.Drawing.Size(70, 70);
             this.daychar7.TabIndex = 161;
@@ -402,8 +415,9 @@
             // 
             // dtext25
             // 
-            this.dtext25.Location = new System.Drawing.Point(213, 819);
+            this.dtext25.Location = new System.Drawing.Point(152, 576);
             this.dtext25.Name = "dtext25";
+            this.dtext25.ReadOnly = true;
             this.dtext25.Size = new System.Drawing.Size(70, 42);
             this.dtext25.TabIndex = 178;
             this.dtext25.Text = "";
@@ -411,7 +425,7 @@
             // daychar15
             // 
             this.daychar15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar15.Location = new System.Drawing.Point(17, 601);
+            this.daychar15.Location = new System.Drawing.Point(3, 376);
             this.daychar15.Name = "daychar15";
             this.daychar15.Size = new System.Drawing.Size(70, 70);
             this.daychar15.TabIndex = 177;
@@ -419,16 +433,18 @@
             // 
             // dtext23
             // 
-            this.dtext23.Location = new System.Drawing.Point(17, 819);
+            this.dtext23.Location = new System.Drawing.Point(0, 576);
             this.dtext23.Name = "dtext23";
+            this.dtext23.ReadOnly = true;
             this.dtext23.Size = new System.Drawing.Size(70, 42);
             this.dtext23.TabIndex = 176;
             this.dtext23.Text = "";
             // 
             // dtext24
             // 
-            this.dtext24.Location = new System.Drawing.Point(115, 819);
+            this.dtext24.Location = new System.Drawing.Point(76, 576);
             this.dtext24.Name = "dtext24";
+            this.dtext24.ReadOnly = true;
             this.dtext24.Size = new System.Drawing.Size(70, 42);
             this.dtext24.TabIndex = 175;
             this.dtext24.Text = "";
@@ -436,7 +452,7 @@
             // daychar14
             // 
             this.daychar14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar14.Location = new System.Drawing.Point(213, 459);
+            this.daychar14.Location = new System.Drawing.Point(155, 252);
             this.daychar14.Name = "daychar14";
             this.daychar14.Size = new System.Drawing.Size(70, 70);
             this.daychar14.TabIndex = 174;
@@ -445,7 +461,7 @@
             // daychar13
             // 
             this.daychar13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.daychar13.Location = new System.Drawing.Point(115, 459);
+            this.daychar13.Location = new System.Drawing.Point(79, 252);
             this.daychar13.Name = "daychar13";
             this.daychar13.Size = new System.Drawing.Size(70, 70);
             this.daychar13.TabIndex = 173;
@@ -453,8 +469,9 @@
             // 
             // dtext27
             // 
-            this.dtext27.Location = new System.Drawing.Point(213, 1424);
+            this.dtext27.Location = new System.Drawing.Point(158, 451);
             this.dtext27.Name = "dtext27";
+            this.dtext27.ReadOnly = true;
             this.dtext27.Size = new System.Drawing.Size(70, 42);
             this.dtext27.TabIndex = 180;
             this.dtext27.Text = "";
@@ -462,7 +479,7 @@
             // dayw12
             // 
             this.dayw12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw12.Location = new System.Drawing.Point(213, 1348);
+            this.dayw12.Location = new System.Drawing.Point(158, 375);
             this.dayw12.Name = "dayw12";
             this.dayw12.Size = new System.Drawing.Size(70, 70);
             this.dayw12.TabIndex = 179;
@@ -470,8 +487,9 @@
             // 
             // dtext19
             // 
-            this.dtext19.Location = new System.Drawing.Point(213, 1285);
+            this.dtext19.Location = new System.Drawing.Point(158, 327);
             this.dtext19.Name = "dtext19";
+            this.dtext19.ReadOnly = true;
             this.dtext19.Size = new System.Drawing.Size(70, 42);
             this.dtext19.TabIndex = 192;
             this.dtext19.Text = "";
@@ -479,7 +497,7 @@
             // dayw9
             // 
             this.dayw9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw9.Location = new System.Drawing.Point(115, 743);
+            this.dayw9.Location = new System.Drawing.Point(152, 500);
             this.dayw9.Name = "dayw9";
             this.dayw9.Size = new System.Drawing.Size(70, 70);
             this.dayw9.TabIndex = 191;
@@ -487,16 +505,18 @@
             // 
             // dtext17
             // 
-            this.dtext17.Location = new System.Drawing.Point(17, 1285);
+            this.dtext17.Location = new System.Drawing.Point(6, 327);
             this.dtext17.Name = "dtext17";
+            this.dtext17.ReadOnly = true;
             this.dtext17.Size = new System.Drawing.Size(70, 42);
             this.dtext17.TabIndex = 190;
             this.dtext17.Text = "";
             // 
             // dtext18
             // 
-            this.dtext18.Location = new System.Drawing.Point(115, 1285);
+            this.dtext18.Location = new System.Drawing.Point(82, 327);
             this.dtext18.Name = "dtext18";
+            this.dtext18.ReadOnly = true;
             this.dtext18.Size = new System.Drawing.Size(70, 42);
             this.dtext18.TabIndex = 189;
             this.dtext18.Text = "";
@@ -504,7 +524,7 @@
             // dayw8
             // 
             this.dayw8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw8.Location = new System.Drawing.Point(17, 743);
+            this.dayw8.Location = new System.Drawing.Point(0, 500);
             this.dayw8.Name = "dayw8";
             this.dayw8.Size = new System.Drawing.Size(70, 70);
             this.dayw8.TabIndex = 188;
@@ -513,7 +533,7 @@
             // dayw7
             // 
             this.dayw7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw7.Location = new System.Drawing.Point(213, 601);
+            this.dayw7.Location = new System.Drawing.Point(155, 376);
             this.dayw7.Name = "dayw7";
             this.dayw7.Size = new System.Drawing.Size(70, 70);
             this.dayw7.TabIndex = 187;
@@ -521,8 +541,9 @@
             // 
             // dtext16
             // 
-            this.dtext16.Location = new System.Drawing.Point(213, 1143);
+            this.dtext16.Location = new System.Drawing.Point(158, 203);
             this.dtext16.Name = "dtext16";
+            this.dtext16.ReadOnly = true;
             this.dtext16.Size = new System.Drawing.Size(70, 42);
             this.dtext16.TabIndex = 186;
             this.dtext16.Text = "";
@@ -530,7 +551,7 @@
             // dayw6
             // 
             this.dayw6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw6.Location = new System.Drawing.Point(115, 601);
+            this.dayw6.Location = new System.Drawing.Point(79, 376);
             this.dayw6.Name = "dayw6";
             this.dayw6.Size = new System.Drawing.Size(70, 70);
             this.dayw6.TabIndex = 185;
@@ -538,16 +559,18 @@
             // 
             // dtext9
             // 
-            this.dtext9.Location = new System.Drawing.Point(17, 1143);
+            this.dtext9.Location = new System.Drawing.Point(6, 203);
             this.dtext9.Name = "dtext9";
+            this.dtext9.ReadOnly = true;
             this.dtext9.Size = new System.Drawing.Size(70, 42);
             this.dtext9.TabIndex = 184;
             this.dtext9.Text = "";
             // 
             // dtext10
             // 
-            this.dtext10.Location = new System.Drawing.Point(115, 1143);
+            this.dtext10.Location = new System.Drawing.Point(82, 203);
             this.dtext10.Name = "dtext10";
+            this.dtext10.ReadOnly = true;
             this.dtext10.Size = new System.Drawing.Size(70, 42);
             this.dtext10.TabIndex = 183;
             this.dtext10.Text = "";
@@ -555,7 +578,7 @@
             // dayw5
             // 
             this.dayw5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw5.Location = new System.Drawing.Point(17, 1348);
+            this.dayw5.Location = new System.Drawing.Point(6, 375);
             this.dayw5.Name = "dayw5";
             this.dayw5.Size = new System.Drawing.Size(70, 70);
             this.dayw5.TabIndex = 182;
@@ -564,7 +587,7 @@
             // dayw4
             // 
             this.dayw4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw4.Location = new System.Drawing.Point(213, 1209);
+            this.dayw4.Location = new System.Drawing.Point(158, 251);
             this.dayw4.Name = "dayw4";
             this.dayw4.Size = new System.Drawing.Size(70, 70);
             this.dayw4.TabIndex = 181;
@@ -572,72 +595,81 @@
             // 
             // dtext22
             // 
-            this.dtext22.Location = new System.Drawing.Point(213, 677);
+            this.dtext22.Location = new System.Drawing.Point(76, 452);
             this.dtext22.Name = "dtext22";
+            this.dtext22.ReadOnly = true;
             this.dtext22.Size = new System.Drawing.Size(70, 42);
             this.dtext22.TabIndex = 168;
             this.dtext22.Text = "";
             // 
             // dtext15
             // 
-            this.dtext15.Location = new System.Drawing.Point(17, 677);
+            this.dtext15.Location = new System.Drawing.Point(0, 452);
             this.dtext15.Name = "dtext15";
+            this.dtext15.ReadOnly = true;
             this.dtext15.Size = new System.Drawing.Size(70, 42);
             this.dtext15.TabIndex = 166;
             this.dtext15.Text = "";
             // 
             // dtext11
             // 
-            this.dtext11.Location = new System.Drawing.Point(213, 393);
+            this.dtext11.Location = new System.Drawing.Point(155, 204);
             this.dtext11.Name = "dtext11";
+            this.dtext11.ReadOnly = true;
             this.dtext11.Size = new System.Drawing.Size(70, 42);
             this.dtext11.TabIndex = 193;
             this.dtext11.Text = "";
             // 
             // dtext12
             // 
-            this.dtext12.Location = new System.Drawing.Point(17, 535);
+            this.dtext12.Location = new System.Drawing.Point(3, 328);
             this.dtext12.Name = "dtext12";
+            this.dtext12.ReadOnly = true;
             this.dtext12.Size = new System.Drawing.Size(70, 42);
             this.dtext12.TabIndex = 194;
             this.dtext12.Text = "";
             // 
             // dtext13
             // 
-            this.dtext13.Location = new System.Drawing.Point(115, 535);
+            this.dtext13.Location = new System.Drawing.Point(79, 328);
             this.dtext13.Name = "dtext13";
+            this.dtext13.ReadOnly = true;
             this.dtext13.Size = new System.Drawing.Size(70, 42);
             this.dtext13.TabIndex = 195;
             this.dtext13.Text = "";
             // 
             // dtext14
             // 
-            this.dtext14.Location = new System.Drawing.Point(213, 535);
+            this.dtext14.Location = new System.Drawing.Point(155, 328);
             this.dtext14.Name = "dtext14";
+            this.dtext14.ReadOnly = true;
             this.dtext14.Size = new System.Drawing.Size(70, 42);
             this.dtext14.TabIndex = 196;
             this.dtext14.Text = "";
             // 
             // dtext20
             // 
-            this.dtext20.Location = new System.Drawing.Point(17, 1424);
+            this.dtext20.Location = new System.Drawing.Point(6, 451);
             this.dtext20.Name = "dtext20";
+            this.dtext20.ReadOnly = true;
             this.dtext20.Size = new System.Drawing.Size(70, 42);
             this.dtext20.TabIndex = 197;
             this.dtext20.Text = "";
             // 
             // dtext26
             // 
-            this.dtext26.Location = new System.Drawing.Point(115, 1424);
+            this.dtext26.Location = new System.Drawing.Point(82, 451);
             this.dtext26.Name = "dtext26";
+            this.dtext26.ReadOnly = true;
             this.dtext26.Size = new System.Drawing.Size(70, 42);
             this.dtext26.TabIndex = 198;
             this.dtext26.Text = "";
             // 
             // dtext30
             // 
-            this.dtext30.Location = new System.Drawing.Point(213, 1562);
+            this.dtext30.Location = new System.Drawing.Point(158, 575);
             this.dtext30.Name = "dtext30";
+            this.dtext30.ReadOnly = true;
             this.dtext30.Size = new System.Drawing.Size(70, 42);
             this.dtext30.TabIndex = 204;
             this.dtext30.Text = "";
@@ -645,7 +677,7 @@
             // dayw15
             // 
             this.dayw15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw15.Location = new System.Drawing.Point(213, 1486);
+            this.dayw15.Location = new System.Drawing.Point(158, 499);
             this.dayw15.Name = "dayw15";
             this.dayw15.Size = new System.Drawing.Size(70, 70);
             this.dayw15.TabIndex = 203;
@@ -653,16 +685,18 @@
             // 
             // dtext28
             // 
-            this.dtext28.Location = new System.Drawing.Point(17, 1562);
+            this.dtext28.Location = new System.Drawing.Point(6, 575);
             this.dtext28.Name = "dtext28";
+            this.dtext28.ReadOnly = true;
             this.dtext28.Size = new System.Drawing.Size(70, 42);
             this.dtext28.TabIndex = 202;
             this.dtext28.Text = "";
             // 
             // dtext29
             // 
-            this.dtext29.Location = new System.Drawing.Point(115, 1562);
+            this.dtext29.Location = new System.Drawing.Point(82, 575);
             this.dtext29.Name = "dtext29";
+            this.dtext29.ReadOnly = true;
             this.dtext29.Size = new System.Drawing.Size(70, 42);
             this.dtext29.TabIndex = 201;
             this.dtext29.Text = "";
@@ -670,7 +704,7 @@
             // dayw14
             // 
             this.dayw14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw14.Location = new System.Drawing.Point(115, 1486);
+            this.dayw14.Location = new System.Drawing.Point(82, 499);
             this.dayw14.Name = "dayw14";
             this.dayw14.Size = new System.Drawing.Size(70, 70);
             this.dayw14.TabIndex = 200;
@@ -679,89 +713,107 @@
             // dayw13
             // 
             this.dayw13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dayw13.Location = new System.Drawing.Point(17, 1486);
+            this.dayw13.Location = new System.Drawing.Point(6, 499);
             this.dayw13.Name = "dayw13";
             this.dayw13.Size = new System.Drawing.Size(70, 70);
             this.dayw13.TabIndex = 199;
             this.dayw13.TabStop = false;
             // 
-            // Воскресенье
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.dayw8);
+            this.panel1.Controls.Add(this.dayw10);
+            this.panel1.Controls.Add(this.dtext15);
+            this.panel1.Controls.Add(this.dayw9);
+            this.panel1.Controls.Add(this.dtext22);
+            this.panel1.Controls.Add(this.dtext23);
+            this.panel1.Controls.Add(this.daychar15);
+            this.panel1.Controls.Add(this.dtext24);
+            this.panel1.Controls.Add(this.dtext21);
+            this.panel1.Controls.Add(this.dtext25);
+            this.panel1.Controls.Add(this.dayw6);
+            this.panel1.Controls.Add(this.dtext12);
+            this.panel1.Controls.Add(this.dayw7);
+            this.panel1.Controls.Add(this.dtext13);
+            this.panel1.Controls.Add(this.daychar12);
+            this.panel1.Controls.Add(this.dtext14);
+            this.panel1.Controls.Add(this.daychar13);
+            this.panel1.Controls.Add(this.dtext4);
+            this.panel1.Controls.Add(this.daychar14);
+            this.panel1.Controls.Add(this.dtext5);
+            this.panel1.Controls.Add(this.daychar4);
+            this.panel1.Controls.Add(this.dtext11);
+            this.panel1.Controls.Add(this.daychar5);
+            this.panel1.Controls.Add(this.dtext1);
+            this.panel1.Controls.Add(this.daychar11);
+            this.panel1.Controls.Add(this.dtext2);
+            this.panel1.Controls.Add(this.daychar1);
+            this.panel1.Controls.Add(this.dtext3);
+            this.panel1.Controls.Add(this.daychar2);
+            this.panel1.Controls.Add(this.daychar3);
+            this.panel1.Location = new System.Drawing.Point(17, 166);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 372);
+            this.panel1.TabIndex = 206;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.daychar7);
+            this.panel2.Controls.Add(this.dayw1);
+            this.panel2.Controls.Add(this.dtext30);
+            this.panel2.Controls.Add(this.dayw2);
+            this.panel2.Controls.Add(this.dayw15);
+            this.panel2.Controls.Add(this.dayw3);
+            this.panel2.Controls.Add(this.dtext28);
+            this.panel2.Controls.Add(this.dayw11);
+            this.panel2.Controls.Add(this.dtext29);
+            this.panel2.Controls.Add(this.dtext6);
+            this.panel2.Controls.Add(this.dayw14);
+            this.panel2.Controls.Add(this.dtext7);
+            this.panel2.Controls.Add(this.dayw13);
+            this.panel2.Controls.Add(this.dtext8);
+            this.panel2.Controls.Add(this.dtext26);
+            this.panel2.Controls.Add(this.daychar6);
+            this.panel2.Controls.Add(this.dtext20);
+            this.panel2.Controls.Add(this.daychar8);
+            this.panel2.Controls.Add(this.dtext19);
+            this.panel2.Controls.Add(this.daychar9);
+            this.panel2.Controls.Add(this.dtext17);
+            this.panel2.Controls.Add(this.daychar10);
+            this.panel2.Controls.Add(this.dtext18);
+            this.panel2.Controls.Add(this.dayw12);
+            this.panel2.Controls.Add(this.dtext16);
+            this.panel2.Controls.Add(this.dtext27);
+            this.panel2.Controls.Add(this.dtext9);
+            this.panel2.Controls.Add(this.dayw4);
+            this.panel2.Controls.Add(this.dtext10);
+            this.panel2.Controls.Add(this.dayw5);
+            this.panel2.Location = new System.Drawing.Point(297, 169);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(247, 372);
+            this.panel2.TabIndex = 207;
+            // 
+            // Ресурсы
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(326, 573);
-            this.Controls.Add(this.dtext30);
-            this.Controls.Add(this.dayw15);
-            this.Controls.Add(this.dtext28);
-            this.Controls.Add(this.dtext29);
-            this.Controls.Add(this.dayw14);
-            this.Controls.Add(this.dayw13);
-            this.Controls.Add(this.dtext26);
-            this.Controls.Add(this.dtext20);
-            this.Controls.Add(this.dtext14);
-            this.Controls.Add(this.dtext13);
-            this.Controls.Add(this.dtext12);
-            this.Controls.Add(this.dtext11);
-            this.Controls.Add(this.dtext19);
-            this.Controls.Add(this.dayw9);
-            this.Controls.Add(this.dtext17);
-            this.Controls.Add(this.dtext18);
-            this.Controls.Add(this.dayw8);
-            this.Controls.Add(this.dayw7);
-            this.Controls.Add(this.dtext16);
-            this.Controls.Add(this.dayw6);
-            this.Controls.Add(this.dtext9);
-            this.Controls.Add(this.dtext10);
-            this.Controls.Add(this.dayw5);
-            this.Controls.Add(this.dayw4);
-            this.Controls.Add(this.dtext27);
-            this.Controls.Add(this.dayw12);
-            this.Controls.Add(this.dtext25);
-            this.Controls.Add(this.daychar15);
-            this.Controls.Add(this.dtext23);
-            this.Controls.Add(this.dtext24);
-            this.Controls.Add(this.daychar14);
-            this.Controls.Add(this.daychar13);
-            this.Controls.Add(this.daychar12);
-            this.Controls.Add(this.dtext21);
-            this.Controls.Add(this.dtext22);
-            this.Controls.Add(this.dtext15);
-            this.Controls.Add(this.daychar11);
-            this.Controls.Add(this.daychar10);
-            this.Controls.Add(this.daychar9);
-            this.Controls.Add(this.daychar8);
-            this.Controls.Add(this.daychar7);
-            this.Controls.Add(this.daychar6);
+            this.ClientSize = new System.Drawing.Size(566, 556);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Назад);
             this.Controls.Add(this.day_text);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtext8);
-            this.Controls.Add(this.dtext7);
-            this.Controls.Add(this.dtext6);
-            this.Controls.Add(this.dayw11);
-            this.Controls.Add(this.dayw10);
-            this.Controls.Add(this.dayw3);
-            this.Controls.Add(this.dayw2);
-            this.Controls.Add(this.dayw1);
-            this.Controls.Add(this.dtext4);
-            this.Controls.Add(this.dtext5);
-            this.Controls.Add(this.dtext3);
-            this.Controls.Add(this.dtext2);
-            this.Controls.Add(this.dtext1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.daychar5);
-            this.Controls.Add(this.daychar4);
-            this.Controls.Add(this.daychar3);
-            this.Controls.Add(this.daychar2);
-            this.Controls.Add(this.daychar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Воскресенье";
+            this.Name = "Ресурсы";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Воскресенье";
+            this.Text = "Ресурсы за выбранный день";
             ((System.ComponentModel.ISupportInitialize)(this.dayw11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw3)).EndInit();
@@ -792,6 +844,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dayw15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayw13)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,5 +917,7 @@
         private System.Windows.Forms.RichTextBox dtext29;
         private System.Windows.Forms.PictureBox dayw14;
         private System.Windows.Forms.PictureBox dayw13;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -90,7 +90,7 @@ namespace Руководство
             this.tierListTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tierListTable.ColumnCount = 2;
             this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 576F));
+            this.tierListTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 580F));
             this.tierListTable.Controls.Add(this.flowLayoutPanel4, 1, 4);
             this.tierListTable.Controls.Add(this.richTextBox2, 0, 5);
             this.tierListTable.Controls.Add(this.richTextBox1, 0, 4);

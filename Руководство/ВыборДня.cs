@@ -41,15 +41,17 @@ namespace Руководство
             }
 
             // Применение
-            День DayInfo = new День();
-            
+            //День DayInfo = new День();
+            //this.Hide();
+
+            Ресурсы VInfo = new Ресурсы();
             this.Hide();
 
             string[] Images = toarray.InitializeArrayFromList(res);
             string[] dtextNames = toarray.InitializeArrayFromDataTable(table, "name_resource1");
 
-            DayInfo.SetDay(nameDay, Images, dtextNames);
-            DayInfo.ShowDialog();
+            VInfo.SetDay(nameDay, Images, dtextNames);
+            VInfo.ShowDialog();
             
         }
         protected void selectVoskr(string nameDay)
@@ -72,7 +74,7 @@ namespace Руководство
                 v_res.Add(row["name_resource"].ToString());
             }
 
-            Воскресенье VInfo = new Воскресенье();
+            Ресурсы VInfo = new Ресурсы();
             this.Hide();
 
             string[] Images = toarray.InitializeArrayFromList(v_res);

@@ -244,6 +244,7 @@ namespace Руководство
             this.a1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.a1_info.Location = new System.Drawing.Point(89, 1327);
             this.a1_info.Name = "a1_info";
+            this.a1_info.ReadOnly = true;
             this.a1_info.Size = new System.Drawing.Size(248, 58);
             this.a1_info.TabIndex = 15;
             this.a1_info.Text = "";
@@ -254,6 +255,7 @@ namespace Руководство
             this.a2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.a2_info.Location = new System.Drawing.Point(89, 1406);
             this.a2_info.Name = "a2_info";
+            this.a2_info.ReadOnly = true;
             this.a2_info.Size = new System.Drawing.Size(248, 58);
             this.a2_info.TabIndex = 16;
             this.a2_info.Text = "";
@@ -264,6 +266,7 @@ namespace Руководство
             this.a3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.a3_info.Location = new System.Drawing.Point(89, 1483);
             this.a3_info.Name = "a3_info";
+            this.a3_info.ReadOnly = true;
             this.a3_info.Size = new System.Drawing.Size(248, 58);
             this.a3_info.TabIndex = 17;
             this.a3_info.Text = "";
@@ -275,6 +278,7 @@ namespace Руководство
             this.InfoCh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InfoCh.Location = new System.Drawing.Point(87, 499);
             this.InfoCh.Name = "InfoCh";
+            this.InfoCh.ReadOnly = true;
             this.InfoCh.Size = new System.Drawing.Size(224, 85);
             this.InfoCh.TabIndex = 18;
             this.InfoCh.Text = "";
@@ -322,6 +326,7 @@ namespace Руководство
             this.p3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p3_info.Location = new System.Drawing.Point(86, 1930);
             this.p3_info.Name = "p3_info";
+            this.p3_info.ReadOnly = true;
             this.p3_info.Size = new System.Drawing.Size(248, 58);
             this.p3_info.TabIndex = 28;
             this.p3_info.Text = "";
@@ -332,6 +337,7 @@ namespace Руководство
             this.p2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p2_info.Location = new System.Drawing.Point(86, 1853);
             this.p2_info.Name = "p2_info";
+            this.p2_info.ReadOnly = true;
             this.p2_info.Size = new System.Drawing.Size(248, 58);
             this.p2_info.TabIndex = 27;
             this.p2_info.Text = "";
@@ -342,6 +348,7 @@ namespace Руководство
             this.p1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p1_info.Location = new System.Drawing.Point(86, 1774);
             this.p1_info.Name = "p1_info";
+            this.p1_info.ReadOnly = true;
             this.p1_info.Size = new System.Drawing.Size(248, 58);
             this.p1_info.TabIndex = 26;
             this.p1_info.Text = "";
@@ -376,6 +383,7 @@ namespace Руководство
             this.c6_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c6_info.Location = new System.Drawing.Point(86, 2350);
             this.c6_info.Name = "c6_info";
+            this.c6_info.ReadOnly = true;
             this.c6_info.Size = new System.Drawing.Size(248, 58);
             this.c6_info.TabIndex = 54;
             this.c6_info.Text = "";
@@ -386,6 +394,7 @@ namespace Руководство
             this.c5_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c5_info.Location = new System.Drawing.Point(86, 2286);
             this.c5_info.Name = "c5_info";
+            this.c5_info.ReadOnly = true;
             this.c5_info.Size = new System.Drawing.Size(248, 58);
             this.c5_info.TabIndex = 53;
             this.c5_info.Text = "";
@@ -396,6 +405,7 @@ namespace Руководство
             this.c4_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c4_info.Location = new System.Drawing.Point(86, 2222);
             this.c4_info.Name = "c4_info";
+            this.c4_info.ReadOnly = true;
             this.c4_info.Size = new System.Drawing.Size(248, 58);
             this.c4_info.TabIndex = 52;
             this.c4_info.Text = "";
@@ -430,6 +440,7 @@ namespace Руководство
             this.c3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c3_info.Location = new System.Drawing.Point(86, 2158);
             this.c3_info.Name = "c3_info";
+            this.c3_info.ReadOnly = true;
             this.c3_info.Size = new System.Drawing.Size(248, 58);
             this.c3_info.TabIndex = 48;
             this.c3_info.Text = "";
@@ -440,6 +451,7 @@ namespace Руководство
             this.c2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c2_info.Location = new System.Drawing.Point(86, 2094);
             this.c2_info.Name = "c2_info";
+            this.c2_info.ReadOnly = true;
             this.c2_info.Size = new System.Drawing.Size(248, 58);
             this.c2_info.TabIndex = 47;
             this.c2_info.Text = "";
@@ -450,6 +462,7 @@ namespace Руководство
             this.c1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.c1_info.Location = new System.Drawing.Point(86, 2030);
             this.c1_info.Name = "c1_info";
+            this.c1_info.ReadOnly = true;
             this.c1_info.Size = new System.Drawing.Size(248, 58);
             this.c1_info.TabIndex = 46;
             this.c1_info.Text = "";
@@ -957,6 +970,7 @@ namespace Руководство
             this.art1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.art1_info.Location = new System.Drawing.Point(75, 838);
             this.art1_info.Name = "art1_info";
+            this.art1_info.ReadOnly = true;
             this.art1_info.Size = new System.Drawing.Size(70, 26);
             this.art1_info.TabIndex = 109;
             this.art1_info.Text = "";
@@ -968,6 +982,7 @@ namespace Руководство
             this.art2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.art2_info.Location = new System.Drawing.Point(172, 838);
             this.art2_info.Name = "art2_info";
+            this.art2_info.ReadOnly = true;
             this.art2_info.Size = new System.Drawing.Size(70, 26);
             this.art2_info.TabIndex = 111;
             this.art2_info.Text = "";
@@ -979,6 +994,7 @@ namespace Руководство
             this.art3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.art3_info.Location = new System.Drawing.Point(269, 838);
             this.art3_info.Name = "art3_info";
+            this.art3_info.ReadOnly = true;
             this.art3_info.Size = new System.Drawing.Size(70, 26);
             this.art3_info.TabIndex = 112;
             this.art3_info.Text = "";
@@ -1036,6 +1052,7 @@ namespace Руководство
             this.w1_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.w1_name.Location = new System.Drawing.Point(12, 1017);
             this.w1_name.Name = "w1_name";
+            this.w1_name.ReadOnly = true;
             this.w1_name.Size = new System.Drawing.Size(70, 26);
             this.w1_name.TabIndex = 121;
             this.w1_name.Text = "";
@@ -1047,6 +1064,7 @@ namespace Руководство
             this.w2_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.w2_name.Location = new System.Drawing.Point(113, 1017);
             this.w2_name.Name = "w2_name";
+            this.w2_name.ReadOnly = true;
             this.w2_name.Size = new System.Drawing.Size(70, 26);
             this.w2_name.TabIndex = 122;
             this.w2_name.Text = "";
@@ -1058,6 +1076,7 @@ namespace Руководство
             this.w3_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.w3_name.Location = new System.Drawing.Point(214, 1017);
             this.w3_name.Name = "w3_name";
+            this.w3_name.ReadOnly = true;
             this.w3_name.Size = new System.Drawing.Size(70, 26);
             this.w3_name.TabIndex = 123;
             this.w3_name.Text = "";
@@ -1069,6 +1088,7 @@ namespace Руководство
             this.w4_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.w4_name.Location = new System.Drawing.Point(315, 1017);
             this.w4_name.Name = "w4_name";
+            this.w4_name.ReadOnly = true;
             this.w4_name.Size = new System.Drawing.Size(70, 26);
             this.w4_name.TabIndex = 124;
             this.w4_name.Text = "";
