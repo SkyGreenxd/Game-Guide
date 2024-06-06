@@ -9,7 +9,6 @@ namespace Руководство
     public partial class Калькулятор : Form
     {
         Database database = new Database();
-
         public Калькулятор()
         {
             InitializeComponent();
@@ -19,45 +18,32 @@ namespace Руководство
             SqlDataAdapter adapter = new SqlDataAdapter();
             // Имя, фото 
             DataTable table = new DataTable();
-
             string querystring = $"select name, image from char_info_db where name = '{nameCharacter}'";
             SqlCommand command = new SqlCommand(querystring, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             // Рес-сы для талантов
             DataTable abil_lvlup_table = new DataTable();
-
             string querystring4 = $"SELECT resources.name_resource FROM ability_lvlup INNER JOIN resources ON ability_lvlup.resources_id = resources.id WHERE ability_lvlup.name = '{nameCharacter}'";
-
             SqlCommand command4 = new SqlCommand(querystring4, database.getConnection());
-
             adapter.SelectCommand = command4;
             adapter.Fill(abil_lvlup_table);
-
             List<string> imagePaths_abil_lvlup = new List<string>();
             foreach (DataRow row in abil_lvlup_table.Rows)
             {
                 imagePaths_abil_lvlup.Add(row["name_resource"].ToString());
             }
-
             // Рес-сы для возвышения
             DataTable char_lvlup_table = new DataTable();
-
             string querystring5 = $"SELECT resources.name_resource FROM char_lvlup INNER JOIN resources ON char_lvlup.resources_id = resources.id WHERE char_lvlup.name = '{nameCharacter}'";
-
             SqlCommand command5 = new SqlCommand(querystring5, database.getConnection());
-
             adapter.SelectCommand = command5;
             adapter.Fill(char_lvlup_table);
-
             List<string> imagePaths_char_lvlup = new List<string>();
             foreach (DataRow row in char_lvlup_table.Rows)
             {
                 imagePaths_char_lvlup.Add(row["name_resource"].ToString());
             }
-
             return new string[] { table.Rows[0]["name"].ToString(), table.Rows[0]["image"].ToString(), imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8] };
         }
         private int[] selectLVL(int lvl1, int lvl2)
@@ -74,11 +60,8 @@ namespace Руководство
                 querystring = $"select * from lvl_db where lvl = '{lvl1}'";
             }
             SqlCommand command = new SqlCommand(querystring, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
-            Расчёт result = new Расчёт();
             if (lvl1 != lvl2)
             {
                 return new int[] { Convert.ToInt32(table.Rows[0]["Total_EXP"]), Convert.ToInt32(table.Rows[1]["Total_EXP"]), Convert.ToInt32(table.Rows[0]["mora"]), Convert.ToInt32(table.Rows[1]["mora"]) };
@@ -87,8 +70,6 @@ namespace Руководство
             {
                 return new int[] { Convert.ToInt32(table.Rows[0]["Total_EXP"]), Convert.ToInt32(table.Rows[0]["Total_EXP"]), 0, 0 };
             }
-            // result.ShowDialog();
-            
         }
         private int[] selectTalent_LVL(int tal1, int tal2)
         {
@@ -103,12 +84,9 @@ namespace Руководство
             {
                 querystring = $"SELECT tal_book1, tal_book2, tal_book3, tal_res1, tal_res2, tal_res3, weekly_boss, mora, crown FROM tal_lvl WHERE lvl = '{tal1}'";
             }
-
             SqlCommand command = new SqlCommand(querystring, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             if (tal1 != tal2)
             {
                 int total_tal_book1 = Convert.ToInt32(table.Rows[0]["total_tal_book1"]);
@@ -127,7 +105,6 @@ namespace Руководство
                 return new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             }
         }
-
         private int[] selectEvolution(int evol1, int evol2)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -141,12 +118,9 @@ namespace Руководство
             {
                 querystring = $"SELECT material1, material2, material3, material4, boss_material, local_specialty, mora FROM evolution_phase_db WHERE lvl = '{evol1}'";
             }
-
             SqlCommand command = new SqlCommand(querystring, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             if (evol1 != evol2)
             {
                 int total_material1 = Convert.ToInt32(table.Rows[0]["total_material1"]);
@@ -202,8 +176,7 @@ namespace Руководство
                 int[] talentResult2 = selectTalent_LVL((int)tal2_1.Value, (int)tal2_2.Value);
                 int[] talentResult3 = selectTalent_LVL((int)tal3_1.Value, (int)tal3_2.Value);
                 int[] evolutionResult = selectEvolution((int)v_1.Value, (int)v_2.Value);
-
-                result.SetCharacterData(charResult[0], charResult[1], charResult[2], charResult[3], charResult[4], charResult[5], charResult[6], charResult[7], charResult[8], charResult[9], charResult[10], charResult[11], charResult[12], charResult[13], charResult[14]);
+                result.SetCharacterData(charResult);
                 result.SetEXP(lvlResult[0], lvlResult[1], lvlResult[2], lvlResult[3]);
                 result.SetTalent(talentResult1[0] + talentResult2[0] + talentResult3[0],
                     talentResult1[1] + talentResult2[1] + talentResult3[1],
@@ -215,9 +188,7 @@ namespace Руководство
                     talentResult1[7] + talentResult2[7] + talentResult3[7],
                     talentResult1[8] + talentResult2[8] + talentResult3[8]);
                 result.SetEvolution(evolutionResult[0], evolutionResult[1], evolutionResult[2], evolutionResult[3], evolutionResult[4], evolutionResult[5], evolutionResult[6]);
-
                 this.Hide();
-
                 result.ShowDialog();
             }  
         }
@@ -273,17 +244,14 @@ namespace Руководство
         {
             SetTal(v_1.Value, tal1_1);
         }
-
         private void tal2_1_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_1.Value, tal2_1);
         }
-
         private void tal3_1_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_1.Value, tal3_1);
         }
-
         private void tal1_2_ValueChanged(object sender, EventArgs e)
         {
             SetTal(v_2.Value, tal1_2);
