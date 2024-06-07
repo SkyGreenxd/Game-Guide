@@ -14,7 +14,6 @@ namespace Руководство
             }
             return array;
         }
-
         public string[] InitializeArrayFromDataTable(DataTable table, string columnName)
         {
             string[] array = new string[table.Rows.Count];

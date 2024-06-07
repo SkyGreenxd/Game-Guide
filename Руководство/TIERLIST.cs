@@ -17,12 +17,10 @@ namespace Руководство
             InitializeComponent();
             imagemove = new imageMove(tierListTable, image_container);
             tierListTable.Focus();
-
             typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
             nazad.TabStop = false;
             addButton.TabStop = false;
             deleteButton.TabStop = false;
-
             foreach (Control control in tierListTable.Controls) // создает ограничение 25 симв
             {
                 if (control is RichTextBox)
@@ -31,39 +29,29 @@ namespace Руководство
                 }
             }
             selectChar();
-            
         }
-
         protected void selectChar()
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             // Фото
             DataTable table = new DataTable();
-
             string querystring = $"select image from char_icon_db";
             SqlCommand command = new SqlCommand(querystring, database.getConnection());
-
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             foreach (DataRow row in table.Rows)
             {
-                string imagePath = row["image"].ToString(); // Получаем путь к изображению из базы данных
-
+                string imagePath = row["image"].ToString(); // Получает путь к изображению из базы данных
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Image = Image.FromFile(imagePath); // Устанавливаем изображение в PictureBox
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Устанавливаем режим отображения изображения
-                pictureBox.Width = 118; // Устанавливаем ширину PictureBox (можете выбрать подходящее значение)
-                pictureBox.Height = 118; // Устанавливаем высоту PictureBox (можете выбрать подходящее значение)
+                pictureBox.Image = Image.FromFile(imagePath); // Устанавливает изображение в PictureBox
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Устанавливает режим отображения изображения
+                pictureBox.Width = 118; // Устанавливает ширину PictureBox
+                pictureBox.Height = 118; // Устанавливает высоту PictureBox
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
-
-                image_container.Controls.Add(pictureBox); // Добавляем PictureBox в FlowLayoutPanel
-                
+                image_container.Controls.Add(pictureBox); // Добавляет PictureBox в FlowLayoutPanel
                 imagemove.AttachHandlers(pictureBox);
-
             }
         }
-
         private void Назад(object sender, EventArgs e)
         {
             Меню oldForm = new Меню();
@@ -75,12 +63,10 @@ namespace Руководство
             if (tierListTable.RowCount > 0)
             {
                 int rowCount = tierListTable.RowCount;
-
                 // Удаление содержимого последней строки
                 for (int col = 0; col < tierListTable.ColumnCount; col++)
                 {
                     Control controlToRemove = tierListTable.GetControlFromPosition(col, rowCount - 1);
-
                     if (controlToRemove is FlowLayoutPanel)
                     {
                         FlowLayoutPanel panel = controlToRemove as FlowLayoutPanel;
@@ -94,42 +80,34 @@ namespace Руководство
                             }
                         }
                     }
-
                     tierListTable.Controls.Remove(controlToRemove);
                 }
-
                 // Удаление последней строки
                 tierListTable.RowStyles.RemoveAt(rowCount - 1);
                 tierListTable.RowCount--;
-
                 // Пересчитывает размеры строк в таблице
                 for (int i = 0; i < tierListTable.RowCount; i++)
                 {
                     tierListTable.RowStyles[i].SizeType = SizeType.Absolute;
                     tierListTable.RowStyles[i].Height = 130; // Устанавливаем желаемую высоту строки
                 }
-
                 // Обновление размеров контейнера
                 tierListTable.AutoScrollMinSize = new Size(0, tierListTable.RowCount * 130); // Учитываем новое количество строк
             }
         }
-
         private void addButton_Click(object sender, EventArgs e)
         {
             tierListTable.Height += 130;
-            // Создаем новую строку с ячейками
+            // Создание новой строки с ячейками
             int rowCount = tierListTable.RowCount;
             tierListTable.RowCount++;
             tierListTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 130));
-
             // Создаем новый RichTextBox и настраиваем ее
             var richTextBox = new RichTextBox();
             RichTextBoxInst(richTextBox);
             // Добавляем новую RichTextBox в ячейку и добавляем ячейку в строку
             tierListTable.Controls.Add(richTextBox, 0, rowCount);
-
             var flowLayoutPanel = new FlowLayoutPanel();
-            
             flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
             flowLayoutPanel.WrapContents = true;
             flowLayoutPanel.Size = new Size(501, 124);
@@ -139,7 +117,6 @@ namespace Руководство
             // Добавляем новый FlowLayoutPanel во второй столбец последней строки
             tierListTable.Controls.Add(flowLayoutPanel, 1, rowCount);
         }
-
         public void RichTextBoxInst(RichTextBox richTextBox)
         {
             richTextBox.Size = new Size(118, 124);
@@ -152,18 +129,15 @@ namespace Руководство
             richTextBox.KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
             richTextBox.BorderStyle = BorderStyle.None;
         }
-
         private void richTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             RichTextBox richTextBox = (RichTextBox)sender;
-
-            // Проверяем, что длина текста не превышает 25 символов
+            // Проверка, что длина текста не превышает 25 символов
             if (richTextBox.Text.Length >= 25 && e.KeyChar != (char)Keys.Back)
             {
-                e.Handled = true; // Отменяем ввод символа, если длина превышает 25 символов
+                e.Handled = true; // Отмена ввода символа, если длина превышает 25 символов
             }
         }
-
         private void Reboot_Click(object sender, EventArgs e)
         {
             List<PictureBox> pictureBoxesToMove = new List<PictureBox>();
@@ -185,27 +159,16 @@ namespace Руководство
                 image_container.Controls.Add(pictureBox); // Перемещаем все PictureBox обратно в image_container
             }
         }
-
         private void Save_Click(object sender, EventArgs e)
         {
-            // Отображаем диалоговое окно сохранения
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PNG файлы (*.png)|*.png|Все файлы (*.*)|*.*"; // Фильтр для диалогового окна сохранения
+            saveFileDialog.Filter = "PNG файлы (*.png)|*.png|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Создаем изображение с большим размером, чтобы вместить всё содержимое TableLayoutPanel
                 Bitmap bmp = new Bitmap(tierListTable.Width, tierListTable.Height);
-
-                // Рисуем содержимое TableLayoutPanel в созданном изображении
                 tierListTable.DrawToBitmap(bmp, new Rectangle(0, 0, tierListTable.Width, tierListTable.Height));
-
-                // Сохраняем изображение по выбранному пути
                 bmp.Save(saveFileDialog.FileName, ImageFormat.Png);
-
-                // Освобождаем ресурсы
                 bmp.Dispose();
-
-                // Показываем сообщение об успешном сохранении
                 MessageBox.Show("Изображение успешно сохранено.", "Сохранение завершено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

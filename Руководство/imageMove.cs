@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Руководство
@@ -13,29 +9,25 @@ namespace Руководство
         private Point downPoint;
         private bool moved;
         private Dictionary<TableLayoutPanelCellPosition, Rectangle> dict = new Dictionary<TableLayoutPanelCellPosition, Rectangle>();
-
         private TableLayoutPanel tierListTable;
         private Control image_container;
-
         public imageMove(TableLayoutPanel tierListTable, Control image_container)
         {
             this.tierListTable = tierListTable;
             this.image_container = image_container;
         }
-
         public void AttachHandlers(PictureBox pictureBox)
         {
             pictureBox.MouseDown += Picture_MouseDown;
             pictureBox.MouseMove += Picture_MouseMove;
             pictureBox.MouseUp += Picture_MouseUp;
         }
-
         private void Picture_MouseDown(object sender, MouseEventArgs e)
         {
             Control picture = sender as Control;
             if (e.Button == MouseButtons.Right)
             {
-                picture.Parent = image_container; // Возвращаем PictureBox в image_container при нажатии правой кнопкой мыши
+                picture.Parent = image_container;
             }
             else
             {
@@ -44,7 +36,6 @@ namespace Руководство
                 downPoint = e.Location;
             }
         }
-
         private void Picture_MouseMove(object sender, MouseEventArgs e)
         {
             Control picture = sender as Control;
@@ -56,14 +47,12 @@ namespace Руководство
                 tierListTable.Invalidate();
             }
         }
-
         private void Picture_MouseUp(object sender, MouseEventArgs e)
         {
             Control picture = sender as Control;
             if (e.Button == MouseButtons.Left)
             {
                 Point currentLocation = tierListTable.PointToClient(Cursor.Position);
-
                 int scrolledY = currentLocation.Y + tierListTable.VerticalScroll.Value;
                 for (int row = 0; row < tierListTable.RowCount; row++)
                 {
@@ -83,7 +72,6 @@ namespace Руководство
                 }
             }
         }
-
         private FlowLayoutPanel FindFlowLayoutPanelInRow(int rowIndex)
         {
             string flowLayoutPanelName = "flowLayoutPanel" + rowIndex;
@@ -94,20 +82,16 @@ namespace Руководство
             }
             return null;
         }
-
         private void EnsurePictureFits(Control picture, FlowLayoutPanel flowLayoutPanel)
         {
             int rowIndex = tierListTable.GetRow(flowLayoutPanel);
-
             if (rowIndex >= 0 && rowIndex < tierListTable.RowStyles.Count)
             {
-                int requiredHeight = picture.Bottom + 10; // 10 - отступ между изображениями
-
+                int requiredHeight = picture.Bottom + 10;
                 if (requiredHeight > tierListTable.RowStyles[rowIndex].Height)
                 {
-                    tierListTable.RowStyles[rowIndex].Height = requiredHeight + 10; // Дополнительный отступ
+                    tierListTable.RowStyles[rowIndex].Height = requiredHeight + 10;
                     flowLayoutPanel.Height = requiredHeight;
-
                     int newHeight = 0;
                     for (int i = 0; i < tierListTable.RowStyles.Count; i++)
                     {
