@@ -94,6 +94,7 @@
     <Compile Include="characterFilter.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="imageMove.cs" />
+    <Compile Include="TierlistManager.cs" />
     <Compile Include="Ресурсы.cs">
       <SubType>Form</SubType>
     </Compile>
