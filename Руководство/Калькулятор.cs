@@ -9,42 +9,31 @@ namespace Руководство
     public partial class Калькулятор : Form
     {
         Database database = new Database();
+        private CharacterRepository characterRepository;
         public Калькулятор()
         {
             InitializeComponent();
+            characterRepository = new CharacterRepository(database);
         }
         private string[] setChar(string nameCharacter)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            // Имя, фото 
-            DataTable table = new DataTable();
-            string querystring = $"select name, image from char_info_db where name = '{nameCharacter}'";
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+            DataTable characterInfoTable = characterRepository.GetCharacterInfo(nameCharacter);
+            DataTable characterAbilityLevelUpTable = characterRepository.GetCharacterAbilityLevelUpResources(nameCharacter);
+            DataTable characterLevelUpTable = characterRepository.GetCharacterLevelUpResources(nameCharacter);
+
             // Рес-сы для талантов
-            DataTable abil_lvlup_table = new DataTable();
-            string querystring4 = $"SELECT resources.name_resource FROM ability_lvlup INNER JOIN resources ON ability_lvlup.resources_id = resources.id WHERE ability_lvlup.name = '{nameCharacter}'";
-            SqlCommand command4 = new SqlCommand(querystring4, database.getConnection());
-            adapter.SelectCommand = command4;
-            adapter.Fill(abil_lvlup_table);
             List<string> imagePaths_abil_lvlup = new List<string>();
-            foreach (DataRow row in abil_lvlup_table.Rows)
+            foreach (DataRow row in characterAbilityLevelUpTable.Rows)
             {
                 imagePaths_abil_lvlup.Add(row["name_resource"].ToString());
             }
             // Рес-сы для возвышения
-            DataTable char_lvlup_table = new DataTable();
-            string querystring5 = $"SELECT resources.name_resource FROM char_lvlup INNER JOIN resources ON char_lvlup.resources_id = resources.id WHERE char_lvlup.name = '{nameCharacter}'";
-            SqlCommand command5 = new SqlCommand(querystring5, database.getConnection());
-            adapter.SelectCommand = command5;
-            adapter.Fill(char_lvlup_table);
             List<string> imagePaths_char_lvlup = new List<string>();
-            foreach (DataRow row in char_lvlup_table.Rows)
+            foreach (DataRow row in characterLevelUpTable.Rows)
             {
                 imagePaths_char_lvlup.Add(row["name_resource"].ToString());
             }
-            return new string[] { table.Rows[0]["name"].ToString(), table.Rows[0]["image"].ToString(), imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8] };
+            return new string[] { characterInfoTable.Rows[0]["name"].ToString(), characterInfoTable.Rows[0]["image"].ToString(), imagePaths_abil_lvlup[0], imagePaths_abil_lvlup[1], imagePaths_abil_lvlup[2], imagePaths_abil_lvlup[3], imagePaths_abil_lvlup[4], imagePaths_abil_lvlup[5], imagePaths_abil_lvlup[6], imagePaths_char_lvlup[3], imagePaths_char_lvlup[4], imagePaths_char_lvlup[5], imagePaths_char_lvlup[6], imagePaths_char_lvlup[7], imagePaths_char_lvlup[8] };
         }
         private int[] selectLVL(int lvl1, int lvl2)
         {
@@ -198,14 +187,6 @@ namespace Руководство
             this.Hide();
             oldForm.ShowDialog();
         }
-        private void Сяо_Click(object sender, EventArgs e)
-        {
-            char_name.Text = Сяо.Text;
-        }
-        private void Кадзуха_Click(object sender, EventArgs e)
-        {
-            char_name.Text = Кадзуха.Text;
-        }
         private void v_1_ValueChanged(object sender, EventArgs e)
         {
             if (v_1.Value > v_2.Value)
@@ -270,6 +251,34 @@ namespace Руководство
             {
                 lvl2.Value = lvl1.Value;
             }
+        }
+        private void Сяо_Click(object sender, EventArgs e)
+        {
+            char_name.Text = Сяо.Text;
+        }
+        private void Кадзуха_Click(object sender, EventArgs e)
+        {
+            char_name.Text = Кадзуха.Text;
+        }
+        private void Тома_Click(object sender, EventArgs e)
+        {
+            char_name.Text = Тома.Text;
+        }
+        private void Барбара_Click(object sender, EventArgs e)
+        {
+            char_name.Text = Барбара.Text;
+        }
+        private void ЧжунЛи_Click(object sender, EventArgs e)
+        {
+            char_name.Text = ЧжунЛи.Text;
+        }
+        private void ЯэМико_Click(object sender, EventArgs e)
+        {
+            char_name.Text = ЯэМико.Text;
+        }
+        private void Тигнари_Click(object sender, EventArgs e)
+        {
+            char_name.Text = Тигнари.Text;
         }
     }
 }

@@ -12,9 +12,7 @@ namespace Руководство
         private void Персонажи(object sender, EventArgs e)
         {
             Персонажи newForm = new Персонажи();
-
             newForm.Show();
-
             this.Hide();
         }
         private void Калькулятор(object sender, EventArgs e)

@@ -10,10 +10,12 @@ namespace Руководство
     {
         private toArray toarray;
         Database database = new Database();
+        private CharacterRepository characterRepository;
         public choiceDay()
         {
             InitializeComponent();
             toarray = new toArray();
+            characterRepository = new CharacterRepository(database);
         }
         private void Назад_Click(object sender, EventArgs e)
         {
@@ -23,44 +25,33 @@ namespace Руководство
         }
         protected void selectDay(string nameDay)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string querystring = $"SELECT resources.name_resource, day_resources.name_resource FROM day_resources INNER JOIN resources ON day_resources.resources_id = resources.id WHERE day_resources.day = '{nameDay}'";
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+            DataTable dayTable = characterRepository.GetResourcesByDay(nameDay);
             List<string> res = new List<string>();
-            foreach (DataRow row in table.Rows)
+            foreach (DataRow row in dayTable.Rows)
             {
                 res.Add(row["name_resource"].ToString());
             }
             Ресурсы VInfo = new Ресурсы();
             this.Hide();
             string[] Images = toarray.InitializeArrayFromList(res);
-            string[] dtextNames = toarray.InitializeArrayFromDataTable(table, "name_resource1");
+            string[] dtextNames = toarray.InitializeArrayFromDataTable(dayTable, "name_resource1");
             VInfo.SetDay(nameDay, Images, dtextNames);
             VInfo.ShowDialog();
         }
         protected void selectVoskr(string nameDay)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable voskr_table = new DataTable();
-            string querystring2 = $"SELECT resources.name_resource, day_resources.name_resource FROM day_resources INNER JOIN resources ON day_resources.resources_id = resources.id WHERE day_resources.day = '{nameDay}'";
-            SqlCommand command2 = new SqlCommand(querystring2, database.getConnection());
-            adapter.SelectCommand = command2;
-            adapter.Fill(voskr_table);
+            DataTable voskrTable = characterRepository.GetResourcesBySunday(nameDay);
             List<string> v_res = new List<string>();
-            foreach (DataRow row in voskr_table.Rows)
+            foreach (DataRow row in voskrTable.Rows)
             {
                 v_res.Add(row["name_resource"].ToString());
             }
             Ресурсы VInfo = new Ресурсы();
             this.Hide();
             string[] Images = toarray.InitializeArrayFromList(v_res);
-            string[] dtextNames = toarray.InitializeArrayFromDataTable(voskr_table, "name_resource1");
+            string[] dtextNames = toarray.InitializeArrayFromDataTable(voskrTable, "name_resource1");
             VInfo.SetVoskr(nameDay, Images, dtextNames);
             VInfo.ShowDialog();
-            
         }
         private void Ponedelnik_Click(object sender, EventArgs e)
         {

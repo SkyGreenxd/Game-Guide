@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -21,7 +22,7 @@ namespace Руководство
         public void SetCharacterData(string[] charResult)
         {
             NameCh.Text = charResult[0];
-            NameCh.SelectionAlignment = HorizontalAlignment.Center;
+            NameCh.TextAlign = ContentAlignment.MiddleCenter;
 
             SetImage(char_image, charResult[1]);
             PictureBox[] abilImages = { alvlup1_image, alvlup2_image, alvlup3_image, alvlup4_image, alvlup5_image, alvlup6_image, alvlup7_image, clvlup4_image, clvlup5_image, clvlup6_image, clvlup7_image, clvlup8_image, clvlup9_image };

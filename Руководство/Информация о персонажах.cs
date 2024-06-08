@@ -106,5 +106,6 @@ namespace Руководство
                 SetImage(wImages[i], weaponImages[i]);
             }
         }
+
     }
 }

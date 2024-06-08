@@ -133,6 +133,7 @@ namespace Руководство
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a1_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a2_image)).BeginInit();
@@ -174,6 +175,7 @@ namespace Руководство
             ((System.ComponentModel.ISupportInitialize)(this.w2_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.w3_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.w4_image)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -189,9 +191,10 @@ namespace Руководство
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(298, 352);
+            this.pictureBox1.Size = new System.Drawing.Size(335, 417);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -199,7 +202,7 @@ namespace Руководство
             // 
             this.NameCh.AutoSize = true;
             this.NameCh.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameCh.Location = new System.Drawing.Point(167, 59);
+            this.NameCh.Location = new System.Drawing.Point(163, 1);
             this.NameCh.Name = "NameCh";
             this.NameCh.Size = new System.Drawing.Size(68, 23);
             this.NameCh.TabIndex = 5;
@@ -209,7 +212,7 @@ namespace Руководство
             // 
             this.Talant.AutoSize = true;
             this.Talant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Talant.Location = new System.Drawing.Point(18, 1279);
+            this.Talant.Location = new System.Drawing.Point(147, 1248);
             this.Talant.Name = "Talant";
             this.Talant.Size = new System.Drawing.Size(86, 24);
             this.Talant.TabIndex = 7;
@@ -217,7 +220,7 @@ namespace Руководство
             // 
             // a1_image
             // 
-            this.a1_image.Location = new System.Drawing.Point(22, 1327);
+            this.a1_image.Location = new System.Drawing.Point(7, 1289);
             this.a1_image.Name = "a1_image";
             this.a1_image.Size = new System.Drawing.Size(58, 58);
             this.a1_image.TabIndex = 8;
@@ -225,7 +228,7 @@ namespace Руководство
             // 
             // a2_image
             // 
-            this.a2_image.Location = new System.Drawing.Point(22, 1406);
+            this.a2_image.Location = new System.Drawing.Point(7, 1368);
             this.a2_image.Name = "a2_image";
             this.a2_image.Size = new System.Drawing.Size(58, 58);
             this.a2_image.TabIndex = 10;
@@ -233,7 +236,7 @@ namespace Руководство
             // 
             // a3_image
             // 
-            this.a3_image.Location = new System.Drawing.Point(22, 1483);
+            this.a3_image.Location = new System.Drawing.Point(7, 1445);
             this.a3_image.Name = "a3_image";
             this.a3_image.Size = new System.Drawing.Size(58, 58);
             this.a3_image.TabIndex = 12;
@@ -243,7 +246,7 @@ namespace Руководство
             // 
             this.a1_info.AutoSize = true;
             this.a1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.a1_info.Location = new System.Drawing.Point(89, 1327);
+            this.a1_info.Location = new System.Drawing.Point(74, 1289);
             this.a1_info.Name = "a1_info";
             this.a1_info.ReadOnly = true;
             this.a1_info.Size = new System.Drawing.Size(248, 58);
@@ -254,7 +257,7 @@ namespace Руководство
             // 
             this.a2_info.AutoSize = true;
             this.a2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.a2_info.Location = new System.Drawing.Point(89, 1406);
+            this.a2_info.Location = new System.Drawing.Point(74, 1368);
             this.a2_info.Name = "a2_info";
             this.a2_info.ReadOnly = true;
             this.a2_info.Size = new System.Drawing.Size(248, 58);
@@ -265,7 +268,7 @@ namespace Руководство
             // 
             this.a3_info.AutoSize = true;
             this.a3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.a3_info.Location = new System.Drawing.Point(89, 1483);
+            this.a3_info.Location = new System.Drawing.Point(74, 1445);
             this.a3_info.Name = "a3_info";
             this.a3_info.ReadOnly = true;
             this.a3_info.Size = new System.Drawing.Size(248, 58);
@@ -277,7 +280,7 @@ namespace Руководство
             this.InfoCh.AutoSize = true;
             this.InfoCh.BackColor = System.Drawing.SystemColors.Window;
             this.InfoCh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InfoCh.Location = new System.Drawing.Point(87, 499);
+            this.InfoCh.Location = new System.Drawing.Point(91, 506);
             this.InfoCh.Name = "InfoCh";
             this.InfoCh.ReadOnly = true;
             this.InfoCh.Size = new System.Drawing.Size(224, 85);
@@ -287,7 +290,7 @@ namespace Руководство
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 1467);
+            this.label1.Location = new System.Drawing.Point(4, 1429);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 19;
@@ -296,7 +299,7 @@ namespace Руководство
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 1390);
+            this.label2.Location = new System.Drawing.Point(4, 1352);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 20;
@@ -305,7 +308,7 @@ namespace Руководство
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 1311);
+            this.label3.Location = new System.Drawing.Point(4, 1273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 21;
@@ -315,7 +318,7 @@ namespace Руководство
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(15, 1747);
+            this.label4.Location = new System.Drawing.Point(3, 1703);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 24);
             this.label4.TabIndex = 22;
@@ -325,7 +328,7 @@ namespace Руководство
             // 
             this.p3_info.AutoSize = true;
             this.p3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p3_info.Location = new System.Drawing.Point(86, 1930);
+            this.p3_info.Location = new System.Drawing.Point(74, 1886);
             this.p3_info.Name = "p3_info";
             this.p3_info.ReadOnly = true;
             this.p3_info.Size = new System.Drawing.Size(248, 58);
@@ -336,7 +339,7 @@ namespace Руководство
             // 
             this.p2_info.AutoSize = true;
             this.p2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p2_info.Location = new System.Drawing.Point(86, 1853);
+            this.p2_info.Location = new System.Drawing.Point(74, 1809);
             this.p2_info.Name = "p2_info";
             this.p2_info.ReadOnly = true;
             this.p2_info.Size = new System.Drawing.Size(248, 58);
@@ -347,7 +350,7 @@ namespace Руководство
             // 
             this.p1_info.AutoSize = true;
             this.p1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p1_info.Location = new System.Drawing.Point(86, 1774);
+            this.p1_info.Location = new System.Drawing.Point(74, 1730);
             this.p1_info.Name = "p1_info";
             this.p1_info.ReadOnly = true;
             this.p1_info.Size = new System.Drawing.Size(248, 58);
@@ -356,7 +359,7 @@ namespace Руководство
             // 
             // p3_image
             // 
-            this.p3_image.Location = new System.Drawing.Point(19, 1930);
+            this.p3_image.Location = new System.Drawing.Point(7, 1886);
             this.p3_image.Name = "p3_image";
             this.p3_image.Size = new System.Drawing.Size(58, 58);
             this.p3_image.TabIndex = 25;
@@ -364,7 +367,7 @@ namespace Руководство
             // 
             // p2_image
             // 
-            this.p2_image.Location = new System.Drawing.Point(19, 1853);
+            this.p2_image.Location = new System.Drawing.Point(7, 1809);
             this.p2_image.Name = "p2_image";
             this.p2_image.Size = new System.Drawing.Size(58, 58);
             this.p2_image.TabIndex = 24;
@@ -372,7 +375,7 @@ namespace Руководство
             // 
             // p1_image
             // 
-            this.p1_image.Location = new System.Drawing.Point(19, 1774);
+            this.p1_image.Location = new System.Drawing.Point(7, 1730);
             this.p1_image.Name = "p1_image";
             this.p1_image.Size = new System.Drawing.Size(58, 58);
             this.p1_image.TabIndex = 23;
@@ -382,7 +385,7 @@ namespace Руководство
             // 
             this.c6_info.AutoSize = true;
             this.c6_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c6_info.Location = new System.Drawing.Point(86, 2350);
+            this.c6_info.Location = new System.Drawing.Point(74, 2306);
             this.c6_info.Name = "c6_info";
             this.c6_info.ReadOnly = true;
             this.c6_info.Size = new System.Drawing.Size(248, 58);
@@ -393,7 +396,7 @@ namespace Руководство
             // 
             this.c5_info.AutoSize = true;
             this.c5_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c5_info.Location = new System.Drawing.Point(86, 2286);
+            this.c5_info.Location = new System.Drawing.Point(74, 2242);
             this.c5_info.Name = "c5_info";
             this.c5_info.ReadOnly = true;
             this.c5_info.Size = new System.Drawing.Size(248, 58);
@@ -404,7 +407,7 @@ namespace Руководство
             // 
             this.c4_info.AutoSize = true;
             this.c4_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c4_info.Location = new System.Drawing.Point(86, 2222);
+            this.c4_info.Location = new System.Drawing.Point(74, 2178);
             this.c4_info.Name = "c4_info";
             this.c4_info.ReadOnly = true;
             this.c4_info.Size = new System.Drawing.Size(248, 58);
@@ -413,7 +416,7 @@ namespace Руководство
             // 
             // c6_image
             // 
-            this.c6_image.Location = new System.Drawing.Point(19, 2350);
+            this.c6_image.Location = new System.Drawing.Point(7, 2306);
             this.c6_image.Name = "c6_image";
             this.c6_image.Size = new System.Drawing.Size(58, 58);
             this.c6_image.TabIndex = 51;
@@ -421,7 +424,7 @@ namespace Руководство
             // 
             // c5_image
             // 
-            this.c5_image.Location = new System.Drawing.Point(19, 2286);
+            this.c5_image.Location = new System.Drawing.Point(7, 2242);
             this.c5_image.Name = "c5_image";
             this.c5_image.Size = new System.Drawing.Size(58, 58);
             this.c5_image.TabIndex = 50;
@@ -429,7 +432,7 @@ namespace Руководство
             // 
             // c4_image
             // 
-            this.c4_image.Location = new System.Drawing.Point(19, 2222);
+            this.c4_image.Location = new System.Drawing.Point(7, 2178);
             this.c4_image.Name = "c4_image";
             this.c4_image.Size = new System.Drawing.Size(58, 58);
             this.c4_image.TabIndex = 49;
@@ -439,7 +442,7 @@ namespace Руководство
             // 
             this.c3_info.AutoSize = true;
             this.c3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c3_info.Location = new System.Drawing.Point(86, 2158);
+            this.c3_info.Location = new System.Drawing.Point(74, 2114);
             this.c3_info.Name = "c3_info";
             this.c3_info.ReadOnly = true;
             this.c3_info.Size = new System.Drawing.Size(248, 58);
@@ -450,7 +453,7 @@ namespace Руководство
             // 
             this.c2_info.AutoSize = true;
             this.c2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c2_info.Location = new System.Drawing.Point(86, 2094);
+            this.c2_info.Location = new System.Drawing.Point(74, 2050);
             this.c2_info.Name = "c2_info";
             this.c2_info.ReadOnly = true;
             this.c2_info.Size = new System.Drawing.Size(248, 58);
@@ -461,7 +464,7 @@ namespace Руководство
             // 
             this.c1_info.AutoSize = true;
             this.c1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.c1_info.Location = new System.Drawing.Point(86, 2030);
+            this.c1_info.Location = new System.Drawing.Point(74, 1986);
             this.c1_info.Name = "c1_info";
             this.c1_info.ReadOnly = true;
             this.c1_info.Size = new System.Drawing.Size(248, 58);
@@ -470,7 +473,7 @@ namespace Руководство
             // 
             // c3_image
             // 
-            this.c3_image.Location = new System.Drawing.Point(19, 2158);
+            this.c3_image.Location = new System.Drawing.Point(7, 2114);
             this.c3_image.Name = "c3_image";
             this.c3_image.Size = new System.Drawing.Size(58, 58);
             this.c3_image.TabIndex = 45;
@@ -478,7 +481,7 @@ namespace Руководство
             // 
             // c2_image
             // 
-            this.c2_image.Location = new System.Drawing.Point(19, 2094);
+            this.c2_image.Location = new System.Drawing.Point(7, 2050);
             this.c2_image.Name = "c2_image";
             this.c2_image.Size = new System.Drawing.Size(58, 58);
             this.c2_image.TabIndex = 44;
@@ -486,7 +489,7 @@ namespace Руководство
             // 
             // c1_image
             // 
-            this.c1_image.Location = new System.Drawing.Point(19, 2030);
+            this.c1_image.Location = new System.Drawing.Point(7, 1986);
             this.c1_image.Name = "c1_image";
             this.c1_image.Size = new System.Drawing.Size(58, 58);
             this.c1_image.TabIndex = 43;
@@ -496,7 +499,7 @@ namespace Руководство
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(16, 1991);
+            this.label5.Location = new System.Drawing.Point(4, 1947);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 24);
             this.label5.TabIndex = 42;
@@ -506,7 +509,7 @@ namespace Руководство
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(19, 1561);
+            this.label6.Location = new System.Drawing.Point(3, 1506);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(376, 20);
             this.label6.TabIndex = 55;
@@ -516,7 +519,7 @@ namespace Руководство
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 1584);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 1529);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 58);
             this.pictureBox2.TabIndex = 56;
@@ -526,7 +529,7 @@ namespace Руководство
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(100, 1584);
+            this.pictureBox3.Location = new System.Drawing.Point(84, 1529);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(58, 58);
             this.pictureBox3.TabIndex = 57;
@@ -535,7 +538,7 @@ namespace Руководство
             // alvlup2_image
             // 
             this.alvlup2_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup2_image.Location = new System.Drawing.Point(252, 1584);
+            this.alvlup2_image.Location = new System.Drawing.Point(236, 1529);
             this.alvlup2_image.Name = "alvlup2_image";
             this.alvlup2_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup2_image.TabIndex = 59;
@@ -544,7 +547,7 @@ namespace Руководство
             // alvlup1_image
             // 
             this.alvlup1_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup1_image.Location = new System.Drawing.Point(175, 1584);
+            this.alvlup1_image.Location = new System.Drawing.Point(159, 1529);
             this.alvlup1_image.Name = "alvlup1_image";
             this.alvlup1_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup1_image.TabIndex = 58;
@@ -553,7 +556,7 @@ namespace Руководство
             // alvlup3_image
             // 
             this.alvlup3_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup3_image.Location = new System.Drawing.Point(327, 1584);
+            this.alvlup3_image.Location = new System.Drawing.Point(311, 1529);
             this.alvlup3_image.Name = "alvlup3_image";
             this.alvlup3_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup3_image.TabIndex = 60;
@@ -561,7 +564,7 @@ namespace Руководство
             // 
             // alvlup7_image
             // 
-            this.alvlup7_image.Location = new System.Drawing.Point(251, 1669);
+            this.alvlup7_image.Location = new System.Drawing.Point(235, 1614);
             this.alvlup7_image.Name = "alvlup7_image";
             this.alvlup7_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup7_image.TabIndex = 64;
@@ -570,7 +573,7 @@ namespace Руководство
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 1645);
+            this.label7.Location = new System.Drawing.Point(11, 1590);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 65;
@@ -579,7 +582,7 @@ namespace Руководство
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(123, 1645);
+            this.label8.Location = new System.Drawing.Point(107, 1590);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 13);
             this.label8.TabIndex = 66;
@@ -588,7 +591,7 @@ namespace Руководство
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(197, 1645);
+            this.label9.Location = new System.Drawing.Point(181, 1590);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 13);
             this.label9.TabIndex = 67;
@@ -597,7 +600,7 @@ namespace Руководство
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(271, 1645);
+            this.label10.Location = new System.Drawing.Point(255, 1590);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 68;
@@ -606,7 +609,7 @@ namespace Руководство
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(347, 1645);
+            this.label11.Location = new System.Drawing.Point(332, 1590);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
             this.label11.TabIndex = 69;
@@ -615,7 +618,7 @@ namespace Руководство
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(198, 1734);
+            this.label12.Location = new System.Drawing.Point(182, 1679);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(19, 13);
             this.label12.TabIndex = 75;
@@ -624,7 +627,7 @@ namespace Руководство
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(122, 1734);
+            this.label13.Location = new System.Drawing.Point(106, 1679);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(19, 13);
             this.label13.TabIndex = 74;
@@ -633,7 +636,7 @@ namespace Руководство
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(48, 1734);
+            this.label14.Location = new System.Drawing.Point(32, 1679);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(13, 13);
             this.label14.TabIndex = 73;
@@ -642,7 +645,7 @@ namespace Руководство
             // alvlup6_image
             // 
             this.alvlup6_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup6_image.Location = new System.Drawing.Point(175, 1669);
+            this.alvlup6_image.Location = new System.Drawing.Point(159, 1614);
             this.alvlup6_image.Name = "alvlup6_image";
             this.alvlup6_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup6_image.TabIndex = 72;
@@ -651,7 +654,7 @@ namespace Руководство
             // alvlup5_image
             // 
             this.alvlup5_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup5_image.Location = new System.Drawing.Point(100, 1669);
+            this.alvlup5_image.Location = new System.Drawing.Point(84, 1614);
             this.alvlup5_image.Name = "alvlup5_image";
             this.alvlup5_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup5_image.TabIndex = 71;
@@ -660,7 +663,7 @@ namespace Руководство
             // alvlup4_image
             // 
             this.alvlup4_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.alvlup4_image.Location = new System.Drawing.Point(23, 1669);
+            this.alvlup4_image.Location = new System.Drawing.Point(7, 1614);
             this.alvlup4_image.Name = "alvlup4_image";
             this.alvlup4_image.Size = new System.Drawing.Size(58, 58);
             this.alvlup4_image.TabIndex = 70;
@@ -669,7 +672,7 @@ namespace Руководство
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(274, 1734);
+            this.label15.Location = new System.Drawing.Point(258, 1679);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(13, 13);
             this.label15.TabIndex = 76;
@@ -679,7 +682,7 @@ namespace Руководство
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(17, 1075);
+            this.label16.Location = new System.Drawing.Point(3, 1043);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(353, 20);
             this.label16.TabIndex = 77;
@@ -689,7 +692,7 @@ namespace Руководство
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(18, 1095);
+            this.label17.Location = new System.Drawing.Point(3, 1062);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(104, 20);
             this.label17.TabIndex = 78;
@@ -698,7 +701,7 @@ namespace Руководство
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(349, 1186);
+            this.label18.Location = new System.Drawing.Point(334, 1146);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(13, 13);
             this.label18.TabIndex = 88;
@@ -707,7 +710,7 @@ namespace Руководство
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(270, 1186);
+            this.label19.Location = new System.Drawing.Point(255, 1146);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(19, 13);
             this.label19.TabIndex = 87;
@@ -716,7 +719,7 @@ namespace Руководство
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(193, 1186);
+            this.label20.Location = new System.Drawing.Point(178, 1146);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(19, 13);
             this.label20.TabIndex = 86;
@@ -725,7 +728,7 @@ namespace Руководство
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(115, 1186);
+            this.label21.Location = new System.Drawing.Point(100, 1146);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(19, 13);
             this.label21.TabIndex = 85;
@@ -734,7 +737,7 @@ namespace Руководство
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(29, 1186);
+            this.label22.Location = new System.Drawing.Point(14, 1146);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(43, 13);
             this.label22.TabIndex = 84;
@@ -743,7 +746,7 @@ namespace Руководство
             // clvlup4_image
             // 
             this.clvlup4_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup4_image.Location = new System.Drawing.Point(326, 1125);
+            this.clvlup4_image.Location = new System.Drawing.Point(311, 1085);
             this.clvlup4_image.Name = "clvlup4_image";
             this.clvlup4_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup4_image.TabIndex = 83;
@@ -752,7 +755,7 @@ namespace Руководство
             // clvlup3_image
             // 
             this.clvlup3_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup3_image.Location = new System.Drawing.Point(251, 1125);
+            this.clvlup3_image.Location = new System.Drawing.Point(236, 1085);
             this.clvlup3_image.Name = "clvlup3_image";
             this.clvlup3_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup3_image.TabIndex = 82;
@@ -761,7 +764,7 @@ namespace Руководство
             // clvlup2_image
             // 
             this.clvlup2_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup2_image.Location = new System.Drawing.Point(174, 1125);
+            this.clvlup2_image.Location = new System.Drawing.Point(159, 1085);
             this.clvlup2_image.Name = "clvlup2_image";
             this.clvlup2_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup2_image.TabIndex = 81;
@@ -771,7 +774,7 @@ namespace Руководство
             // 
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox8.Location = new System.Drawing.Point(22, 1125);
+            this.pictureBox8.Location = new System.Drawing.Point(7, 1085);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(58, 58);
             this.pictureBox8.TabIndex = 79;
@@ -780,7 +783,7 @@ namespace Руководство
             // clvlup1_image
             // 
             this.clvlup1_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup1_image.Location = new System.Drawing.Point(97, 1125);
+            this.clvlup1_image.Location = new System.Drawing.Point(82, 1085);
             this.clvlup1_image.Name = "clvlup1_image";
             this.clvlup1_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup1_image.TabIndex = 89;
@@ -789,7 +792,7 @@ namespace Руководство
             // clvlup6_image
             // 
             this.clvlup6_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup6_image.Location = new System.Drawing.Point(97, 1202);
+            this.clvlup6_image.Location = new System.Drawing.Point(82, 1162);
             this.clvlup6_image.Name = "clvlup6_image";
             this.clvlup6_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup6_image.TabIndex = 99;
@@ -798,7 +801,7 @@ namespace Руководство
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(343, 1263);
+            this.label23.Location = new System.Drawing.Point(328, 1223);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(25, 13);
             this.label23.TabIndex = 98;
@@ -807,7 +810,7 @@ namespace Руководство
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(270, 1263);
+            this.label24.Location = new System.Drawing.Point(255, 1223);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(19, 13);
             this.label24.TabIndex = 97;
@@ -816,7 +819,7 @@ namespace Руководство
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(196, 1263);
+            this.label25.Location = new System.Drawing.Point(181, 1223);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(13, 13);
             this.label25.TabIndex = 96;
@@ -825,7 +828,7 @@ namespace Руководство
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(119, 1263);
+            this.label26.Location = new System.Drawing.Point(104, 1223);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(13, 13);
             this.label26.TabIndex = 95;
@@ -834,7 +837,7 @@ namespace Руководство
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(41, 1263);
+            this.label27.Location = new System.Drawing.Point(26, 1223);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(13, 13);
             this.label27.TabIndex = 94;
@@ -843,7 +846,7 @@ namespace Руководство
             // clvlup9_image
             // 
             this.clvlup9_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup9_image.Location = new System.Drawing.Point(326, 1202);
+            this.clvlup9_image.Location = new System.Drawing.Point(311, 1162);
             this.clvlup9_image.Name = "clvlup9_image";
             this.clvlup9_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup9_image.TabIndex = 93;
@@ -852,7 +855,7 @@ namespace Руководство
             // clvlup8_image
             // 
             this.clvlup8_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup8_image.Location = new System.Drawing.Point(251, 1202);
+            this.clvlup8_image.Location = new System.Drawing.Point(236, 1162);
             this.clvlup8_image.Name = "clvlup8_image";
             this.clvlup8_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup8_image.TabIndex = 92;
@@ -861,7 +864,7 @@ namespace Руководство
             // clvlup7_image
             // 
             this.clvlup7_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup7_image.Location = new System.Drawing.Point(174, 1202);
+            this.clvlup7_image.Location = new System.Drawing.Point(159, 1162);
             this.clvlup7_image.Name = "clvlup7_image";
             this.clvlup7_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup7_image.TabIndex = 91;
@@ -870,7 +873,7 @@ namespace Руководство
             // clvlup5_image
             // 
             this.clvlup5_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.clvlup5_image.Location = new System.Drawing.Point(22, 1202);
+            this.clvlup5_image.Location = new System.Drawing.Point(7, 1162);
             this.clvlup5_image.Name = "clvlup5_image";
             this.clvlup5_image.Size = new System.Drawing.Size(58, 58);
             this.clvlup5_image.TabIndex = 90;
@@ -879,7 +882,7 @@ namespace Руководство
             // el_image
             // 
             this.el_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.el_image.Location = new System.Drawing.Point(139, 443);
+            this.el_image.Location = new System.Drawing.Point(143, 450);
             this.el_image.Name = "el_image";
             this.el_image.Size = new System.Drawing.Size(50, 50);
             this.el_image.TabIndex = 100;
@@ -889,7 +892,7 @@ namespace Руководство
             // 
             this.el.AutoSize = true;
             this.el.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.el.Location = new System.Drawing.Point(194, 459);
+            this.el.Location = new System.Drawing.Point(198, 466);
             this.el.Name = "el";
             this.el.Size = new System.Drawing.Size(78, 20);
             this.el.TabIndex = 101;
@@ -899,7 +902,7 @@ namespace Руководство
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.Location = new System.Drawing.Point(154, 623);
+            this.label28.Location = new System.Drawing.Point(145, 627);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(108, 20);
             this.label28.TabIndex = 102;
@@ -909,7 +912,7 @@ namespace Руководство
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(168, 881);
+            this.label29.Location = new System.Drawing.Point(163, 874);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(72, 20);
             this.label29.TabIndex = 103;
@@ -919,7 +922,7 @@ namespace Руководство
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(133, 739);
+            this.label30.Location = new System.Drawing.Point(124, 743);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(159, 20);
             this.label30.TabIndex = 104;
@@ -928,7 +931,7 @@ namespace Руководство
             // art_image
             // 
             this.art_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.art_image.Location = new System.Drawing.Point(171, 646);
+            this.art_image.Location = new System.Drawing.Point(162, 650);
             this.art_image.Name = "art_image";
             this.art_image.Size = new System.Drawing.Size(70, 70);
             this.art_image.TabIndex = 105;
@@ -938,7 +941,7 @@ namespace Руководство
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(75, 762);
+            this.pictureBox5.Location = new System.Drawing.Point(66, 766);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(70, 70);
             this.pictureBox5.TabIndex = 106;
@@ -948,7 +951,7 @@ namespace Руководство
             // 
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(172, 762);
+            this.pictureBox6.Location = new System.Drawing.Point(163, 766);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 70);
             this.pictureBox6.TabIndex = 107;
@@ -958,7 +961,7 @@ namespace Руководство
             // 
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(269, 762);
+            this.pictureBox7.Location = new System.Drawing.Point(260, 766);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(70, 70);
             this.pictureBox7.TabIndex = 108;
@@ -969,7 +972,7 @@ namespace Руководство
             this.art1_info.AutoSize = true;
             this.art1_info.BackColor = System.Drawing.SystemColors.Window;
             this.art1_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.art1_info.Location = new System.Drawing.Point(75, 838);
+            this.art1_info.Location = new System.Drawing.Point(66, 842);
             this.art1_info.Name = "art1_info";
             this.art1_info.ReadOnly = true;
             this.art1_info.Size = new System.Drawing.Size(70, 26);
@@ -981,7 +984,7 @@ namespace Руководство
             this.art2_info.AutoSize = true;
             this.art2_info.BackColor = System.Drawing.SystemColors.Window;
             this.art2_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.art2_info.Location = new System.Drawing.Point(172, 838);
+            this.art2_info.Location = new System.Drawing.Point(163, 842);
             this.art2_info.Name = "art2_info";
             this.art2_info.ReadOnly = true;
             this.art2_info.Size = new System.Drawing.Size(70, 26);
@@ -993,7 +996,7 @@ namespace Руководство
             this.art3_info.AutoSize = true;
             this.art3_info.BackColor = System.Drawing.SystemColors.Window;
             this.art3_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.art3_info.Location = new System.Drawing.Point(269, 838);
+            this.art3_info.Location = new System.Drawing.Point(260, 842);
             this.art3_info.Name = "art3_info";
             this.art3_info.ReadOnly = true;
             this.art3_info.Size = new System.Drawing.Size(70, 26);
@@ -1004,7 +1007,7 @@ namespace Руководство
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label34.Location = new System.Drawing.Point(83, 590);
+            this.label34.Location = new System.Drawing.Point(74, 594);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(241, 24);
             this.label34.TabIndex = 116;
@@ -1013,7 +1016,7 @@ namespace Руководство
             // w1_image
             // 
             this.w1_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.w1_image.Location = new System.Drawing.Point(5, 942);
+            this.w1_image.Location = new System.Drawing.Point(7, 920);
             this.w1_image.Name = "w1_image";
             this.w1_image.Size = new System.Drawing.Size(75, 75);
             this.w1_image.TabIndex = 117;
@@ -1022,7 +1025,7 @@ namespace Руководство
             // w2_image
             // 
             this.w2_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.w2_image.Location = new System.Drawing.Point(111, 942);
+            this.w2_image.Location = new System.Drawing.Point(113, 920);
             this.w2_image.Name = "w2_image";
             this.w2_image.Size = new System.Drawing.Size(75, 75);
             this.w2_image.TabIndex = 118;
@@ -1031,7 +1034,7 @@ namespace Руководство
             // w3_image
             // 
             this.w3_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.w3_image.Location = new System.Drawing.Point(212, 942);
+            this.w3_image.Location = new System.Drawing.Point(214, 920);
             this.w3_image.Name = "w3_image";
             this.w3_image.Size = new System.Drawing.Size(75, 75);
             this.w3_image.TabIndex = 119;
@@ -1040,7 +1043,7 @@ namespace Руководство
             // w4_image
             // 
             this.w4_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.w4_image.Location = new System.Drawing.Point(313, 942);
+            this.w4_image.Location = new System.Drawing.Point(315, 920);
             this.w4_image.Name = "w4_image";
             this.w4_image.Size = new System.Drawing.Size(75, 75);
             this.w4_image.TabIndex = 120;
@@ -1051,7 +1054,7 @@ namespace Руководство
             this.w1_name.AutoSize = true;
             this.w1_name.BackColor = System.Drawing.SystemColors.Window;
             this.w1_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.w1_name.Location = new System.Drawing.Point(5, 1023);
+            this.w1_name.Location = new System.Drawing.Point(7, 1001);
             this.w1_name.Name = "w1_name";
             this.w1_name.ReadOnly = true;
             this.w1_name.Size = new System.Drawing.Size(75, 26);
@@ -1063,7 +1066,7 @@ namespace Руководство
             this.w2_name.AutoSize = true;
             this.w2_name.BackColor = System.Drawing.SystemColors.Window;
             this.w2_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.w2_name.Location = new System.Drawing.Point(111, 1023);
+            this.w2_name.Location = new System.Drawing.Point(113, 1001);
             this.w2_name.Name = "w2_name";
             this.w2_name.ReadOnly = true;
             this.w2_name.Size = new System.Drawing.Size(75, 26);
@@ -1075,7 +1078,7 @@ namespace Руководство
             this.w3_name.AutoSize = true;
             this.w3_name.BackColor = System.Drawing.SystemColors.Window;
             this.w3_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.w3_name.Location = new System.Drawing.Point(211, 1023);
+            this.w3_name.Location = new System.Drawing.Point(213, 1001);
             this.w3_name.Name = "w3_name";
             this.w3_name.ReadOnly = true;
             this.w3_name.Size = new System.Drawing.Size(76, 26);
@@ -1087,7 +1090,7 @@ namespace Руководство
             this.w4_name.AutoSize = true;
             this.w4_name.BackColor = System.Drawing.SystemColors.Window;
             this.w4_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.w4_name.Location = new System.Drawing.Point(313, 1023);
+            this.w4_name.Location = new System.Drawing.Point(315, 1001);
             this.w4_name.Name = "w4_name";
             this.w4_name.ReadOnly = true;
             this.w4_name.Size = new System.Drawing.Size(75, 26);
@@ -1098,7 +1101,7 @@ namespace Руководство
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(12, 920);
+            this.label31.Location = new System.Drawing.Point(14, 898);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(57, 16);
             this.label31.TabIndex = 125;
@@ -1107,7 +1110,7 @@ namespace Руководство
             // arti
             // 
             this.arti.AutoSize = true;
-            this.arti.Location = new System.Drawing.Point(155, 719);
+            this.arti.Location = new System.Drawing.Point(146, 723);
             this.arti.Name = "arti";
             this.arti.Size = new System.Drawing.Size(114, 13);
             this.arti.TabIndex = 126;
@@ -1117,7 +1120,7 @@ namespace Руководство
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label32.Location = new System.Drawing.Point(144, 920);
+            this.label32.Location = new System.Drawing.Point(146, 898);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(118, 16);
             this.label32.TabIndex = 127;
@@ -1127,7 +1130,7 @@ namespace Руководство
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label33.Location = new System.Drawing.Point(332, 920);
+            this.label33.Location = new System.Drawing.Point(334, 898);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(35, 16);
             this.label33.TabIndex = 128;
@@ -1137,11 +1140,119 @@ namespace Руководство
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label35.Location = new System.Drawing.Point(225, 646);
+            this.label35.Location = new System.Drawing.Point(216, 650);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(15, 15);
             this.label35.TabIndex = 129;
             this.label35.Text = "4";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.c6_info);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.c5_info);
+            this.panel1.Controls.Add(this.clvlup6_image);
+            this.panel1.Controls.Add(this.c4_info);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.c6_image);
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.c5_image);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.c4_image);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.c3_info);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.c2_info);
+            this.panel1.Controls.Add(this.NameCh);
+            this.panel1.Controls.Add(this.c1_info);
+            this.panel1.Controls.Add(this.alvlup6_image);
+            this.panel1.Controls.Add(this.c3_image);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.c2_image);
+            this.panel1.Controls.Add(this.alvlup5_image);
+            this.panel1.Controls.Add(this.c1_image);
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.alvlup4_image);
+            this.panel1.Controls.Add(this.p3_info);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.p2_info);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.p1_info);
+            this.panel1.Controls.Add(this.InfoCh);
+            this.panel1.Controls.Add(this.p3_image);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.p2_image);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.p1_image);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.el_image);
+            this.panel1.Controls.Add(this.alvlup7_image);
+            this.panel1.Controls.Add(this.clvlup9_image);
+            this.panel1.Controls.Add(this.alvlup3_image);
+            this.panel1.Controls.Add(this.arti);
+            this.panel1.Controls.Add(this.alvlup2_image);
+            this.panel1.Controls.Add(this.clvlup8_image);
+            this.panel1.Controls.Add(this.alvlup1_image);
+            this.panel1.Controls.Add(this.el);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.clvlup7_image);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.clvlup5_image);
+            this.panel1.Controls.Add(this.label34);
+            this.panel1.Controls.Add(this.clvlup1_image);
+            this.panel1.Controls.Add(this.w4_name);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.w3_name);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.w2_name);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.clvlup4_image);
+            this.panel1.Controls.Add(this.w1_name);
+            this.panel1.Controls.Add(this.clvlup3_image);
+            this.panel1.Controls.Add(this.art_image);
+            this.panel1.Controls.Add(this.clvlup2_image);
+            this.panel1.Controls.Add(this.w4_image);
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.w3_image);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.w2_image);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.w1_image);
+            this.panel1.Controls.Add(this.art1_info);
+            this.panel1.Controls.Add(this.art2_info);
+            this.panel1.Controls.Add(this.art3_info);
+            this.panel1.Controls.Add(this.Talant);
+            this.panel1.Controls.Add(this.a1_image);
+            this.panel1.Controls.Add(this.a2_image);
+            this.panel1.Controls.Add(this.a3_image);
+            this.panel1.Controls.Add(this.a1_info);
+            this.panel1.Controls.Add(this.a2_info);
+            this.panel1.Controls.Add(this.a3_info);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(12, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(414, 543);
+            this.panel1.TabIndex = 130;
             // 
             // Информация_о_персонажах
             // 
@@ -1149,107 +1260,8 @@ namespace Руководство
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(414, 700);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.arti);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.w4_name);
-            this.Controls.Add(this.w3_name);
-            this.Controls.Add(this.w2_name);
-            this.Controls.Add(this.w1_name);
-            this.Controls.Add(this.w4_image);
-            this.Controls.Add(this.w3_image);
-            this.Controls.Add(this.w2_image);
-            this.Controls.Add(this.w1_image);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.art3_info);
-            this.Controls.Add(this.art2_info);
-            this.Controls.Add(this.art1_info);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.art_image);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.el);
-            this.Controls.Add(this.el_image);
-            this.Controls.Add(this.clvlup6_image);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.clvlup9_image);
-            this.Controls.Add(this.clvlup8_image);
-            this.Controls.Add(this.clvlup7_image);
-            this.Controls.Add(this.clvlup5_image);
-            this.Controls.Add(this.clvlup1_image);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.clvlup4_image);
-            this.Controls.Add(this.clvlup3_image);
-            this.Controls.Add(this.clvlup2_image);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.alvlup6_image);
-            this.Controls.Add(this.alvlup5_image);
-            this.Controls.Add(this.alvlup4_image);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.alvlup7_image);
-            this.Controls.Add(this.alvlup3_image);
-            this.Controls.Add(this.alvlup2_image);
-            this.Controls.Add(this.alvlup1_image);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.c6_info);
-            this.Controls.Add(this.c5_info);
-            this.Controls.Add(this.c4_info);
-            this.Controls.Add(this.c6_image);
-            this.Controls.Add(this.c5_image);
-            this.Controls.Add(this.c4_image);
-            this.Controls.Add(this.c3_info);
-            this.Controls.Add(this.c2_info);
-            this.Controls.Add(this.c1_info);
-            this.Controls.Add(this.c3_image);
-            this.Controls.Add(this.c2_image);
-            this.Controls.Add(this.c1_image);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.p3_info);
-            this.Controls.Add(this.p2_info);
-            this.Controls.Add(this.p1_info);
-            this.Controls.Add(this.p3_image);
-            this.Controls.Add(this.p2_image);
-            this.Controls.Add(this.p1_image);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.InfoCh);
-            this.Controls.Add(this.a3_info);
-            this.Controls.Add(this.a2_info);
-            this.Controls.Add(this.a1_info);
-            this.Controls.Add(this.a3_image);
-            this.Controls.Add(this.a2_image);
-            this.Controls.Add(this.a1_image);
-            this.Controls.Add(this.Talant);
-            this.Controls.Add(this.NameCh);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(438, 614);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -1298,8 +1310,9 @@ namespace Руководство
             ((System.ComponentModel.ISupportInitialize)(this.w2_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.w3_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.w4_image)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1406,5 +1419,6 @@ namespace Руководство
         private Label label32;
         private Label label33;
         private Label label35;
+        private Panel panel1;
     }
 }
