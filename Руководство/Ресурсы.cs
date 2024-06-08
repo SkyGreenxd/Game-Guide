@@ -5,6 +5,7 @@ namespace Руководство
 {
     public partial class Ресурсы : Form
     {
+        private imageMove imagemove;
         public Ресурсы()
         {
             InitializeComponent();
@@ -104,7 +105,7 @@ namespace Руководство
         private void Назад_Click(object sender, EventArgs e)
         {
             choiceDay oldForm = new choiceDay();
-            this.Hide();
+            Hide();
             oldForm.ShowDialog();
         }
     }

@@ -29,7 +29,7 @@ namespace Руководство
                 res.Add(row["name_resource"].ToString());
             }
             Ресурсы VInfo = new Ресурсы();
-            this.Hide();
+            Hide();
             string[] Images = characterRepository.InitializeArrayFromList(res);
             string[] dtextNames = characterRepository.InitializeArrayFromDataTable(dayTable, "name_resource1");
             VInfo.SetDay(nameDay, Images, dtextNames);
@@ -44,7 +44,7 @@ namespace Руководство
                 v_res.Add(row["name_resource"].ToString());
             }
             Ресурсы VInfo = new Ресурсы();
-            this.Hide();
+            Hide();
             string[] Images = characterRepository.InitializeArrayFromList(v_res);
             string[] dtextNames = characterRepository.InitializeArrayFromDataTable(voskrTable, "name_resource1");
             VInfo.SetVoskr(nameDay, Images, dtextNames);
