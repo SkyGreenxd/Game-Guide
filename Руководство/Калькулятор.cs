@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Руководство
@@ -37,56 +36,32 @@ namespace Руководство
         }
         private int[] selectLVL(int lvl1, int lvl2)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string querystring;
+            DataTable lvlTable = characterRepository.GetLevelData(lvl1, lvl2);
+
             if (lvl1 != lvl2)
             {
-                querystring = $"select * from lvl_db where lvl = '{lvl1}' or lvl = '{lvl2}'";
+                return new int[] { Convert.ToInt32(lvlTable.Rows[0]["Total_EXP"]), Convert.ToInt32(lvlTable.Rows[1]["Total_EXP"]), Convert.ToInt32(lvlTable.Rows[0]["mora"]), Convert.ToInt32(lvlTable.Rows[1]["mora"]) };
             }
             else
             {
-                querystring = $"select * from lvl_db where lvl = '{lvl1}'";
-            }
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            if (lvl1 != lvl2)
-            {
-                return new int[] { Convert.ToInt32(table.Rows[0]["Total_EXP"]), Convert.ToInt32(table.Rows[1]["Total_EXP"]), Convert.ToInt32(table.Rows[0]["mora"]), Convert.ToInt32(table.Rows[1]["mora"]) };
-            }
-            else
-            {
-                return new int[] { Convert.ToInt32(table.Rows[0]["Total_EXP"]), Convert.ToInt32(table.Rows[0]["Total_EXP"]), 0, 0 };
+                return new int[] { Convert.ToInt32(lvlTable.Rows[0]["Total_EXP"]), Convert.ToInt32(lvlTable.Rows[0]["Total_EXP"]), 0, 0 };
             }
         }
         private int[] selectTalent_LVL(int tal1, int tal2)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string querystring;
+            DataTable talantLvlTable = characterRepository.GetTalentLevelData(tal1, tal2);
+
             if (tal1 != tal2)
             {
-                querystring = $"SELECT SUM(tal_book1) AS total_tal_book1, SUM(tal_book2) AS total_tal_book2, SUM(tal_book3) AS total_tal_book3, SUM(tal_res1) AS total_tal_res1, SUM(tal_res2) AS total_tal_res2, SUM(tal_res3) AS total_tal_res3, SUM(weekly_boss) AS total_weekly_boss, SUM(mora) AS total_mora, SUM(crown) AS total_crown FROM tal_lvl WHERE lvl > '{tal1}' AND lvl <= '{tal2}'";
-            }
-            else
-            {
-                querystring = $"SELECT tal_book1, tal_book2, tal_book3, tal_res1, tal_res2, tal_res3, weekly_boss, mora, crown FROM tal_lvl WHERE lvl = '{tal1}'";
-            }
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            if (tal1 != tal2)
-            {
-                int total_tal_book1 = Convert.ToInt32(table.Rows[0]["total_tal_book1"]);
-                int total_tal_book2 = Convert.ToInt32(table.Rows[0]["total_tal_book2"]);
-                int total_tal_book3 = Convert.ToInt32(table.Rows[0]["total_tal_book3"]);
-                int total_tal_res1 = Convert.ToInt32(table.Rows[0]["total_tal_res1"]);
-                int total_tal_res2 = Convert.ToInt32(table.Rows[0]["total_tal_res2"]);
-                int total_tal_res3 = Convert.ToInt32(table.Rows[0]["total_tal_res3"]);
-                int total_weekly_boss = Convert.ToInt32(table.Rows[0]["total_weekly_boss"]);
-                int total_mora = Convert.ToInt32(table.Rows[0]["total_mora"]);
-                int total_crown = Convert.ToInt32(table.Rows[0]["total_crown"]);
+                int total_tal_book1 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_book1"]);
+                int total_tal_book2 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_book2"]);
+                int total_tal_book3 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_book3"]);
+                int total_tal_res1 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_res1"]);
+                int total_tal_res2 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_res2"]);
+                int total_tal_res3 = Convert.ToInt32(talantLvlTable.Rows[0]["total_tal_res3"]);
+                int total_weekly_boss = Convert.ToInt32(talantLvlTable.Rows[0]["total_weekly_boss"]);
+                int total_mora = Convert.ToInt32(talantLvlTable.Rows[0]["total_mora"]);
+                int total_crown = Convert.ToInt32(talantLvlTable.Rows[0]["total_crown"]);
                 return new int[] { total_tal_book1, total_tal_book2, total_tal_book3, total_tal_res1, total_tal_res2, total_tal_res3, total_weekly_boss, total_mora, total_crown };
             }
             else
@@ -96,29 +71,17 @@ namespace Руководство
         }
         private int[] selectEvolution(int evol1, int evol2)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string querystring;
+            DataTable evolTable = characterRepository.GetEvolutionData(evol1, evol2);
+            
             if (evol1 != evol2)
             {
-                querystring = $"SELECT SUM(material1) AS total_material1, SUM(material2) AS total_material2, SUM(material3) AS total_material3, SUM(material4) AS total_material4, SUM(boss_material) AS total_boss_material, SUM(local_specialty) AS total_local_specialty, SUM(mora) AS total_mora FROM evolution_phase_db WHERE lvl > '{evol1}' AND lvl <= '{evol2}'";
-            }
-            else
-            {
-                querystring = $"SELECT material1, material2, material3, material4, boss_material, local_specialty, mora FROM evolution_phase_db WHERE lvl = '{evol1}'";
-            }
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            if (evol1 != evol2)
-            {
-                int total_material1 = Convert.ToInt32(table.Rows[0]["total_material1"]);
-                int total_material2 = Convert.ToInt32(table.Rows[0]["total_material2"]);
-                int total_material3 = Convert.ToInt32(table.Rows[0]["total_material3"]);
-                int total_material4 = Convert.ToInt32(table.Rows[0]["total_material4"]);
-                int total_boss_material = Convert.ToInt32(table.Rows[0]["total_boss_material"]);
-                int total_local_specialty = Convert.ToInt32(table.Rows[0]["total_local_specialty"]);
-                int total_mora = Convert.ToInt32(table.Rows[0]["total_mora"]);
+                int total_material1 = Convert.ToInt32(evolTable.Rows[0]["total_material1"]);
+                int total_material2 = Convert.ToInt32(evolTable.Rows[0]["total_material2"]);
+                int total_material3 = Convert.ToInt32(evolTable.Rows[0]["total_material3"]);
+                int total_material4 = Convert.ToInt32(evolTable.Rows[0]["total_material4"]);
+                int total_boss_material = Convert.ToInt32(evolTable.Rows[0]["total_boss_material"]);
+                int total_local_specialty = Convert.ToInt32(evolTable.Rows[0]["total_local_specialty"]);
+                int total_mora = Convert.ToInt32(evolTable.Rows[0]["total_mora"]);
                 return new int[] { total_material1, total_material2, total_material3, total_material4, total_boss_material, total_local_specialty, total_mora };
             }
             else

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Руководство
@@ -9,7 +8,6 @@ namespace Руководство
     public partial class Персонажи : Form
     {
         Database database = new Database();
-        toArray toarray = new toArray();
         characterFilter filter;
         private CharacterRepository characterRepository;
         public Персонажи()
@@ -42,7 +40,6 @@ namespace Руководство
                 DataTable characterLevelUpTable = characterRepository.GetCharacterLevelUpResources(nameCharacter);
                 DataTable characterArtifactTable = characterRepository.GetCharacterArtifacts(nameCharacter);
                 DataTable characterWeaponTable = characterRepository.GetCharacterWeapons(nameCharacter);
-
                 // Extract element info
                 List<string> element = new List<string>();
                 foreach (DataRow row in characterElementTable.Rows)
@@ -50,7 +47,6 @@ namespace Руководство
                     element.Add(row["name_element"].ToString());
                     element.Add(row["image"].ToString());
                 }
-
                 // Extract ability info
                 List<string> abilityInfo = new List<string>();
                 List<string> abilityImage = new List<string>();
@@ -59,7 +55,6 @@ namespace Руководство
                     abilityInfo.Add(characterAbilitiesTable.Rows[0][$"ability{i}_info"].ToString());
                     abilityImage.Add(characterAbilitiesTable.Rows[0][$"ability{i}_image"].ToString());
                 }
-
                 // Extract passive ability info
                 List<string> pasInfo = new List<string>();
                 List<string> pasImage = new List<string>();
@@ -68,7 +63,6 @@ namespace Руководство
                     pasInfo.Add(characterPassiveTable.Rows[0][$"pas{i}_info"].ToString());
                     pasImage.Add(characterPassiveTable.Rows[0][$"pas{i}_image"].ToString());
                 }
-
                 // Extract constellation info
                 List<string> cInfo = new List<string>();
                 List<string> cImage = new List<string>();
@@ -77,23 +71,20 @@ namespace Руководство
                     cInfo.Add(characterConstTable.Rows[0][$"const{i}_info"].ToString());
                     cImage.Add(characterConstTable.Rows[0][$"const{i}_image"].ToString());
                 }
-
                 // Extract ability level-up resources info
                 List<string> imagePathsAbilLvlup = new List<string>();
                 foreach (DataRow row in characterAbilityLevelUpTable.Rows)
                 {
                     imagePathsAbilLvlup.Add(row["name_resource"].ToString());
                 }
-                string[] abillvlup = toarray.InitializeArrayFromList(imagePathsAbilLvlup);
-
+                string[] abillvlup = characterRepository.InitializeArrayFromList(imagePathsAbilLvlup);
                 // Extract character level-up resources info
                 List<string> imagePathsCharLvlup = new List<string>();
                 foreach (DataRow row in characterLevelUpTable.Rows)
                 {
                     imagePathsCharLvlup.Add(row["name_resource"].ToString());
                 }
-                string[] charlvlup = toarray.InitializeArrayFromList(imagePathsCharLvlup);
-
+                string[] charlvlup = characterRepository.InitializeArrayFromList(imagePathsCharLvlup);
                 // Extract artifact info
                 List<string> artInfo = new List<string>();
                 List<string> artImage = new List<string>();
@@ -111,7 +102,6 @@ namespace Руководство
                     weaponInfo.Add(characterWeaponTable.Rows[0][$"weapon{i}_name"].ToString());
                     weaponImage.Add(characterWeaponTable.Rows[0][$"weapon{i}_image"].ToString());
                 }
-
                 // Pass data to character details form
                 Информация_о_персонажах characterDetailsForm = new Информация_о_персонажах();
                 this.Hide();

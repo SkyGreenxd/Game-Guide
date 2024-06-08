@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Руководство
@@ -8,7 +7,6 @@ namespace Руководство
     {
         private Point downPoint;
         private bool moved;
-        private Dictionary<TableLayoutPanelCellPosition, Rectangle> dict = new Dictionary<TableLayoutPanelCellPosition, Rectangle>();
         private TableLayoutPanel tierListTable;
         private Control image_container;
         public imageMove(TableLayoutPanel tierListTable, Control image_container)

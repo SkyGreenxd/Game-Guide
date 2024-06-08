@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterRepository.cs" />
-    <Compile Include="toArray.cs" />
     <Compile Include="characterFilter.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="imageMove.cs" />

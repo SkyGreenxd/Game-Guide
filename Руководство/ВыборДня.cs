@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Руководство
 {
     public partial class choiceDay : Form
     {
-        private toArray toarray;
         Database database = new Database();
         private CharacterRepository characterRepository;
         public choiceDay()
         {
             InitializeComponent();
-            toarray = new toArray();
             characterRepository = new CharacterRepository(database);
         }
         private void Назад_Click(object sender, EventArgs e)
@@ -33,8 +30,8 @@ namespace Руководство
             }
             Ресурсы VInfo = new Ресурсы();
             this.Hide();
-            string[] Images = toarray.InitializeArrayFromList(res);
-            string[] dtextNames = toarray.InitializeArrayFromDataTable(dayTable, "name_resource1");
+            string[] Images = characterRepository.InitializeArrayFromList(res);
+            string[] dtextNames = characterRepository.InitializeArrayFromDataTable(dayTable, "name_resource1");
             VInfo.SetDay(nameDay, Images, dtextNames);
             VInfo.ShowDialog();
         }
@@ -48,8 +45,8 @@ namespace Руководство
             }
             Ресурсы VInfo = new Ресурсы();
             this.Hide();
-            string[] Images = toarray.InitializeArrayFromList(v_res);
-            string[] dtextNames = toarray.InitializeArrayFromDataTable(voskrTable, "name_resource1");
+            string[] Images = characterRepository.InitializeArrayFromList(v_res);
+            string[] dtextNames = characterRepository.InitializeArrayFromDataTable(voskrTable, "name_resource1");
             VInfo.SetVoskr(nameDay, Images, dtextNames);
             VInfo.ShowDialog();
         }

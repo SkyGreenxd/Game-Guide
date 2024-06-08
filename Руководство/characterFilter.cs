@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using Руководство;
 
 namespace Руководство
 {
@@ -16,21 +9,19 @@ namespace Руководство
         private Database database;
         private ComboBox comboBoxElements;
         private Panel charPanel;
+        private CharacterRepository characterRepository;
         public characterFilter(Database db, ComboBox comboBox, FlowLayoutPanel panel)
         {
             database = db;
             comboBoxElements = comboBox;
             charPanel = panel;
+            characterRepository = new CharacterRepository(database);
             LoadElements();
         }
         private void LoadElements()
         {
-            string query = "SELECT DISTINCT element_db.name_element FROM element_db";
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable elementsTable = new DataTable();
-            SqlCommand command = new SqlCommand(query, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(elementsTable);
+            DataTable elementsTable = characterRepository.GetLoadElement();
+
             comboBoxElements.Items.Clear();
             foreach (DataRow row in elementsTable.Rows)
             {
@@ -39,12 +30,8 @@ namespace Руководство
         }
         public void FilterCharacters(string selectedElement)
         {
-            string query = $"SELECT char_element.name FROM char_element INNER JOIN element_db ON char_element.element_id = element_db.id WHERE element_db.name_element = '{selectedElement}'";
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable charactersTable = new DataTable();
-            SqlCommand command = new SqlCommand(query, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(charactersTable);
+            DataTable charactersTable = characterRepository.GetFilterCharacters(selectedElement);
+
             HashSet<string> characters = new HashSet<string>();
             foreach (DataRow row in charactersTable.Rows)
             {

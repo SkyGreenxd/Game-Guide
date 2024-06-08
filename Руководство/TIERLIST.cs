@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -10,36 +9,24 @@ namespace Руководство
 {
     public partial class TIERLIST : Form
     {
+        private CharacterRepository characterRepository;
         private imageMove imagemove;
         Database database = new Database();
         public TIERLIST()
         {
             InitializeComponent();
+            characterRepository = new CharacterRepository(database);
             imagemove = new imageMove(tierListTable, image_container);
             tierListTable.Focus();
             typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
-            nazad.TabStop = false;
-            addButton.TabStop = false;
-            deleteButton.TabStop = false;
-            foreach (Control control in tierListTable.Controls) // создает ограничение 25 симв
-            {
-                if (control is RichTextBox)
-                {
-                    ((RichTextBox)control).KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
-                }
-            }
+            limitation();
             selectChar();
         }
         protected void selectChar()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            // Фото
-            DataTable table = new DataTable();
-            string querystring = $"select image from char_icon_db";
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            foreach (DataRow row in table.Rows)
+            DataTable charImage = characterRepository.Getpic();
+
+            foreach (DataRow row in charImage.Rows)
             {
                 string imagePath = row["image"].ToString(); // Получает путь к изображению из базы данных
                 PictureBox pictureBox = new PictureBox();
@@ -117,6 +104,18 @@ namespace Руководство
             // Добавляем новый FlowLayoutPanel во второй столбец последней строки
             tierListTable.Controls.Add(flowLayoutPanel, 1, rowCount);
         }
+
+        public void limitation()
+        {
+            foreach (Control control in tierListTable.Controls) // создает ограничение 25 симв
+            {
+                if (control is RichTextBox)
+                {
+                    ((RichTextBox)control).KeyPress += new KeyPressEventHandler(richTextBox_KeyPress);
+                }
+            }
+        }
+
         public void RichTextBoxInst(RichTextBox richTextBox)
         {
             richTextBox.Size = new Size(118, 124);
@@ -140,24 +139,13 @@ namespace Руководство
         }
         private void Reboot_Click(object sender, EventArgs e)
         {
-            List<PictureBox> pictureBoxesToMove = new List<PictureBox>();
-            foreach (Control control in tierListTable.Controls)
-            {
-                if (control is FlowLayoutPanel)
-                {
-                    foreach (Control subControl in control.Controls)
-                    {
-                        if (subControl is PictureBox)
-                        {
-                            pictureBoxesToMove.Add((PictureBox)subControl);
-                        }
-                    }
-                }
-            }
-            foreach (PictureBox pictureBox in pictureBoxesToMove)
-            {
-                image_container.Controls.Add(pictureBox); // Перемещаем все PictureBox обратно в image_container
-            }
+            this.Controls.Clear();
+            InitializeComponent();
+            imagemove = new imageMove(tierListTable, image_container);
+            tierListTable.Focus();
+            typeof(TableLayoutPanel).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(tierListTable, true, null);
+            limitation();
+            selectChar();
         }
         private void Save_Click(object sender, EventArgs e)
         {
